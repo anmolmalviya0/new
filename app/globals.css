@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border-radius: 0 !important;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'IBM Plex Mono', monospace;
+  @apply bg-[#0A0E27] text-white;
+  background-color: #0A0E27;
+}
+
+/* DESIGN TOKENS - DARK THEME */
+:root {
+  --dark-bg: #0A0E27;
+  --dark-secondary: #121829;
+  --cyan: #00D9FF;
+  --orange: #FF6B35;
+  --text-primary: #FFFFFF;
+  --text-secondary: #AAAAAA;
+  --border-dark: #1F2937;
+}
+
+/* COLOR UTILITIES */
+.bg-dark-bg {
+  @apply bg-[#0A0E27];
+}
+
+.bg-dark-secondary {
+  @apply bg-[#121829];
+}
+
+.text-cyan {
+  @apply text-[#00D9FF];
+}
+
+.bg-cyan {
+  @apply bg-[#00D9FF];
+}
+
+.text-orange {
+  @apply text-[#FF6B35];
+}
+
+.bg-orange {
+  @apply bg-[#FF6B35];
+}
+
+.text-secondary {
+  @apply text-[#AAAAAA];
+}
+
+.border-dark {
+  @apply border-[#1F2937];
+}
+
+/* TYPOGRAPHY */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  color: #FFFFFF;
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+h1 {
+  font-size: 3.75rem;
+  line-height: 1.2;
+  letter-spacing: -1px;
+}
+
+h2 {
+  font-size: 2.25rem;
+  line-height: 1.3;
+}
+
+h3 {
+  font-size: 1.5rem;
+  line-height: 1.4;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #AAAAAA;
+}
+
+a {
+  transition: all 300ms ease;
+}
+
+/* BUTTONS - DARK THEME */
+.btn-primary {
+  background-color: #00D9FF;
+  color: #0A0E27;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  transition: all 300ms ease;
+  border: none;
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+.btn-primary:hover {
+  background-color: #00A8CC;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 217, 255, 0.3);
+}
+
+.btn-secondary {
+  border: 2px solid #00D9FF;
+  color: #00D9FF;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  background-color: transparent;
+  transition: all 300ms ease;
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+.btn-secondary:hover {
+  background-color: #00D9FF;
+  color: #0A0E27;
+}
+
+.btn-ghost {
+  color: #00D9FF;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+.btn-ghost:hover {
+  color: #FF6B35;
+}
+
+/* CARDS - DARK THEME */
+.card {
+  background-color: #121829;
+  border: 1px solid #1F2937;
+  padding: 1.5rem;
+  transition: all 300ms ease;
+}
+
+.card:hover {
+  border-color: #00D9FF;
+  box-shadow: 0 8px 24px rgba(0, 217, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.card-hover {
+  transition: all 300ms ease;
+}
+
+/* PROSE - For blog content */
+.prose {
+  max-width: none;
+}
+
+.prose p {
+  margin-bottom: 1rem;
+  color: #AAAAAA;
+}
+
+.prose h2 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: #00D9FF;
+}
+
+.prose a {
+  color: #00D9FF;
+  text-decoration: underline;
+}
+
+.prose a:hover {
+  color: #FF6B35;
+}
+
+.prose code {
+  background-color: #121829;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0;
+  font-size: 0.875rem;
+  font-family: 'IBM Plex Mono', monospace;
+  color: #00D9FF;
+}
+
+.prose blockquote {
+  border-left: 4px solid #00D9FF;
+  padding-left: 1rem;
+  font-style: italic;
+  color: #AAAAAA;
+  margin: 1rem 0;
+}
+
+/* SCROLLBAR - DARK */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #0A0E27;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #00D9FF;
+  border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #FF6B35;
+}
+
+/* FOCUS STATES */
+a:focus,
+button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 217, 255, 0.3);
+}
+
+/* ACCESSIBILITY */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* ANIMATIONS - DATA COUNTERS */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.counter {
+  animation: slideIn 0.6s ease-out forwards;
+}
+
+.counter[data-delay="1"] {
+  animation-delay: 0.1s;
+}
+
+.counter[data-delay="2"] {
+  animation-delay: 0.2s;
+}
+
+.counter[data-delay="3"] {
+  animation-delay: 0.3s;
+}
