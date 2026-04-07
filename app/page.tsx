@@ -22,20 +22,20 @@ export default function Home() {
           {/* METRICS GRID */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-20">
             <div className="border border-[#1F2937] p-8 text-center counter" data-delay="1">
-              <div className="text-5xl font-bold text-[#00D9FF] mb-2">50+</div>
-              <p className="text-[#AAAAAA] text-sm uppercase tracking-widest">Enterprise Clients</p>
+              <div className="text-5xl font-bold text-[#00D9FF] mb-2">5000+</div>
+              <p className="text-[#AAAAAA] text-sm uppercase tracking-widest">Engineers Trained</p>
             </div>
             <div className="border border-[#1F2937] p-8 text-center counter" data-delay="2">
-              <div className="text-5xl font-bold text-[#FF6B35] mb-2">$200M+</div>
-              <p className="text-[#AAAAAA] text-sm uppercase tracking-widest">Impact Created</p>
+              <div className="text-5xl font-bold text-[#FF6B35] mb-2">50+</div>
+              <p className="text-[#AAAAAA] text-sm uppercase tracking-widest">Institutions Reached</p>
             </div>
             <div className="border border-[#1F2937] p-8 text-center counter" data-delay="3">
-              <div className="text-5xl font-bold text-[#00D9FF] mb-2">89%</div>
-              <p className="text-[#AAAAAA] text-sm uppercase tracking-widest">Defect Reduction</p>
+              <div className="text-5xl font-bold text-[#00D9FF] mb-2">10+</div>
+              <p className="text-[#AAAAAA] text-sm uppercase tracking-widest">Years Experience</p>
             </div>
             <div className="border border-[#1F2937] p-8 text-center counter" data-delay="4">
-              <div className="text-5xl font-bold text-[#FF6B35] mb-2">200+</div>
-              <p className="text-[#AAAAAA] text-sm uppercase tracking-widest">Publications</p>
+              <div className="text-5xl font-bold text-[#FF6B35] mb-2">3</div>
+              <p className="text-[#AAAAAA] text-sm uppercase tracking-widest">Personas: Research · Build · Teach</p>
             </div>
           </div>
 
@@ -48,10 +48,10 @@ export default function Home() {
               → Deploy
             </a>
             <a
-              href="/research"
+              href="/blog"
               className="border border-[#00D9FF] text-[#00D9FF] px-8 py-3 font-bold uppercase tracking-widest hover:bg-[#00D9FF] hover:text-[#0A0E27] transition"
             >
-              → Research
+              → Blog & Research
             </a>
           </div>
         </div>
