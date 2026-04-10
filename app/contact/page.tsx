@@ -10,7 +10,6 @@ export default function ContactPage() {
     message: '',
     inquiryType: 'speaking',
   });
-
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
@@ -30,7 +29,6 @@ export default function ContactPage() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
       });
-
       if (response.ok) {
         setSubmitted(true);
         setFormData({ name: '', email: '', subject: '', message: '', inquiryType: 'speaking' });
@@ -45,81 +43,89 @@ export default function ContactPage() {
     }
   };
 
-  const inputClass =
-    'w-full px-4 py-3 bg-[#121829] border border-[#1F2937] text-[#FFFFFF] font-mono focus:outline-none focus:border-[#00D9FF] transition placeholder-[#555555]';
-  const labelClass = 'block text-xs font-bold text-[#AAAAAA] uppercase tracking-widest mb-2';
+  const fieldStyle: React.CSSProperties = {
+    width: '100%',
+    padding: '0.85rem 1rem',
+    background: 'var(--bg-3)',
+    border: '1px solid var(--border)',
+    borderRadius: 'var(--radius-sm)',
+    color: 'var(--fg)',
+    fontFamily: 'monospace',
+    fontSize: '0.95rem',
+    outline: 'none',
+    transition: 'border-color 0.2s',
+    boxSizing: 'border-box',
+  };
+
+  const labelStyle: React.CSSProperties = {
+    display: 'block',
+    fontSize: '0.72rem',
+    fontWeight: 700,
+    color: 'var(--fg-muted)',
+    textTransform: 'uppercase',
+    letterSpacing: '0.12em',
+    marginBottom: '0.5rem',
+  };
+
+  const handleFocus = (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    e.currentTarget.style.borderColor = 'var(--cyan)';
+  };
+  const handleBlur = (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    e.currentTarget.style.borderColor = 'var(--border)';
+  };
 
   return (
     <>
-      {/* HERO */}
-      <section className="bg-[#0A0E27] text-white py-16 md:py-24 border-b border-[#1F2937]">
-        <div className="max-w-7xl mx-auto px-6 text-center">
-          <p className="text-[#00D9FF] uppercase tracking-widest text-xs mb-4">— Let's Talk —</p>
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">Get in Touch</h1>
-          <p className="text-lg text-[#AAAAAA] font-mono max-w-2xl mx-auto">
+      {/* ── HERO ── */}
+      <section style={{ background: 'var(--bg)', paddingTop: 'clamp(5rem,12vw,8rem)', paddingBottom: 'clamp(3rem,8vw,5rem)', borderBottom: '1px solid var(--border)' }}>
+        <div className="container" style={{ textAlign: 'center' }}>
+          <span className="section-label">— Let's Talk —</span>
+          <h1 style={{ fontSize: 'clamp(2.4rem,7vw,4rem)', fontWeight: 900, color: 'var(--fg)', margin: '1rem 0 1.2rem', lineHeight: 1.1 }}>
+            Get in <span style={{ color: 'var(--accent)' }}>Touch</span>
+          </h1>
+          <p style={{ fontSize: 'clamp(0.95rem,2.5vw,1.1rem)', color: 'var(--fg-2)', fontFamily: 'monospace', maxWidth: '38rem', margin: '0 auto' }}>
             Speaking inquiry, course question, or collaboration? I respond within 48 hours.
           </p>
         </div>
       </section>
 
-      {/* FORM + INFO */}
-      <section className="py-20 bg-[#0A0E27]">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+      {/* ── FORM + INFO ── */}
+      <section style={{ background: 'var(--bg)', padding: 'clamp(3rem,8vw,5rem) 0' }}>
+        <div style={{ maxWidth: '72rem', margin: '0 auto', padding: '0 1.5rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '3rem' }}>
 
-            {/* LEFT — FORM */}
+            {/* ── LEFT: FORM ── */}
             <div>
-              <h2 className="text-2xl font-bold text-white mb-8 uppercase tracking-widest">
+              <h2 style={{ fontSize: '1.3rem', fontWeight: 800, color: 'var(--fg)', marginBottom: '2rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
                 Send a Message
               </h2>
 
               {submitted && (
-                <div className="mb-6 p-4 bg-[#00D9FF] text-[#0A0E27] font-bold font-mono">
-                  ✓ Message sent. I'll reply within 48 hours.
+                <div style={{ marginBottom: '1.5rem', padding: '1rem 1.2rem', background: 'var(--cyan)', color: 'var(--bg)', fontWeight: 700, fontFamily: 'monospace', borderRadius: 'var(--radius-sm)' }}>
+                  ✓ Message sent! I'll reply within 48 hours.
                 </div>
               )}
 
               {error && (
-                <div className="mb-6 p-4 bg-[#FF6B35] text-white font-bold font-mono">
+                <div style={{ marginBottom: '1.5rem', padding: '1rem 1.2rem', background: 'var(--accent)', color: '#fff', fontWeight: 700, fontFamily: 'monospace', borderRadius: 'var(--radius-sm)' }}>
                   ✗ {error}
                 </div>
               )}
 
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.2rem' }}>
                 <div>
-                  <label className={labelClass}>Name *</label>
-                  <input
-                    type="text"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    placeholder="Your name"
-                    className={inputClass}
-                  />
+                  <label style={labelStyle}>Name *</label>
+                  <input type="text" name="name" value={formData.name} onChange={handleChange} onFocus={handleFocus} onBlur={handleBlur} required placeholder="Your name" style={fieldStyle} />
                 </div>
 
                 <div>
-                  <label className={labelClass}>Email *</label>
-                  <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    placeholder="your@email.com"
-                    className={inputClass}
-                  />
+                  <label style={labelStyle}>Email *</label>
+                  <input type="email" name="email" value={formData.email} onChange={handleChange} onFocus={handleFocus} onBlur={handleBlur} required placeholder="your@email.com" style={fieldStyle} />
                 </div>
 
                 <div>
-                  <label className={labelClass}>Inquiry Type</label>
-                  <select
-                    name="inquiryType"
-                    value={formData.inquiryType}
-                    onChange={handleChange}
-                    className={inputClass}
-                  >
+                  <label style={labelStyle}>Inquiry Type</label>
+                  <select name="inquiryType" value={formData.inquiryType} onChange={handleChange} onFocus={handleFocus} onBlur={handleBlur} style={fieldStyle}>
                     <option value="speaking">Speaking Engagement</option>
                     <option value="course">Course / Training</option>
                     <option value="consulting">Technical Consulting</option>
@@ -129,94 +135,110 @@ export default function ContactPage() {
                 </div>
 
                 <div>
-                  <label className={labelClass}>Subject *</label>
-                  <input
-                    type="text"
-                    name="subject"
-                    value={formData.subject}
-                    onChange={handleChange}
-                    required
-                    placeholder="What's this about?"
-                    className={inputClass}
-                  />
+                  <label style={labelStyle}>Subject *</label>
+                  <input type="text" name="subject" value={formData.subject} onChange={handleChange} onFocus={handleFocus} onBlur={handleBlur} required placeholder="What's this about?" style={fieldStyle} />
                 </div>
 
                 <div>
-                  <label className={labelClass}>Message *</label>
+                  <label style={labelStyle}>Message *</label>
                   <textarea
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
+                    onFocus={handleFocus}
+                    onBlur={handleBlur}
                     required
                     rows={6}
                     placeholder="Tell me more about what you're looking for..."
-                    className={inputClass}
+                    style={{ ...fieldStyle, resize: 'vertical', minHeight: '140px' }}
                   />
                 </div>
 
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full bg-[#FF6B35] text-white py-4 font-bold uppercase tracking-widest hover:bg-[#FF8A5B] transition disabled:opacity-50 disabled:cursor-not-allowed"
+                  style={{
+                    width: '100%',
+                    padding: '1rem',
+                    background: loading ? 'var(--fg-muted)' : 'var(--accent)',
+                    color: '#fff',
+                    border: 'none',
+                    borderRadius: 'var(--radius-sm)',
+                    fontWeight: 800,
+                    fontSize: '1rem',
+                    letterSpacing: '0.06em',
+                    textTransform: 'uppercase',
+                    cursor: loading ? 'not-allowed' : 'pointer',
+                    transition: 'opacity 0.2s',
+                  }}
+                  onMouseEnter={e => !loading && (e.currentTarget.style.opacity = '0.88')}
+                  onMouseLeave={e => (e.currentTarget.style.opacity = '1')}
                 >
-                  {loading ? '⏳ Sending...' : '→ Send Message'}
+                  {loading ? '⏳ Sending…' : '→ Send Message'}
                 </button>
               </form>
             </div>
 
-            {/* RIGHT — CONTACT INFO */}
+            {/* ── RIGHT: CONTACT INFO ── */}
             <div>
-              <h2 className="text-2xl font-bold text-white mb-8 uppercase tracking-widest">
+              <h2 style={{ fontSize: '1.3rem', fontWeight: 800, color: 'var(--fg)', marginBottom: '2rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
                 Other Ways to Connect
               </h2>
 
-              <div className="space-y-6">
-                <div className="p-6 bg-[#121829] border border-[#1F2937] hover:border-[#00D9FF] transition">
-                  <p className="text-xs text-[#00D9FF] uppercase tracking-widest mb-2">Email</p>
-                  <a
-                    href="mailto:hello@srijanspeaks.com"
-                    className="text-[#AAAAAA] font-mono hover:text-[#00D9FF] transition"
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                {/* Email */}
+                <div style={{ padding: '1.2rem 1.5rem', background: 'var(--bg-card)', border: '1px solid var(--border)', borderRadius: 'var(--radius)', transition: 'border-color 0.2s' }}
+                  onMouseEnter={e => (e.currentTarget.style.borderColor = 'var(--cyan)')}
+                  onMouseLeave={e => (e.currentTarget.style.borderColor = 'var(--border)')}
+                >
+                  <p style={{ fontSize: '0.7rem', color: 'var(--cyan)', textTransform: 'uppercase', letterSpacing: '0.12em', fontWeight: 700, marginBottom: '0.4rem' }}>Email</p>
+                  <a href="mailto:hello@srijanspeaks.com" style={{ color: 'var(--fg-2)', fontFamily: 'monospace', textDecoration: 'none', transition: 'color 0.2s' }}
+                    onMouseEnter={e => (e.currentTarget.style.color = 'var(--cyan)')}
+                    onMouseLeave={e => (e.currentTarget.style.color = 'var(--fg-2)')}
                   >
                     hello@srijanspeaks.com
                   </a>
                 </div>
 
-                <div className="p-6 bg-[#121829] border border-[#1F2937] hover:border-[#00D9FF] transition">
-                  <p className="text-xs text-[#00D9FF] uppercase tracking-widest mb-2">LinkedIn</p>
-                  <a
-                    href="https://linkedin.com/in/srijantiwari"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[#AAAAAA] font-mono hover:text-[#00D9FF] transition"
+                {/* LinkedIn */}
+                <div style={{ padding: '1.2rem 1.5rem', background: 'var(--bg-card)', border: '1px solid var(--border)', borderRadius: 'var(--radius)', transition: 'border-color 0.2s' }}
+                  onMouseEnter={e => (e.currentTarget.style.borderColor = 'var(--cyan)')}
+                  onMouseLeave={e => (e.currentTarget.style.borderColor = 'var(--border)')}
+                >
+                  <p style={{ fontSize: '0.7rem', color: 'var(--cyan)', textTransform: 'uppercase', letterSpacing: '0.12em', fontWeight: 700, marginBottom: '0.4rem' }}>LinkedIn</p>
+                  <a href="https://linkedin.com/in/srijantiwari" target="_blank" rel="noopener noreferrer"
+                    style={{ color: 'var(--fg-2)', fontFamily: 'monospace', textDecoration: 'none', transition: 'color 0.2s' }}
+                    onMouseEnter={e => (e.currentTarget.style.color = 'var(--cyan)')}
+                    onMouseLeave={e => (e.currentTarget.style.color = 'var(--fg-2)')}
                   >
                     linkedin.com/in/srijantiwari
                   </a>
                 </div>
 
-                <div className="p-6 bg-[#121829] border border-[#1F2937] hover:border-[#FF6B35] transition">
-                  <p className="text-xs text-[#FF6B35] uppercase tracking-widest mb-2">Response Time</p>
-                  <p className="text-[#AAAAAA] font-mono">Typically within 24–48 hours</p>
+                {/* Response Time */}
+                <div style={{ padding: '1.2rem 1.5rem', background: 'var(--bg-card)', border: '1px solid var(--border)', borderRadius: 'var(--radius)', transition: 'border-color 0.2s' }}
+                  onMouseEnter={e => (e.currentTarget.style.borderColor = 'var(--accent)')}
+                  onMouseLeave={e => (e.currentTarget.style.borderColor = 'var(--border)')}
+                >
+                  <p style={{ fontSize: '0.7rem', color: 'var(--accent)', textTransform: 'uppercase', letterSpacing: '0.12em', fontWeight: 700, marginBottom: '0.4rem' }}>Response Time</p>
+                  <p style={{ color: 'var(--fg-2)', fontFamily: 'monospace' }}>Typically within 24–48 hours</p>
                 </div>
 
-                <div className="p-6 bg-[#121829] border border-[#1F2937]">
-                  <p className="text-xs text-[#AAAAAA] uppercase tracking-widest mb-4">Best for</p>
-                  <ul className="space-y-3 font-mono text-sm text-[#AAAAAA]">
-                    <li className="flex gap-3 items-start">
-                      <span className="text-[#00D9FF]">✓</span>
-                      <span>Keynotes, workshops, and panel invitations</span>
-                    </li>
-                    <li className="flex gap-3 items-start">
-                      <span className="text-[#00D9FF]">✓</span>
-                      <span>Corporate training programs (10+ engineers)</span>
-                    </li>
-                    <li className="flex gap-3 items-start">
-                      <span className="text-[#00D9FF]">✓</span>
-                      <span>AI/NDE consulting engagements</span>
-                    </li>
-                    <li className="flex gap-3 items-start">
-                      <span className="text-[#FF6B35]">→</span>
-                      <span>Research collaborations & institutional partnerships</span>
-                    </li>
+                {/* Best For */}
+                <div style={{ padding: '1.2rem 1.5rem', background: 'var(--bg-card)', border: '1px solid var(--border)', borderRadius: 'var(--radius)' }}>
+                  <p style={{ fontSize: '0.7rem', color: 'var(--fg-muted)', textTransform: 'uppercase', letterSpacing: '0.12em', fontWeight: 700, marginBottom: '1rem' }}>Best for</p>
+                  <ul style={{ display: 'flex', flexDirection: 'column', gap: '0.7rem', listStyle: 'none', padding: 0, margin: 0 }}>
+                    {[
+                      { icon: '✓', text: 'Keynotes, workshops, and panel invitations', c: 'var(--cyan)' },
+                      { icon: '✓', text: 'Corporate training programs (10+ engineers)', c: 'var(--cyan)' },
+                      { icon: '✓', text: 'AI/NDE consulting engagements', c: 'var(--cyan)' },
+                      { icon: '→', text: 'Research collaborations & institutional partnerships', c: 'var(--accent)' },
+                    ].map((item, i) => (
+                      <li key={i} style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
+                        <span style={{ color: item.c, fontWeight: 700, flexShrink: 0 }}>{item.icon}</span>
+                        <span style={{ color: 'var(--fg-2)', fontFamily: 'monospace', fontSize: '0.88rem', lineHeight: 1.5 }}>{item.text}</span>
+                      </li>
+                    ))}
                   </ul>
                 </div>
               </div>

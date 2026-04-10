@@ -14,6 +14,7 @@ export default function CoursesPage() {
       level: 'Intermediate',
       enrolled: 1250,
       image: '🤖',
+      color: 'var(--cyan)',
     },
     {
       title: 'Startup Fundamentals',
@@ -23,6 +24,7 @@ export default function CoursesPage() {
       level: 'Beginner',
       enrolled: 850,
       image: '🚀',
+      color: 'var(--accent)',
     },
     {
       title: 'Advanced Python for ML',
@@ -32,6 +34,7 @@ export default function CoursesPage() {
       level: 'Advanced',
       enrolled: 620,
       image: '🐍',
+      color: 'var(--cyan)',
     },
     {
       title: 'Technical Writing & Speaking',
@@ -41,108 +44,131 @@ export default function CoursesPage() {
       level: 'Beginner',
       enrolled: 425,
       image: '✍️',
+      color: 'var(--accent)',
     },
   ];
 
+  const philosophy = [
+    { icon: '🎯', title: 'Real-World First', desc: 'Every concept connected to actual industry problems and solutions', color: 'var(--cyan)' },
+    { icon: '💡', title: 'Connect, Not Confuse', desc: 'Simplified explanations of complex topics with relatable examples', color: 'var(--accent)' },
+    { icon: '🚀', title: 'Skill to Career', desc: 'Move from learning to applying—direct pathways to opportunity', color: 'var(--cyan)' },
+  ];
+
   const faqs = [
-    {
-      question: 'Do I need prior experience?',
-      answer: 'Each course specifies its level (Beginner/Intermediate/Advanced). Most courses are beginner-friendly. Prerequisites are listed in course descriptions.',
-    },
-    {
-      question: 'What happens after course completion?',
-      answer: 'You get a certificate of completion, lifetime access to course materials, and exclusive job board access for intermediate+ students.',
-    },
-    {
-      question: 'Can I get a refund?',
-      answer: 'Yes! 7-day money-back guarantee if you\'re not satisfied. No questions asked.',
-    },
-    {
-      question: 'How long do I have access?',
-      answer: 'Lifetime! All course materials, including future updates, are yours forever.',
-    },
-    {
-      question: 'Is there any doubt support?',
-      answer: 'Yes, via Discord community and email. I personally respond to questions within 24 hours.',
-    },
+    { question: 'Do I need prior experience?', answer: 'Each course specifies its level (Beginner/Intermediate/Advanced). Most courses are beginner-friendly. Prerequisites are listed in course descriptions.' },
+    { question: 'What happens after course completion?', answer: 'You get a certificate of completion, lifetime access to course materials, and exclusive job board access for intermediate+ students.' },
+    { question: 'Can I get a refund?', answer: "Yes! 7-day money-back guarantee if you're not satisfied. No questions asked." },
+    { question: 'How long do I have access?', answer: 'Lifetime! All course materials, including future updates, are yours forever.' },
+    { question: 'Is there any doubt support?', answer: 'Yes, via Discord community and email. I personally respond to questions within 24 hours.' },
   ];
 
   return (
     <>
-      {/* HERO */}
-      <section className="bg-[#0A0E27] text-white py-20">
-        <div className="max-w-7xl mx-auto px-6 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">Online Courses</h1>
-          <p className="text-xl text-[#AAAAAA] font-mono max-w-3xl mx-auto">
+      {/* ── HERO ── */}
+      <section style={{ background: 'var(--bg)', paddingTop: 'clamp(5rem,12vw,8rem)', paddingBottom: 'clamp(3rem,8vw,5rem)', borderBottom: '1px solid var(--border)' }}>
+        <div className="container" style={{ textAlign: 'center' }}>
+          <span className="section-label">📚 Learning Hub</span>
+          <h1 style={{ fontSize: 'clamp(2.4rem,7vw,4rem)', fontWeight: 900, color: 'var(--fg)', margin: '1rem 0 1.2rem', lineHeight: 1.1 }}>
+            Online <span style={{ color: 'var(--accent)' }}>Courses</span>
+          </h1>
+          <p style={{ fontSize: 'clamp(1rem,2.5vw,1.2rem)', color: 'var(--fg-2)', fontFamily: 'monospace', maxWidth: '38rem', margin: '0 auto' }}>
             Learn from practical experience. Built by an educator committed to your growth.
           </p>
         </div>
       </section>
 
-      {/* TEACHING PHILOSOPHY */}
-      <section className="bg-[#121829] border-t border-[#1F2937] py-16">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="text-4xl mb-4">🎯</div>
-              <h3 className="text-lg font-bold text-[#00D9FF] mb-2">Real-World First</h3>
-              <p className="text-[#AAAAAA] font-mono text-sm">Every concept connected to actual industry problems and solutions</p>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl mb-4">💡</div>
-              <h3 className="text-lg font-bold text-[#FF6B35] mb-2">Connect, Not Confuse</h3>
-              <p className="text-[#AAAAAA] font-mono text-sm">Simplified explanations of complex topics with relatable examples</p>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl mb-4">🚀</div>
-              <h3 className="text-lg font-bold text-[#00D9FF] mb-2">Skill to Career</h3>
-              <p className="text-[#AAAAAA] font-mono text-sm">Move from learning to applying—direct pathways to opportunity</p>
-            </div>
+      {/* ── TEACHING PHILOSOPHY ── */}
+      <section style={{ background: 'var(--bg-2)', borderBottom: '1px solid var(--border)', padding: 'clamp(3rem,8vw,5rem) 0' }}>
+        <div className="container">
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '2rem' }}>
+            {philosophy.map((p, i) => (
+              <div key={i} style={{ textAlign: 'center', padding: '2rem 1.5rem', background: 'var(--bg-card)', borderRadius: 'var(--radius)', border: '1px solid var(--border)' }}>
+                <div style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>{p.icon}</div>
+                <h3 style={{ fontSize: '1.05rem', fontWeight: 700, color: p.color, marginBottom: '0.6rem' }}>{p.title}</h3>
+                <p style={{ color: 'var(--fg-muted)', fontFamily: 'monospace', fontSize: '0.88rem', lineHeight: 1.6 }}>{p.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* STATS BANNER */}
-      <section className="bg-[#0A0E27] text-white py-16 border-t border-[#1F2937]">
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-          <div>
-            <div className="text-5xl font-bold mb-2 text-[#00D9FF]">5000+</div>
-            <p className="text-[#AAAAAA] font-mono uppercase tracking-widest text-sm">Engineers Trained</p>
-          </div>
-          <div>
-            <div className="text-5xl font-bold mb-2 text-[#FF6B35]">4.8★</div>
-            <p className="text-[#AAAAAA] font-mono uppercase tracking-widest text-sm">Average Rating</p>
-          </div>
-          <div>
-            <div className="text-5xl font-bold mb-2 text-[#00D9FF]">100%</div>
-            <p className="text-[#AAAAAA] font-mono uppercase tracking-widest text-sm">Satisfaction Guarantee</p>
+      {/* ── STATS BANNER ── */}
+      <section style={{ background: 'var(--bg)', borderBottom: '1px solid var(--border)', padding: 'clamp(2.5rem,6vw,4rem) 0' }}>
+        <div className="container">
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: '2rem', textAlign: 'center' }}>
+            {[
+              { val: '5000+', label: 'Engineers Trained', c: 'var(--cyan)' },
+              { val: '4.8★', label: 'Average Rating', c: 'var(--accent)' },
+              { val: '100%', label: 'Satisfaction Guarantee', c: 'var(--cyan)' },
+            ].map((s, i) => (
+              <div key={i}>
+                <div style={{ fontSize: 'clamp(2.2rem,6vw,3.2rem)', fontWeight: 900, color: s.c, lineHeight: 1 }}>{s.val}</div>
+                <p style={{ color: 'var(--fg-muted)', fontFamily: 'monospace', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.12em', marginTop: '0.5rem' }}>{s.label}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* COURSES GRID */}
-      <section className="py-20 bg-[#0A0E27]">
-        <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-3xl font-bold text-white text-center mb-12">Curated Learning Paths</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {/* ── COURSES GRID ── */}
+      <section id="courses" style={{ background: 'var(--bg)', padding: 'clamp(3rem,8vw,5rem) 0' }}>
+        <div className="container">
+          <h2 style={{ fontSize: 'clamp(1.6rem,4vw,2.2rem)', fontWeight: 800, color: 'var(--fg)', textAlign: 'center', marginBottom: '3rem' }}>
+            Curated Learning Paths
+          </h2>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem' }}>
             {courses.map((course, idx) => (
-              <div key={idx} className="rounded-lg border border-[#1F2937] overflow-hidden hover:border-[#00D9FF] transition group bg-[#121829]">
-                <div className="bg-[#1F2937] h-32 flex items-center justify-center text-6xl group-hover:bg-[#00D9FF]/10 transition">
+              <div
+                key={idx}
+                style={{
+                  background: 'var(--bg-card)',
+                  border: '1px solid var(--border)',
+                  borderRadius: 'var(--radius)',
+                  overflow: 'hidden',
+                  transition: 'border-color 0.2s, transform 0.2s, box-shadow 0.2s',
+                }}
+                onMouseEnter={e => {
+                  (e.currentTarget as HTMLDivElement).style.borderColor = course.color;
+                  (e.currentTarget as HTMLDivElement).style.transform = 'translateY(-4px)';
+                  (e.currentTarget as HTMLDivElement).style.boxShadow = `0 12px 32px color-mix(in srgb, ${course.color} 18%, transparent)`;
+                }}
+                onMouseLeave={e => {
+                  (e.currentTarget as HTMLDivElement).style.borderColor = 'var(--border)';
+                  (e.currentTarget as HTMLDivElement).style.transform = 'none';
+                  (e.currentTarget as HTMLDivElement).style.boxShadow = 'none';
+                }}
+              >
+                <div style={{ background: 'var(--bg-3)', height: '7rem', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '3.5rem' }}>
                   {course.image}
                 </div>
-                <div className="p-6">
-                  <h3 className="text-2xl font-bold text-[#00D9FF] mb-3 group-hover:text-[#FF6B35] transition">{course.title}</h3>
-                  <p className="text-[#AAAAAA] font-mono mb-4">{course.description}</p>
-                  <div className="flex justify-between items-center mb-4 text-sm text-[#AAAAAA] font-mono">
+                <div style={{ padding: '1.5rem' }}>
+                  <h3 style={{ fontSize: '1.2rem', fontWeight: 800, color: course.color, marginBottom: '0.6rem' }}>{course.title}</h3>
+                  <p style={{ color: 'var(--fg-muted)', fontFamily: 'monospace', fontSize: '0.88rem', marginBottom: '1rem', lineHeight: 1.6 }}>{course.description}</p>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.8rem', color: 'var(--fg-muted)', fontFamily: 'monospace', marginBottom: '1rem' }}>
                     <span>📚 {course.duration}</span>
-                    <span className="text-[#FF6B35]">{course.level}</span>
+                    <span style={{ color: 'var(--accent)', fontWeight: 700 }}>{course.level}</span>
                   </div>
-                  <div className="flex justify-between items-center mb-4">
-                    <span className="text-2xl font-bold text-[#00D9FF]">{course.price}</span>
-                    <span className="text-xs text-[#AAAAAA] font-mono">{course.enrolled} enrolled</span>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.2rem' }}>
+                    <span style={{ fontSize: '1.6rem', fontWeight: 900, color: course.color }}>{course.price}</span>
+                    <span style={{ fontSize: '0.75rem', color: 'var(--fg-muted)', fontFamily: 'monospace' }}>{course.enrolled.toLocaleString()} enrolled</span>
                   </div>
-                  <button className="w-full bg-[#00D9FF] text-[#0A0E27] py-3 rounded-lg font-semibold hover:bg-[#FF6B35] transition">
-                    Enroll Now
+                  <button
+                    style={{
+                      width: '100%',
+                      padding: '0.85rem',
+                      background: course.color,
+                      color: 'var(--bg)',
+                      border: 'none',
+                      borderRadius: 'var(--radius-sm)',
+                      fontWeight: 700,
+                      fontSize: '0.95rem',
+                      cursor: 'pointer',
+                      transition: 'opacity 0.2s',
+                    }}
+                    onMouseEnter={e => (e.currentTarget.style.opacity = '0.85')}
+                    onMouseLeave={e => (e.currentTarget.style.opacity = '1')}
+                  >
+                    Enroll Now →
                   </button>
                 </div>
               </div>
@@ -151,22 +177,43 @@ export default function CoursesPage() {
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="py-20 bg-[#121829] border-t border-[#1F2937]">
-        <div className="max-w-4xl mx-auto px-6">
-          <h2 className="text-4xl font-bold text-center text-[#00D9FF] mb-16">Frequently Asked Questions</h2>
-          <div className="space-y-4">
+      {/* ── FAQ ── */}
+      <section style={{ background: 'var(--bg-2)', borderTop: '1px solid var(--border)', padding: 'clamp(3rem,8vw,5rem) 0' }}>
+        <div style={{ maxWidth: '52rem', margin: '0 auto', padding: '0 1.5rem' }}>
+          <h2 style={{ fontSize: 'clamp(1.6rem,4vw,2.2rem)', fontWeight: 800, color: 'var(--cyan)', textAlign: 'center', marginBottom: '2.5rem' }}>
+            Frequently Asked Questions
+          </h2>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
             {faqs.map((faq, idx) => (
-              <div key={idx} className="border border-[#1F2937] rounded-lg overflow-hidden">
+              <div
+                key={idx}
+                style={{
+                  border: '1px solid var(--border)',
+                  borderRadius: 'var(--radius)',
+                  overflow: 'hidden',
+                  background: 'var(--bg-card)',
+                }}
+              >
                 <button
                   onClick={() => setExpandedFaq(expandedFaq === idx ? null : idx)}
-                  className="w-full p-6 flex justify-between items-center bg-[#0A0E27] hover:bg-[#1F2937] transition"
+                  style={{
+                    width: '100%',
+                    padding: '1.2rem 1.5rem',
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                    background: 'transparent',
+                    border: 'none',
+                    cursor: 'pointer',
+                    textAlign: 'left',
+                    gap: '1rem',
+                  }}
                 >
-                  <span className="font-semibold text-[#FFFFFF] text-left">{faq.question}</span>
-                  <span className="text-[#00D9FF] text-xl">{expandedFaq === idx ? '−' : '+'}</span>
+                  <span style={{ fontWeight: 600, color: 'var(--fg)', fontSize: '0.97rem' }}>{faq.question}</span>
+                  <span style={{ color: 'var(--cyan)', fontSize: '1.3rem', fontWeight: 700, flexShrink: 0 }}>{expandedFaq === idx ? '−' : '+'}</span>
                 </button>
                 {expandedFaq === idx && (
-                  <div className="p-6 bg-[#0A0E27] border-t border-[#1F2937] text-[#AAAAAA] font-mono">
+                  <div style={{ padding: '1rem 1.5rem 1.4rem', borderTop: '1px solid var(--border)', color: 'var(--fg-muted)', fontFamily: 'monospace', fontSize: '0.9rem', lineHeight: 1.7 }}>
                     {faq.answer}
                   </div>
                 )}
@@ -176,15 +223,28 @@ export default function CoursesPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="bg-[#0A0E27] text-white py-20 text-center border-t border-[#1F2937]">
-        <h2 className="text-4xl font-bold mb-6">Ready to learn?</h2>
-        <p className="text-lg text-[#AAAAAA] font-mono mb-8 max-w-2xl mx-auto">
+      {/* ── CTA ── */}
+      <section style={{ background: 'var(--brand)', padding: 'clamp(3rem,8vw,5rem) 1.5rem', textAlign: 'center' }}>
+        <h2 style={{ fontSize: 'clamp(1.8rem,5vw,2.6rem)', fontWeight: 900, color: '#fff', marginBottom: '1rem' }}>Ready to level up?</h2>
+        <p style={{ color: 'rgba(255,255,255,0.8)', fontFamily: 'monospace', fontSize: '1rem', marginBottom: '2rem', maxWidth: '36rem', margin: '0 auto 2rem' }}>
           Start your learning journey today. Certificates upon completion. Join 5000+ engineers.
         </p>
         <a
           href="#courses"
-          className="inline-block bg-[#00D9FF] text-[#0A0E27] px-8 py-3 rounded-lg font-bold uppercase tracking-widest hover:bg-[#FF6B35] transition"
+          style={{
+            display: 'inline-block',
+            background: 'var(--accent)',
+            color: '#fff',
+            padding: '0.9rem 2.5rem',
+            borderRadius: 'var(--radius-sm)',
+            fontWeight: 800,
+            fontSize: '1rem',
+            textDecoration: 'none',
+            letterSpacing: '0.05em',
+            transition: 'opacity 0.2s',
+          }}
+          onMouseEnter={e => (e.currentTarget.style.opacity = '0.85')}
+          onMouseLeave={e => (e.currentTarget.style.opacity = '1')}
         >
           → Browse All Courses
         </a>

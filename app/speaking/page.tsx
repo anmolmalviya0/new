@@ -1,180 +1,106 @@
 'use client';
 
+const topics = [
+  { title: 'AI & Machine Learning in NDT', desc: 'How AI is transforming non-destructive testing. Deep dive into ML models, deployment challenges, and real-world use cases.', duration: '45–60 min' },
+  { title: 'Building Your First Startup',   desc: 'From idea to 50+ clients. Lessons from founding TIQ World, raising funding, and scaling an AI startup.',              duration: '45–60 min' },
+  { title: 'The Art of Technical Speaking', desc: 'Crafting memorable keynotes, engaging technical audiences, and making complex ideas simple.',                           duration: '30–45 min' },
+  { title: 'Research to Market',            desc: 'How to transition from academic research to building a profitable product company.',                                    duration: '45 min'    },
+];
+
+const events = [
+  { event: 'AI India Summit 2024',    date: 'Jun 15, 2024',   location: 'Delhi, India',   role: 'Keynote' },
+  { event: 'TechCrunch Disrupt',      date: 'Sep 9–11, 2024', location: 'San Francisco',  role: 'Panel'   },
+  { event: 'IIT Madras Alumni Meet',  date: 'Jul 22, 2024',   location: 'Chennai',        role: 'Keynote' },
+];
+
+const gallery = [
+  { src: '/images/speaking/industry-meet-keynote.jpg', accent: 'var(--accent)', title: 'Translational Research Keynote',   desc: 'Bridging academic research with industry — 200+ industry leaders.' },
+  { src: '/images/speaking/make-in-india.jpg',         accent: 'var(--cyan)',   title: 'Quality & Inspection Innovation',  desc: 'AI in manufacturing quality at national conference, Bengaluru 2025.' },
+  { src: '/images/speaking/iit-cnde-seminar.jpg',      accent: 'var(--accent)', title: 'CNDE Research Symposium',          desc: 'NDE methodologies & AI applications with fellow researchers.' },
+  { src: '/images/teaching/classroom-ml.jpg',          accent: 'var(--cyan)',   title: 'Interactive Teaching',             desc: 'Creating aha moments through live demos and real-world case studies.' },
+];
+
 export default function SpeakingPage() {
-  const topics = [
-    {
-      title: 'AI & Machine Learning in NDT',
-      description: 'How AI is transforming non-destructive testing. Deep dive into ML models, deployment challenges, and real-world use cases.',
-      duration: '45-60 min',
-    },
-    {
-      title: 'Building Your First Startup',
-      description: 'From idea to 50+ clients. Lessons from founding TIQ World, raising funding, and scaling an AI startup.',
-      duration: '45-60 min',
-    },
-    {
-      title: 'The Art of Technical Speaking',
-      description: 'Crafting memorable keynotes, engaging technical audiences, and making complex ideas simple.',
-      duration: '30-45 min',
-    },
-    {
-      title: 'Research to Market: Commercializing Science',
-      description: 'How to transition from academic research to building a profitable product company.',
-      duration: '45 min',
-    },
-  ];
-
-  const events = [
-    { event: 'AI India Summit 2024', date: 'Jun 15, 2024', location: 'Delhi, India', status: 'Keynote' },
-    { event: 'TechCrunch Disrupt', date: 'Sep 9-11, 2024', location: 'San Francisco', status: 'Panel' },
-    { event: 'IIT Madras Alumni Meet', date: 'Jul 22, 2024', location: 'Chennai', status: 'Keynote' },
-  ];
-
   return (
     <>
-      {/* HERO */}
-      <section className="bg-[#0A0E27] text-white py-20">
-        <div className="max-w-7xl mx-auto px-6 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">Keynote Speaking</h1>
-          <p className="text-xl md:text-2xl text-[#AAAAAA] font-mono">
-            Inspiring audiences on AI, entrepreneurship, and making impact.
+      {/* ── HERO ── */}
+      <section style={{ background: 'var(--bg)', borderBottom: '1px solid var(--border)', padding: 'clamp(4rem,10vw,7rem) 0 clamp(3rem,7vw,5rem)', position: 'relative', overflow: 'hidden' }}>
+        <div className="hero-grid" style={{ position: 'absolute', inset: 0, pointerEvents: 'none' }} />
+        <div className="container" style={{ position: 'relative', zIndex: 1, textAlign: 'center' }}>
+          <span className="badge badge-accent" style={{ marginBottom: '1.5rem', display: 'inline-flex' }}>Speaking</span>
+          <h1 style={{ color: 'var(--fg)', marginBottom: '1rem' }}>Keynote <span style={{ color: 'var(--accent)' }}>Speaking</span></h1>
+          <p style={{ fontSize: 'clamp(1rem,2vw,1.2rem)', color: 'var(--fg-2)', maxWidth: '540px', margin: '0 auto', lineHeight: 1.75 }}>
+            Inspiring audiences on AI, entrepreneurship, and making impact at scale.
           </p>
         </div>
       </section>
 
-      {/* TOPICS */}
-      <section className="py-20 bg-[#0A0E27]">
-        <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-4xl font-bold text-center mb-16 text-white">Available Topics</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {topics.map((topic, idx) => (
-              <div key={idx} className="p-8 bg-[#121829] border border-[#1F2937] hover:border-[#00D9FF] transition">
-                <h3 className="text-2xl font-bold text-[#00D9FF] mb-3">{topic.title}</h3>
-                <p className="text-[#AAAAAA] font-mono mb-4">{topic.description}</p>
-                <p className="text-sm font-semibold text-[#FF6B35] font-mono">Duration: {topic.duration}</p>
+      {/* ── TOPICS ── */}
+      <section className="section" style={{ background: 'var(--bg)' }}>
+        <div className="container">
+          <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+            <span className="section-label" style={{ display: 'inline-flex', marginBottom: '1rem' }}>Topics</span>
+            <h2 style={{ color: 'var(--fg)' }}>Available Topics</h2>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1.25rem' }}>
+            {topics.map((t, i) => (
+              <div key={i} className="card" style={{ padding: 'clamp(1.25rem,3vw,1.75rem)' }}>
+                <h3 style={{ color: 'var(--cyan)', fontSize: '1rem', fontWeight: 700, marginBottom: '0.75rem' }}>{t.title}</h3>
+                <p style={{ fontSize: '0.875rem', color: 'var(--fg-2)', lineHeight: 1.7, fontFamily: 'var(--font-mono,monospace)', marginBottom: '1rem' }}>{t.desc}</p>
+                <span style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--accent)', fontFamily: 'var(--font-mono,monospace)' }}>⏱ {t.duration}</span>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* FEATURED SPEAKING MOMENTS */}
-      <section className="py-20 bg-[#121829] border-t border-[#1F2937]">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-white mb-4">Speaking in Action</h2>
-            <p className="text-[#AAAAAA] font-mono text-lg">Real conference presentations and keynote moments</p>
+      {/* ── GALLERY ── */}
+      <section className="section" style={{ background: 'var(--bg-2)', borderTop: '1px solid var(--border)' }}>
+        <div className="container">
+          <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+            <span className="section-label" style={{ display: 'inline-flex', marginBottom: '1rem' }}>In Action</span>
+            <h2 style={{ color: 'var(--fg)' }}>Speaking in Action</h2>
           </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Industry Meet Keynote */}
-            <div className="overflow-hidden rounded border border-[#1F2937] hover:border-[#FF6B35] transition">
-              <div className="bg-[#0A0E27] aspect-video flex items-center justify-center relative overflow-hidden">
-                <img 
-                  src="/images/speaking/industry-meet-keynote.jpg" 
-                  alt="Industry Meet 2025 - Translational Research Keynote"
-                  className="w-full h-full object-cover hover:scale-105 transition duration-300"
-                  onError={(e) => {
-                    (e.target as HTMLImageElement).style.display = 'none';
-                  }}
-                />
-                <span className="text-[#AAAAAA] text-sm absolute inset-0 flex items-center justify-center bg-[#0A0E27]/80">
-                  Industry Meet 2025
-                </span>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1.25rem' }}>
+            {gallery.map((g, i) => (
+              <div key={i} className="card spk-card" style={{ overflow: 'hidden' }}>
+                <div style={{ position: 'relative', aspectRatio: '16/9', background: 'var(--bg-3)', overflow: 'hidden' }}>
+                  <img src={g.src} alt={g.title} className="spk-img" style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.5s ease' }} onError={e => { (e.target as HTMLImageElement).style.display = 'none'; }} />
+                  <div className="spk-bar" style={{ position: 'absolute', bottom: 0, left: 0, height: '3px', width: 0, background: g.accent, transition: 'width 0.4s ease' }} />
+                </div>
+                <div style={{ padding: '1.1rem' }}>
+                  <h4 style={{ color: g.accent, fontWeight: 700, marginBottom: '0.35rem', fontSize: '0.95rem' }}>{g.title}</h4>
+                  <p style={{ fontSize: '0.8rem', color: 'var(--fg-muted)', fontFamily: 'var(--font-mono,monospace)', lineHeight: 1.6 }}>{g.desc}</p>
+                </div>
               </div>
-              <div className="p-6 bg-[#0A0E27]">
-                <h3 className="text-lg font-bold text-[#FF6B35] mb-2">Translational Research Keynote</h3>
-                <p className="text-[#AAAAAA] font-mono text-sm">Speaking on bridging academic research with industry applications. Engaging 200+ industry leaders on AI innovation pathways.</p>
-              </div>
-            </div>
-
-            {/* Make in India Conference */}
-            <div className="overflow-hidden rounded border border-[#1F2937] hover:border-[#00D9FF] transition">
-              <div className="bg-[#0A0E27] aspect-video flex items-center justify-center relative overflow-hidden">
-                <img 
-                  src="/images/speaking/make-in-india.jpg" 
-                  alt="Make in India - Quality and Inspection Innovation"
-                  className="w-full h-full object-cover hover:scale-105 transition duration-300"
-                  onError={(e) => {
-                    (e.target as HTMLImageElement).style.display = 'none';
-                  }}
-                />
-                <span className="text-[#AAAAAA] text-sm absolute inset-0 flex items-center justify-center bg-[#0A0E27]/80">
-                  Make in India Presentation
-                </span>
-              </div>
-              <div className="p-6 bg-[#0A0E27]">
-                <h3 className="text-lg font-bold text-[#00D9FF] mb-2">Quality & Inspection Innovation</h3>
-                <p className="text-[#AAAAAA] font-mono text-sm">Discussing role of AI in manufacturing quality assurance and inspection at national conference. Bengaluru, India 2025.</p>
-              </div>
-            </div>
-
-            {/* IIT Conference */}
-            <div className="overflow-hidden rounded border border-[#1F2937] hover:border-[#FF6B35] transition">
-              <div className="bg-[#0A0E27] aspect-video flex items-center justify-center relative overflow-hidden">
-                <img 
-                  src="/images/speaking/iit-cnde-seminar.jpg" 
-                  alt="IIT CNDE - Technical Seminar"
-                  className="w-full h-full object-cover hover:scale-105 transition duration-300"
-                  onError={(e) => {
-                    (e.target as HTMLImageElement).style.display = 'none';
-                  }}
-                />
-                <span className="text-[#AAAAAA] text-sm absolute inset-0 flex items-center justify-center bg-[#0A0E27]/80">
-                  IIT Technical Seminar
-                </span>
-              </div>
-              <div className="p-6 bg-[#0A0E27]">
-                <h3 className="text-lg font-bold text-[#FF6B35] mb-2">CNDE Research Symposium</h3>
-                <p className="text-[#AAAAAA] font-mono text-sm">Technical deep-dive on NDE research methodologies and AI applications with fellow researchers and academics.</p>
-              </div>
-            </div>
-
-            {/* Academic Teaching */}
-            <div className="overflow-hidden rounded border border-[#1F2937] hover:border-[#00D9FF] transition">
-              <div className="bg-[#0A0E27] aspect-video flex items-center justify-center relative overflow-hidden">
-                <img 
-                  src="/images/teaching/classroom-ml.jpg" 
-                  alt="Classroom - Interactive Teaching"
-                  className="w-full h-full object-cover hover:scale-105 transition duration-300"
-                  onError={(e) => {
-                    (e.target as HTMLImageElement).style.display = 'none';
-                  }}
-                />
-                <span className="text-[#AAAAAA] text-sm absolute inset-0 flex items-center justify-center bg-[#0A0E27]/80">
-                  Classroom Session
-                </span>
-              </div>
-              <div className="p-6 bg-[#0A0E27]">
-                <h3 className="text-lg font-bold text-[#00D9FF] mb-2">Interactive Teaching Moment</h3>
-                <p className="text-[#AAAAAA] font-mono text-sm">Connecting with students through live demonstrations and real-world case studies. Creating aha moments in technical learning.</p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* UPCOMING EVENTS */}
-      <section className="py-20 bg-[#121829]">
-        <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-4xl font-bold text-center mb-16 text-white">Upcoming Speaking Engagements</h2>
-          <div className="overflow-x-auto">
-            <table className="w-full text-left border border-[#1F2937]">
+      {/* ── EVENTS TABLE ── */}
+      <section className="section" style={{ background: 'var(--bg)', borderTop: '1px solid var(--border)' }}>
+        <div className="container">
+          <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+            <span className="section-label" style={{ display: 'inline-flex', marginBottom: '1rem' }}>Schedule</span>
+            <h2 style={{ color: 'var(--fg)' }}>Speaking Engagements</h2>
+          </div>
+          <div style={{ overflowX: 'auto', borderRadius: 'var(--r-md)', border: '1px solid var(--border)' }}>
+            <table style={{ width: '100%', borderCollapse: 'collapse', minWidth: '480px' }}>
               <thead>
-                <tr className="border-b-2 border-[#00D9FF] bg-[#0A0E27]">
-                  <th className="pb-4 px-6 font-bold text-[#00D9FF]">Event</th>
-                  <th className="pb-4 px-6 font-bold text-[#00D9FF]">Date</th>
-                  <th className="pb-4 px-6 font-bold text-[#00D9FF]">Location</th>
-                  <th className="pb-4 px-6 font-bold text-[#00D9FF]">Role</th>
+                <tr style={{ background: 'var(--bg-2)', borderBottom: '2px solid var(--cyan)' }}>
+                  {['Event', 'Date', 'Location', 'Role'].map(h => (
+                    <th key={h} style={{ padding: '1rem 1.25rem', textAlign: 'left', fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--cyan)' }}>{h}</th>
+                  ))}
                 </tr>
               </thead>
               <tbody>
-                {events.map((event, idx) => (
-                  <tr key={idx} className="border-b border-[#1F2937] hover:bg-[#0A0E27] transition">
-                    <td className="py-4 px-6 text-[#AAAAAA] font-mono">{event.event}</td>
-                    <td className="py-4 px-6 text-[#AAAAAA] font-mono">{event.date}</td>
-                    <td className="py-4 px-6 text-[#AAAAAA] font-mono">{event.location}</td>
-                    <td className="py-4 px-6 text-[#FF6B35] font-mono font-semibold">{event.status}</td>
+                {events.map((e, i) => (
+                  <tr key={i} className="spk-row" style={{ borderBottom: '1px solid var(--border)', transition: 'background 0.15s ease' }}>
+                    <td style={{ padding: '0.9rem 1.25rem', color: 'var(--fg)', fontSize: '0.9rem', fontWeight: 500 }}>{e.event}</td>
+                    <td style={{ padding: '0.9rem 1.25rem', color: 'var(--fg-2)', fontSize: '0.85rem', fontFamily: 'var(--font-mono,monospace)' }}>{e.date}</td>
+                    <td style={{ padding: '0.9rem 1.25rem', color: 'var(--fg-2)', fontSize: '0.85rem', fontFamily: 'var(--font-mono,monospace)' }}>{e.location}</td>
+                    <td style={{ padding: '0.9rem 1.25rem' }}><span className="badge badge-accent">{e.role}</span></td>
                   </tr>
                 ))}
               </tbody>
@@ -183,19 +109,23 @@ export default function SpeakingPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="bg-[#0A0E27] text-white py-20 text-center border-t border-[#1F2937]">
-        <h2 className="text-4xl font-bold mb-6">Book me for your event</h2>
-        <p className="text-lg text-[#AAAAAA] font-mono mb-8 max-w-2xl mx-auto">
-          Available for keynotes, panels, workshops, and consulting engagements worldwide.
-        </p>
-        <a
-          href="/contact"
-          className="inline-block bg-[#FF6B35] text-white px-8 py-3 font-bold uppercase tracking-widest hover:bg-[#FF8A5B] transition"
-        >
-          → Inquire Now
-        </a>
+      {/* ── CTA ── */}
+      <section className="section" style={{ background: 'var(--bg-2)', borderTop: '1px solid var(--border)', textAlign: 'center' }}>
+        <div className="container" style={{ maxWidth: '560px' }}>
+          <span className="section-label" style={{ display: 'inline-flex', marginBottom: '1.25rem' }}>Book Srijan</span>
+          <h2 style={{ color: 'var(--fg)', marginBottom: '1rem' }}>Book Me for Your Event</h2>
+          <p style={{ color: 'var(--fg-2)', fontSize: '1.05rem', lineHeight: 1.7, marginBottom: '2.5rem' }}>
+            Available for keynotes, panels, workshops, and consulting worldwide.
+          </p>
+          <a href="/contact" className="btn btn-primary">Inquire Now →</a>
+        </div>
       </section>
+
+      <style>{`
+        .spk-card:hover .spk-img { transform: scale(1.05); }
+        .spk-card:hover .spk-bar { width: 100% !important; }
+        .spk-row:hover { background: var(--bg-2); }
+      `}</style>
     </>
   );
 }

@@ -5,6 +5,8 @@ import { useState } from 'react';
 export default function BlogPage() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
+  const [email, setEmail] = useState('');
+  const [subscribed, setSubscribed] = useState(false);
 
   const blogPosts = [
     {
@@ -14,6 +16,7 @@ export default function BlogPage() {
       date: 'Mar 15, 2024',
       category: 'AI & ML',
       image: '🤖',
+      readTime: '5 min read',
     },
     {
       id: 2,
@@ -22,6 +25,7 @@ export default function BlogPage() {
       date: 'Mar 8, 2024',
       category: 'Entrepreneurship',
       image: '🚀',
+      readTime: '7 min read',
     },
     {
       id: 3,
@@ -30,42 +34,103 @@ export default function BlogPage() {
       date: 'Feb 28, 2024',
       category: 'Speaking',
       image: '🎤',
+      readTime: '4 min read',
+    },
+    {
+      id: 4,
+      title: 'Python for NDT Data Analysis',
+      excerpt: 'Practical guide to processing ultrasonic and radiographic data with Python.',
+      date: 'Feb 14, 2024',
+      category: 'AI & ML',
+      image: '🐍',
+      readTime: '8 min read',
+    },
+    {
+      id: 5,
+      title: 'Manufacturing 4.0 in India',
+      excerpt: 'How Indian manufacturers can leapfrog into Industry 4.0 with AI.',
+      date: 'Jan 30, 2024',
+      category: 'Research',
+      image: '🏭',
+      readTime: '6 min read',
+    },
+    {
+      id: 6,
+      title: 'From Engineer to Entrepreneur',
+      excerpt: 'The mindset shift required when you stop building for others and start building for yourself.',
+      date: 'Jan 15, 2024',
+      category: 'Entrepreneurship',
+      image: '💡',
+      readTime: '5 min read',
     },
   ];
 
   const categories = ['all', 'AI & ML', 'Entrepreneurship', 'Speaking', 'Research'];
 
+  const filtered = blogPosts.filter((p) => {
+    const matchCat = selectedCategory === 'all' || p.category === selectedCategory;
+    const matchSearch = p.title.toLowerCase().includes(searchTerm.toLowerCase()) || p.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
+    return matchCat && matchSearch;
+  });
+
   return (
     <>
-      {/* HERO */}
-      <section className="bg-[#0A0E27] text-white py-12 md:py-20">
-        <div className="max-w-7xl mx-auto px-6 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">Blog</h1>
-          <p className="text-xl text-[#AAAAAA] font-mono">Thoughts on AI, entrepreneurship, and making impact.</p>
+      {/* ── HERO ── */}
+      <section style={{ background: 'var(--bg)', paddingTop: 'clamp(5rem,12vw,8rem)', paddingBottom: 'clamp(3rem,8vw,5rem)', borderBottom: '1px solid var(--border)' }}>
+        <div className="container" style={{ textAlign: 'center' }}>
+          <span className="section-label">✍️ Thoughts & Ideas</span>
+          <h1 style={{ fontSize: 'clamp(2.4rem,7vw,4rem)', fontWeight: 900, color: 'var(--fg)', margin: '1rem 0 1.2rem', lineHeight: 1.1 }}>
+            The <span style={{ color: 'var(--accent)' }}>Blog</span>
+          </h1>
+          <p style={{ fontSize: 'clamp(0.95rem,2.5vw,1.1rem)', color: 'var(--fg-2)', fontFamily: 'monospace', maxWidth: '38rem', margin: '0 auto' }}>
+            Thoughts on AI, entrepreneurship, and making impact.
+          </p>
         </div>
       </section>
 
-      {/* SEARCH & FILTERS */}
-      <section className="py-12 bg-[#121829] border-b border-[#1F2937]">
-        <div className="max-w-7xl mx-auto px-6">
+      {/* ── SEARCH & FILTERS ── */}
+      <section style={{ background: 'var(--bg-2)', borderBottom: '1px solid var(--border)', padding: 'clamp(1.5rem,4vw,2.5rem) 0' }}>
+        <div className="container">
           <input
             type="text"
-            placeholder="Search posts..."
+            placeholder="Search posts…"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full mb-8 px-4 py-3 border border-[#1F2937] bg-[#0A0E27] text-[#FFFFFF] placeholder-[#AAAAAA] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00D9FF]"
+            style={{
+              width: '100%',
+              marginBottom: '1.2rem',
+              padding: '0.85rem 1rem',
+              border: '1px solid var(--border)',
+              borderRadius: 'var(--radius-sm)',
+              background: 'var(--bg-card)',
+              color: 'var(--fg)',
+              fontFamily: 'monospace',
+              fontSize: '0.95rem',
+              outline: 'none',
+              boxSizing: 'border-box',
+              transition: 'border-color 0.2s',
+            }}
+            onFocus={e => (e.currentTarget.style.borderColor = 'var(--cyan)')}
+            onBlur={e => (e.currentTarget.style.borderColor = 'var(--border)')}
           />
 
-          <div className="flex flex-wrap gap-3">
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.6rem' }}>
             {categories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
-                className={`px-4 py-2 font-medium transition ${
-                  selectedCategory === cat
-                    ? 'bg-[#00D9FF] text-[#0A0E27]'
-                    : 'bg-[#121829] text-[#AAAAAA] border border-[#1F2937] hover:border-[#00D9FF]'
-                }`}
+                style={{
+                  padding: '0.45rem 1rem',
+                  borderRadius: 'var(--radius-sm)',
+                  border: `1px solid ${selectedCategory === cat ? 'var(--cyan)' : 'var(--border)'}`,
+                  background: selectedCategory === cat ? 'var(--cyan)' : 'var(--bg-card)',
+                  color: selectedCategory === cat ? 'var(--bg)' : 'var(--fg-2)',
+                  fontWeight: 600,
+                  fontSize: '0.85rem',
+                  cursor: 'pointer',
+                  transition: 'all 0.2s',
+                  textTransform: 'capitalize',
+                }}
               >
                 {cat}
               </button>
@@ -74,45 +139,121 @@ export default function BlogPage() {
         </div>
       </section>
 
-      {/* BLOG GRID */}
-      <section className="py-20 bg-[#0A0E27]">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {blogPosts.map((post) => (
-              <a
-                key={post.id}
-                href={`/blog/${post.id}`}
-                className="group border border-[#1F2937]overflow-hidden hover:border-[#00D9FF] transition"
-              >
-                <div className="bg-[#121829] h-48 flex items-center justify-center text-6xl group-hover:bg-[#1F2937] transition">
-                  {post.image}
-                </div>
-                <div className="p-6">
-                  <div className="text-sm font-semibold text-[#FF6B35] mb-2">{post.category}</div>
-                  <h3 className="text-xl font-bold text-[#FFFFFF] mb-3 group-hover:text-[#00D9FF] transition">{post.title}</h3>
-                  <p className="text-[#AAAAAA] font-mono text-sm mb-4">{post.excerpt}</p>
-                  <p className="text-xs text-[#777777]">{post.date}</p>
-                </div>
-              </a>
-            ))}
-          </div>
+      {/* ── BLOG GRID ── */}
+      <section style={{ background: 'var(--bg)', padding: 'clamp(3rem,8vw,5rem) 0' }}>
+        <div className="container">
+          {filtered.length === 0 ? (
+            <div style={{ textAlign: 'center', padding: '4rem 0', color: 'var(--fg-muted)', fontFamily: 'monospace' }}>
+              No posts found for "{searchTerm}" in {selectedCategory === 'all' ? 'all categories' : selectedCategory}.
+            </div>
+          ) : (
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem' }}>
+              {filtered.map((post) => (
+                <a
+                  key={post.id}
+                  href={`/blog/${post.id}`}
+                  style={{
+                    display: 'block',
+                    background: 'var(--bg-card)',
+                    border: '1px solid var(--border)',
+                    borderRadius: 'var(--radius)',
+                    overflow: 'hidden',
+                    textDecoration: 'none',
+                    transition: 'border-color 0.2s, transform 0.2s, box-shadow 0.2s',
+                  }}
+                  onMouseEnter={e => {
+                    e.currentTarget.style.borderColor = 'var(--cyan)';
+                    e.currentTarget.style.transform = 'translateY(-4px)';
+                    e.currentTarget.style.boxShadow = 'var(--shadow-lg)';
+                  }}
+                  onMouseLeave={e => {
+                    e.currentTarget.style.borderColor = 'var(--border)';
+                    e.currentTarget.style.transform = 'none';
+                    e.currentTarget.style.boxShadow = 'none';
+                  }}
+                >
+                  <div style={{ background: 'var(--bg-3)', height: '10rem', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '3.5rem' }}>
+                    {post.image}
+                  </div>
+                  <div style={{ padding: '1.4rem' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem' }}>
+                      <span style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--accent)', textTransform: 'uppercase', letterSpacing: '0.08em' }}>{post.category}</span>
+                      <span style={{ fontSize: '0.72rem', color: 'var(--fg-muted)', fontFamily: 'monospace' }}>{post.readTime}</span>
+                    </div>
+                    <h3 style={{ fontSize: '1.08rem', fontWeight: 800, color: 'var(--fg)', marginBottom: '0.6rem', lineHeight: 1.3, transition: 'color 0.2s' }}>
+                      {post.title}
+                    </h3>
+                    <p style={{ color: 'var(--fg-muted)', fontFamily: 'monospace', fontSize: '0.85rem', lineHeight: 1.6, marginBottom: '1rem' }}>{post.excerpt}</p>
+                    <p style={{ fontSize: '0.72rem', color: 'var(--fg-muted)', fontFamily: 'monospace' }}>{post.date}</p>
+                  </div>
+                </a>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="bg-navy text-white py-20 text-center">
-        <h2 className="text-4xl font-bold mb-6">Subscribe to my newsletter</h2>
-        <p className="text-xl mb-8 text-gray-300">Get new articles delivered to your inbox.</p>
-        <div className="max-w-md mx-auto flex gap-3">
-          <input
-            type="email"
-            placeholder="Enter your email"
-            className="flex-1 px-4 py-3 rounded-lg text-navy focus:outline-none focus:ring-2 focus:ring-teal"
-          />
-          <button className="bg-teal text-white px-6 py-3 rounded-lg font-semibold hover:bg-off-white hover:text-navy transition">
-            Subscribe
-          </button>
-        </div>
+      {/* ── NEWSLETTER CTA ── */}
+      <section style={{ background: 'var(--bg-2)', borderTop: '1px solid var(--border)', padding: 'clamp(3rem,8vw,5rem) 1.5rem', textAlign: 'center' }}>
+        <span className="section-label">📬 Newsletter</span>
+        <h2 style={{ fontSize: 'clamp(1.6rem,4vw,2.4rem)', fontWeight: 900, color: 'var(--fg)', margin: '1rem 0 0.75rem' }}>
+          Subscribe to stay updated
+        </h2>
+        <p style={{ color: 'var(--fg-2)', fontFamily: 'monospace', fontSize: '0.95rem', marginBottom: '2rem', maxWidth: '30rem', margin: '0 auto 2rem' }}>
+          New articles on AI, manufacturing, and entrepreneurship — delivered to your inbox.
+        </p>
+
+        {subscribed ? (
+          <div style={{ display: 'inline-block', padding: '1rem 2rem', background: 'var(--cyan)', color: 'var(--bg)', fontWeight: 700, fontFamily: 'monospace', borderRadius: 'var(--radius-sm)' }}>
+            ✓ You're subscribed! Watch your inbox.
+          </div>
+        ) : (
+          <form
+            onSubmit={e => { e.preventDefault(); if (email) setSubscribed(true); }}
+            style={{ display: 'flex', gap: '0.75rem', maxWidth: '28rem', margin: '0 auto', flexWrap: 'wrap', justifyContent: 'center' }}
+          >
+            <input
+              type="email"
+              value={email}
+              onChange={e => setEmail(e.target.value)}
+              placeholder="Enter your email"
+              required
+              style={{
+                flex: '1 1 200px',
+                padding: '0.85rem 1rem',
+                border: '1px solid var(--border)',
+                borderRadius: 'var(--radius-sm)',
+                background: 'var(--bg-card)',
+                color: 'var(--fg)',
+                fontFamily: 'monospace',
+                fontSize: '0.95rem',
+                outline: 'none',
+                transition: 'border-color 0.2s',
+              }}
+              onFocus={e => (e.currentTarget.style.borderColor = 'var(--cyan)')}
+              onBlur={e => (e.currentTarget.style.borderColor = 'var(--border)')}
+            />
+            <button
+              type="submit"
+              style={{
+                padding: '0.85rem 1.8rem',
+                background: 'var(--accent)',
+                color: '#fff',
+                border: 'none',
+                borderRadius: 'var(--radius-sm)',
+                fontWeight: 700,
+                fontSize: '0.95rem',
+                cursor: 'pointer',
+                transition: 'opacity 0.2s',
+                whiteSpace: 'nowrap',
+              }}
+              onMouseEnter={e => (e.currentTarget.style.opacity = '0.85')}
+              onMouseLeave={e => (e.currentTarget.style.opacity = '1')}
+            >
+              Subscribe →
+            </button>
+          </form>
+        )}
       </section>
     </>
   );
