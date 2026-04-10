@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 
+// Blog page with search, filtering, and newsletter subscription
 export default function BlogPage() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
