@@ -44,9 +44,10 @@ export default function Header() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  useEffect(() => { setIsMenuOpen(false); }, [pathname]);
+   useEffect(() => { setIsMenuOpen(false); }, [pathname]);
 
-  const navLinks = [
+   // Navigation links configuration
+   const navLinks = [
     { href: '/about',    label: 'About' },
     { href: '/speaking', label: 'Speaking' },
     { href: '/courses',  label: 'Courses' },
