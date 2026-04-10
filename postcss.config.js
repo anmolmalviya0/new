@@ -1,3 +1,4 @@
+// PostCSS configuration with Tailwind CSS and autoprefixer
 module.exports = {
   plugins: {
     tailwindcss: {},
