@@ -57,6 +57,81 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* TEACHING & MENTORING IN ACTION */}
+      <section className="py-20 bg-[#121829] border-t border-[#1F2937]">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-white mb-4">Teaching in Action</h2>
+            <p className="text-[#AAAAAA] font-mono text-lg">Real moments of mentoring, teaching, and knowledge transfer</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Classroom Teaching */}
+            <div className="overflow-hidden rounded border border-[#1F2937] hover:border-[#00D9FF] transition">
+              <div className="bg-[#0A0E27] aspect-video flex items-center justify-center relative overflow-hidden">
+                <img 
+                  src="/images/teaching/classroom-teaching.jpg" 
+                  alt="Classroom Teaching Session - Live ML demonstrations"
+                  className="w-full h-full object-cover hover:scale-105 transition duration-300"
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).style.display = 'none';
+                  }}
+                />
+                <span className="text-[#AAAAAA] text-sm absolute inset-0 flex items-center justify-center bg-[#0A0E27]/80">
+                  Classroom Teaching Session
+                </span>
+              </div>
+              <div className="p-6 bg-[#0A0E27]">
+                <h3 className="text-lg font-bold text-[#00D9FF] mb-2">Interactive Classroom</h3>
+                <p className="text-[#AAAAAA] font-mono text-sm">Deep dive into ML fundamentals and real-world applications</p>
+              </div>
+            </div>
+
+            {/* Conference Speaking */}
+            <div className="overflow-hidden rounded border border-[#1F2937] hover:border-[#FF6B35] transition">
+              <div className="bg-[#0A0E27] aspect-video flex items-center justify-center relative overflow-hidden">
+                <img 
+                  src="/images/speaking/conference-speaking.jpg" 
+                  alt="Conference Speaking - Industry engagement"
+                  className="w-full h-full object-cover hover:scale-105 transition duration-300"
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).style.display = 'none';
+                  }}
+                />
+                <span className="text-[#AAAAAA] text-sm absolute inset-0 flex items-center justify-center bg-[#0A0E27]/80">
+                  Conference Speaking
+                </span>
+              </div>
+              <div className="p-6 bg-[#0A0E27]">
+                <h3 className="text-lg font-bold text-[#FF6B35] mb-2">Industry Engagement</h3>
+                <p className="text-[#AAAAAA] font-mono text-sm">Sharing research and insights at national & international conferences</p>
+              </div>
+            </div>
+
+            {/* Mentoring */}
+            <div className="overflow-hidden rounded border border-[#1F2937] hover:border-[#00D9FF] transition">
+              <div className="bg-[#0A0E27] aspect-video flex items-center justify-center relative overflow-hidden">
+                <img 
+                  src="/images/mentoring/iit-mentoring.jpg" 
+                  alt="Mentoring - One-on-one guidance"
+                  className="w-full h-full object-cover hover:scale-105 transition duration-300"
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).style.display = 'none';
+                  }}
+                />
+                <span className="text-[#AAAAAA] text-sm absolute inset-0 flex items-center justify-center bg-[#0A0E27]/80">
+                  Mentoring Moments
+                </span>
+              </div>
+              <div className="p-6 bg-[#0A0E27]">
+                <h3 className="text-lg font-bold text-[#00D9FF] mb-2">One-on-One Mentoring</h3>
+                <p className="text-[#AAAAAA] font-mono text-sm">Guiding aspiring researchers and entrepreneurs in their journey</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="bg-[#0A0E27] text-white py-20 text-center border-t border-[#1F2937]">
         <h2 className="text-4xl font-bold mb-6">Let's work together</h2>

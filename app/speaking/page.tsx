@@ -58,6 +58,102 @@ export default function SpeakingPage() {
         </div>
       </section>
 
+      {/* FEATURED SPEAKING MOMENTS */}
+      <section className="py-20 bg-[#121829] border-t border-[#1F2937]">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-white mb-4">Speaking in Action</h2>
+            <p className="text-[#AAAAAA] font-mono text-lg">Real conference presentations and keynote moments</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Industry Meet Keynote */}
+            <div className="overflow-hidden rounded border border-[#1F2937] hover:border-[#FF6B35] transition">
+              <div className="bg-[#0A0E27] aspect-video flex items-center justify-center relative overflow-hidden">
+                <img 
+                  src="/images/speaking/industry-meet-keynote.jpg" 
+                  alt="Industry Meet 2025 - Translational Research Keynote"
+                  className="w-full h-full object-cover hover:scale-105 transition duration-300"
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).style.display = 'none';
+                  }}
+                />
+                <span className="text-[#AAAAAA] text-sm absolute inset-0 flex items-center justify-center bg-[#0A0E27]/80">
+                  Industry Meet 2025
+                </span>
+              </div>
+              <div className="p-6 bg-[#0A0E27]">
+                <h3 className="text-lg font-bold text-[#FF6B35] mb-2">Translational Research Keynote</h3>
+                <p className="text-[#AAAAAA] font-mono text-sm">Speaking on bridging academic research with industry applications. Engaging 200+ industry leaders on AI innovation pathways.</p>
+              </div>
+            </div>
+
+            {/* Make in India Conference */}
+            <div className="overflow-hidden rounded border border-[#1F2937] hover:border-[#00D9FF] transition">
+              <div className="bg-[#0A0E27] aspect-video flex items-center justify-center relative overflow-hidden">
+                <img 
+                  src="/images/speaking/make-in-india.jpg" 
+                  alt="Make in India - Quality and Inspection Innovation"
+                  className="w-full h-full object-cover hover:scale-105 transition duration-300"
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).style.display = 'none';
+                  }}
+                />
+                <span className="text-[#AAAAAA] text-sm absolute inset-0 flex items-center justify-center bg-[#0A0E27]/80">
+                  Make in India Presentation
+                </span>
+              </div>
+              <div className="p-6 bg-[#0A0E27]">
+                <h3 className="text-lg font-bold text-[#00D9FF] mb-2">Quality & Inspection Innovation</h3>
+                <p className="text-[#AAAAAA] font-mono text-sm">Discussing role of AI in manufacturing quality assurance and inspection at national conference. Bengaluru, India 2025.</p>
+              </div>
+            </div>
+
+            {/* IIT Conference */}
+            <div className="overflow-hidden rounded border border-[#1F2937] hover:border-[#FF6B35] transition">
+              <div className="bg-[#0A0E27] aspect-video flex items-center justify-center relative overflow-hidden">
+                <img 
+                  src="/images/speaking/iit-cnde-seminar.jpg" 
+                  alt="IIT CNDE - Technical Seminar"
+                  className="w-full h-full object-cover hover:scale-105 transition duration-300"
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).style.display = 'none';
+                  }}
+                />
+                <span className="text-[#AAAAAA] text-sm absolute inset-0 flex items-center justify-center bg-[#0A0E27]/80">
+                  IIT Technical Seminar
+                </span>
+              </div>
+              <div className="p-6 bg-[#0A0E27]">
+                <h3 className="text-lg font-bold text-[#FF6B35] mb-2">CNDE Research Symposium</h3>
+                <p className="text-[#AAAAAA] font-mono text-sm">Technical deep-dive on NDE research methodologies and AI applications with fellow researchers and academics.</p>
+              </div>
+            </div>
+
+            {/* Academic Teaching */}
+            <div className="overflow-hidden rounded border border-[#1F2937] hover:border-[#00D9FF] transition">
+              <div className="bg-[#0A0E27] aspect-video flex items-center justify-center relative overflow-hidden">
+                <img 
+                  src="/images/teaching/classroom-ml.jpg" 
+                  alt="Classroom - Interactive Teaching"
+                  className="w-full h-full object-cover hover:scale-105 transition duration-300"
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).style.display = 'none';
+                  }}
+                />
+                <span className="text-[#AAAAAA] text-sm absolute inset-0 flex items-center justify-center bg-[#0A0E27]/80">
+                  Classroom Session
+                </span>
+              </div>
+              <div className="p-6 bg-[#0A0E27]">
+                <h3 className="text-lg font-bold text-[#00D9FF] mb-2">Interactive Teaching Moment</h3>
+                <p className="text-[#AAAAAA] font-mono text-sm">Connecting with students through live demonstrations and real-world case studies. Creating aha moments in technical learning.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* UPCOMING EVENTS */}
       <section className="py-20 bg-[#121829]">
         <div className="max-w-7xl mx-auto px-6">

@@ -74,50 +74,74 @@ export default function CoursesPage() {
         <div className="max-w-7xl mx-auto px-6 text-center">
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">Online Courses</h1>
           <p className="text-xl text-[#AAAAAA] font-mono max-w-3xl mx-auto">
-            Learn from my experience. From AI to startup skills, master the tools that matter.
+            Learn from practical experience. Built by an educator committed to your growth.
           </p>
         </div>
       </section>
 
+      {/* TEACHING PHILOSOPHY */}
+      <section className="bg-[#121829] border-t border-[#1F2937] py-16">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="text-center">
+              <div className="text-4xl mb-4">🎯</div>
+              <h3 className="text-lg font-bold text-[#00D9FF] mb-2">Real-World First</h3>
+              <p className="text-[#AAAAAA] font-mono text-sm">Every concept connected to actual industry problems and solutions</p>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl mb-4">💡</div>
+              <h3 className="text-lg font-bold text-[#FF6B35] mb-2">Connect, Not Confuse</h3>
+              <p className="text-[#AAAAAA] font-mono text-sm">Simplified explanations of complex topics with relatable examples</p>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl mb-4">🚀</div>
+              <h3 className="text-lg font-bold text-[#00D9FF] mb-2">Skill to Career</h3>
+              <p className="text-[#AAAAAA] font-mono text-sm">Move from learning to applying—direct pathways to opportunity</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* STATS BANNER */}
-      <section className="bg-navy text-white py-12">
+      <section className="bg-[#0A0E27] text-white py-16 border-t border-[#1F2937]">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
           <div>
-            <div className="text-4xl font-bold mb-2">5000+</div>
-            <p className="text-gray-300">Engineers Trained</p>
+            <div className="text-5xl font-bold mb-2 text-[#00D9FF]">5000+</div>
+            <p className="text-[#AAAAAA] font-mono uppercase tracking-widest text-sm">Engineers Trained</p>
           </div>
           <div>
-            <div className="text-4xl font-bold mb-2">4.8★</div>
-            <p className="text-gray-300">Average Rating</p>
+            <div className="text-5xl font-bold mb-2 text-[#FF6B35]">4.8★</div>
+            <p className="text-[#AAAAAA] font-mono uppercase tracking-widest text-sm">Average Rating</p>
           </div>
           <div>
-            <div className="text-4xl font-bold mb-2">100%</div>
-            <p className="text-gray-300">Satisfaction Guarantee</p>
+            <div className="text-5xl font-bold mb-2 text-[#00D9FF]">100%</div>
+            <p className="text-[#AAAAAA] font-mono uppercase tracking-widest text-sm">Satisfaction Guarantee</p>
           </div>
         </div>
       </section>
 
       {/* COURSES GRID */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-[#0A0E27]">
         <div className="max-w-7xl mx-auto px-6">
+          <h2 className="text-3xl font-bold text-white text-center mb-12">Curated Learning Paths</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {courses.map((course, idx) => (
-              <div key={idx} className="rounded-lg border border-light-gray overflow-hidden hover:shadow-lg hover:border-teal transition group">
-                <div className="bg-off-white h-32 flex items-center justify-center text-5xl group-hover:bg-light-gray transition">
+              <div key={idx} className="rounded-lg border border-[#1F2937] overflow-hidden hover:border-[#00D9FF] transition group bg-[#121829]">
+                <div className="bg-[#1F2937] h-32 flex items-center justify-center text-6xl group-hover:bg-[#00D9FF]/10 transition">
                   {course.image}
                 </div>
                 <div className="p-6">
-                  <h3 className="text-2xl font-bold text-navy mb-3 group-hover:text-teal transition">{course.title}</h3>
-                  <p className="text-gray-600 mb-4">{course.description}</p>
-                  <div className="flex justify-between items-center mb-4 text-sm text-gray-600">
+                  <h3 className="text-2xl font-bold text-[#00D9FF] mb-3 group-hover:text-[#FF6B35] transition">{course.title}</h3>
+                  <p className="text-[#AAAAAA] font-mono mb-4">{course.description}</p>
+                  <div className="flex justify-between items-center mb-4 text-sm text-[#AAAAAA] font-mono">
                     <span>📚 {course.duration}</span>
-                    <span>{course.level}</span>
+                    <span className="text-[#FF6B35]">{course.level}</span>
                   </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-2xl font-bold text-teal">{course.price}</span>
-                    <span className="text-xs text-gray-500">{course.enrolled} enrolled</span>
+                  <div className="flex justify-between items-center mb-4">
+                    <span className="text-2xl font-bold text-[#00D9FF]">{course.price}</span>
+                    <span className="text-xs text-[#AAAAAA] font-mono">{course.enrolled} enrolled</span>
                   </div>
-                  <button className="w-full mt-4 bg-navy text-white py-3 rounded-lg font-semibold hover:bg-teal transition">
+                  <button className="w-full bg-[#00D9FF] text-[#0A0E27] py-3 rounded-lg font-semibold hover:bg-[#FF6B35] transition">
                     Enroll Now
                   </button>
                 </div>
@@ -128,21 +152,21 @@ export default function CoursesPage() {
       </section>
 
       {/* FAQ */}
-      <section className="py-20 bg-off-white">
+      <section className="py-20 bg-[#121829] border-t border-[#1F2937]">
         <div className="max-w-4xl mx-auto px-6">
-          <h2 className="text-4xl font-bold text-center text-navy mb-16">Frequently Asked Questions</h2>
+          <h2 className="text-4xl font-bold text-center text-[#00D9FF] mb-16">Frequently Asked Questions</h2>
           <div className="space-y-4">
             {faqs.map((faq, idx) => (
-              <div key={idx} className="border border-light-gray rounded-lg overflow-hidden">
+              <div key={idx} className="border border-[#1F2937] rounded-lg overflow-hidden">
                 <button
                   onClick={() => setExpandedFaq(expandedFaq === idx ? null : idx)}
-                  className="w-full p-6 flex justify-between items-center bg-white hover:bg-gray-100 transition"
+                  className="w-full p-6 flex justify-between items-center bg-[#0A0E27] hover:bg-[#1F2937] transition"
                 >
-                  <span className="font-semibold text-navy text-left">{faq.question}</span>
-                  <span className="text-teal text-xl">{expandedFaq === idx ? '−' : '+'}</span>
+                  <span className="font-semibold text-[#FFFFFF] text-left">{faq.question}</span>
+                  <span className="text-[#00D9FF] text-xl">{expandedFaq === idx ? '−' : '+'}</span>
                 </button>
                 {expandedFaq === idx && (
-                  <div className="p-6 bg-white border-t border-light-gray text-gray-600">
+                  <div className="p-6 bg-[#0A0E27] border-t border-[#1F2937] text-[#AAAAAA] font-mono">
                     {faq.answer}
                   </div>
                 )}
@@ -153,12 +177,17 @@ export default function CoursesPage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-navy text-white py-20 text-center">
+      <section className="bg-[#0A0E27] text-white py-20 text-center border-t border-[#1F2937]">
         <h2 className="text-4xl font-bold mb-6">Ready to learn?</h2>
-        <p className="text-xl mb-8 text-gray-300">Start with a course today. Certificates upon completion.</p>
-        <button className="bg-teal text-white px-8 py-3 rounded-lg font-semibold hover:bg-off-white hover:text-navy transition">
-          Browse All Courses
-        </button>
+        <p className="text-lg text-[#AAAAAA] font-mono mb-8 max-w-2xl mx-auto">
+          Start your learning journey today. Certificates upon completion. Join 5000+ engineers.
+        </p>
+        <a
+          href="#courses"
+          className="inline-block bg-[#00D9FF] text-[#0A0E27] px-8 py-3 rounded-lg font-bold uppercase tracking-widest hover:bg-[#FF6B35] transition"
+        >
+          → Browse All Courses
+        </a>
       </section>
     </>
   );

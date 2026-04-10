@@ -15,44 +15,41 @@ export default function Header() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-[#0A0E27] border-b border-[#1F2937]">
+    <header className="sticky top-0 z-50 border-b border-[color:var(--border)] bg-[color:var(--cream)]/85 backdrop-blur-md">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        {/* LOGO */}
-        <Link href="/" className="text-2xl font-bold text-[#00D9FF]">
-          ▲ SRIJAN
+        <Link href="/" className="group inline-flex items-center gap-3">
+          <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[color:var(--navy)] text-sm font-semibold text-[color:var(--cream)] transition group-hover:-translate-y-0.5">
+            SS
+          </span>
+          <span className="leading-tight">
+            <span className="block text-[0.7rem] uppercase tracking-[0.25em] text-[color:var(--text-muted)]">
+              Srijan
+            </span>
+            <span className="block text-lg font-semibold text-[color:var(--navy)]">Speaks</span>
+          </span>
         </Link>
 
-        {/* DESKTOP NAV */}
-        <nav className="hidden md:flex gap-8">
+        <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="text-[#AAAAAA] hover:text-[#00D9FF] transition font-medium text-sm uppercase tracking-widest"
-            >
+            <Link key={link.href} href={link.href} className="nav-link">
               {link.label}
             </Link>
           ))}
         </nav>
 
-        {/* CTA + MOBILE TOGGLE */}
-        <div className="flex items-center gap-4">
-          <Link
-            href="/contact"
-            className="hidden md:inline-block bg-[#00D9FF] text-[#0A0E27] px-6 py-2 font-semibold hover:bg-[#00A8CC] transition text-sm uppercase tracking-widest"
-          >
-            → Contact
+        <div className="flex items-center gap-3">
+          <Link href="/contact" className="hidden md:inline-flex btn btn-primary px-6">
+            Invite Srijan
           </Link>
 
-          {/* MOBILE MENU BUTTON */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 text-[#AAAAAA] hover:text-[#00D9FF] hover:bg-[#121829] transition"
+            className="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-full border border-[color:var(--border)] text-[color:var(--navy)] transition hover:border-[color:var(--teal)] hover:text-[color:var(--teal)]"
             aria-label="Toggle menu"
           >
             <svg
-              width="24"
-              height="24"
+              width="22"
+              height="22"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
@@ -75,27 +72,28 @@ export default function Header() {
         </div>
       </div>
 
-      {/* MOBILE MENU — dark theme */}
       {isMenuOpen && (
-        <nav className="md:hidden bg-[#0A0E27] border-t border-[#1F2937]">
-          <div className="max-w-7xl mx-auto px-6 py-6 flex flex-col gap-4">
+        <nav className="md:hidden border-t border-[color:var(--border)] bg-[color:var(--cream-2)]">
+          <div className="max-w-7xl mx-auto px-6 py-4 flex flex-col gap-2 animate-slide-down">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-[#AAAAAA] hover:text-[#00D9FF] transition font-medium text-sm uppercase tracking-widest py-2 border-b border-[#1F2937]"
+                className="nav-link py-3 border-b border-[color:var(--border)]"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {link.label}
               </Link>
             ))}
-            <Link
-              href="/contact"
-              className="bg-[#00D9FF] text-[#0A0E27] px-6 py-3 font-bold uppercase tracking-widest hover:bg-[#00A8CC] transition text-center mt-2"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              → Get in Touch
-            </Link>
+            <div className="pt-4">
+              <Link
+                href="/contact"
+                className="btn btn-primary w-full justify-center"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Invite Srijan
+              </Link>
+            </div>
           </div>
         </nav>
       )}
