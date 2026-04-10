@@ -1,3 +1,22 @@
+/**
+ * Root Layout Component
+ * 
+ * Main layout wrapper for all pages in the application.
+ * - Sets up Google Fonts (Inter + IBM Plex Mono)
+ * - Defines metadata (SEO, Open Graph)
+ * - Configures viewport for mobile and theme color
+ * - Provides sticky Header and Footer
+ * 
+ * Features:
+ * - SSR-ready with Next.js 15 App Router
+ * - Responsive meta viewport configuration
+ * - Theme color support for light/dark modes
+ * - Proper font variable injection for CSS
+ * - Semantic HTML structure
+ * 
+ * @component
+ */
+
 import type { Metadata, Viewport } from "next";
 import { Inter, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
