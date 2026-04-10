@@ -23,6 +23,8 @@ import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
+// Font configurations for the application
+
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
