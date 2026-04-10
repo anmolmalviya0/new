@@ -1,5 +1,25 @@
 'use client';
 
+/**
+ * Header Component
+ * 
+ * Sticky navigation bar with adaptive mobile/desktop layouts.
+ * - Desktop (≥768px): Horizontal nav with CTA button
+ * - Mobile (<768px): Hamburger menu with dropdown nav
+ * - Uses JS-based `isMobile` state to prevent Tailwind conflicts
+ * - Active nav links highlighted with cyan underline
+ * - Scroll-triggered backdrop blur and border
+ * 
+ * Features:
+ * - Responsive hamburger menu (SVG icons)
+ * - Active route highlighting via usePathname
+ * - Smooth animations and transitions
+ * - Accessibility: ARIA labels, semantic navigation
+ * - Logo auto-scales (sm on mobile, md on desktop)
+ * 
+ * @component
+ */
+
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
