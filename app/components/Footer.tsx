@@ -1,104 +1,131 @@
 'use client';
-
 import Link from 'next/link';
+import Logo from './Logo';
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear();
+  const year = new Date().getFullYear();
+
+  const cols = [
+    {
+      title: 'Explore',
+      links: [
+        { label: 'About',    href: '/about' },
+        { label: 'Speaking', href: '/speaking' },
+        { label: 'Courses',  href: '/courses' },
+        { label: 'Blog',     href: '/blog' },
+      ],
+    },
+    {
+      title: 'Connect',
+      links: [
+        { label: 'Contact',    href: '/contact' },
+        { label: 'LinkedIn',   href: 'https://linkedin.com', external: true },
+        { label: 'Twitter/X',  href: 'https://twitter.com',  external: true },
+        { label: 'GitHub',     href: 'https://github.com',   external: true },
+      ],
+    },
+    {
+      title: 'Legal',
+      links: [
+        { label: 'Privacy Policy',   href: '#privacy' },
+        { label: 'Terms of Service', href: '#terms' },
+        { label: 'Cookie Policy',    href: '#cookies' },
+      ],
+    },
+  ];
 
   return (
-    <footer className="bg-[#0A0E27] text-white py-12 border-t border-[#1F2937]">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-          {/* ABOUT */}
-          <div>
-            <h3 className="font-bold text-lg mb-4 text-[#00D9FF]">About</h3>
-            <ul className="space-y-2 text-[#AAAAAA]">
-              <li>
-                <Link href="/about" className="hover:text-[#00D9FF] transition">
-                  Background
-                </Link>
-              </li>
-              <li>
-                <Link href="/speaking" className="hover:text-[#00D9FF] transition">
-                  Speaking
-                </Link>
-              </li>
-              <li>
-                <Link href="/research" className="hover:text-[#00D9FF] transition">
-                  Research
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* CONTENT */}
-          <div>
-            <h3 className="font-bold text-lg mb-4 text-[#00D9FF]">Content</h3>
-            <ul className="space-y-2 text-[#AAAAAA]">
-              <li>
-                <Link href="/blog" className="hover:text-[#00D9FF] transition">
-                  Blog
-                </Link>
-              </li>
-              <li>
-                <a href="#newsletter" className="hover:text-[#00D9FF] transition">
-                  Newsletter
-                </a>
-              </li>
-              <li>
-                <a href="#media" className="hover:text-[#00D9FF] transition">
-                  Media Kit
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* LEGAL */}
-          <div>
-            <h3 className="font-bold text-lg mb-4 text-[#00D9FF]">Legal</h3>
-            <ul className="space-y-2 text-[#AAAAAA]">
-              <li>
-                <a href="#privacy" className="hover:text-[#00D9FF] transition">
-                  Privacy Policy
-                </a>
-              </li>
-              <li>
-                <a href="#terms" className="hover:text-[#00D9FF] transition">
-                  Terms of Service
-                </a>
-              </li>
-              <li>
-                <a href="#cookies" className="hover:text-[#00D9FF] transition">
-                  Cookie Policy
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* SOCIAL */}
-          <div>
-            <h3 className="font-bold text-lg mb-4 text-[#00D9FF]">Follow</h3>
-            <div className="flex gap-4">
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#FF6B35] transition">
-                Twitter
-              </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#FF6B35] transition">
-                LinkedIn
-              </a>
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#FF6B35] transition">
-                GitHub
-              </a>
+    <footer
+      style={{
+        background: 'var(--bg-2)',
+        borderTop: '1px solid var(--border)',
+        paddingTop: '3.5rem',
+        paddingBottom: '2rem',
+      }}
+    >
+      <div className="container">
+        {/* Top row */}
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))',
+            gap: '2.5rem',
+            marginBottom: '3rem',
+          }}
+        >
+          {/* Brand */}
+          <div style={{ gridColumn: 'span 1' }}>
+            <div style={{ marginBottom: '1rem' }}>
+              <Logo size="sm" />
             </div>
+            <p style={{ fontSize: '0.85rem', color: 'var(--fg-muted)', lineHeight: 1.65, maxWidth: '200px' }}>
+              AI · Manufacturing · Education. Building the future, one engineer at a time.
+            </p>
           </div>
+
+          {/* Nav columns */}
+          {cols.map((col) => (
+            <div key={col.title}>
+              <h4
+                style={{
+                  fontSize: '0.72rem',
+                  fontWeight: 700,
+                  letterSpacing: '0.14em',
+                  textTransform: 'uppercase',
+                  color: 'var(--fg-muted)',
+                  marginBottom: '1rem',
+                }}
+              >
+                {col.title}
+              </h4>
+              <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
+                {col.links.map((link) => (
+                  <li key={link.label}>
+                    <Link
+                      href={link.href}
+                      target={'external' in link && link.external ? '_blank' : undefined}
+                      rel={'external' in link && link.external ? 'noopener noreferrer' : undefined}
+                      style={{
+                        fontSize: '0.875rem',
+                        color: 'var(--fg-2)',
+                        transition: 'color 0.2s ease',
+                      }}
+                      className="footer-link"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
 
-        {/* DIVIDER */}
-        <div className="border-t border-gray-700 pt-8">
-          <p className="text-center text-gray-400 text-sm">
-            © {currentYear} Srijan Speaks. All rights reserved.
+        {/* Divider */}
+        <div className="divider" style={{ marginBottom: '1.5rem' }} />
+
+        {/* Bottom */}
+        <div
+          style={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            gap: '0.75rem',
+          }}
+        >
+          <p style={{ fontSize: '0.8rem', color: 'var(--fg-muted)' }}>
+            © {year} Srijan Speaks. All rights reserved.
+          </p>
+          <p style={{ fontSize: '0.8rem', color: 'var(--fg-muted)' }}>
+            Built with ♥ · AI · NDE · Education
           </p>
         </div>
       </div>
+
+      <style>{`
+        .footer-link:hover { color: var(--accent) !important; }
+      `}</style>
     </footer>
   );
 }
