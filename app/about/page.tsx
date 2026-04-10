@@ -1,5 +1,6 @@
 'use client';
 
+// About page timeline and gallery data
 const timeline = [
   {
     role: 'Researcher',
