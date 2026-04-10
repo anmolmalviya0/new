@@ -1,3 +1,34 @@
+/**
+ * Home Page (Route: /)
+ * 
+ * Primary landing page showcasing Srijan's expertise, impact, and teaching methodology.
+ * 
+ * Sections:
+ * 1. Hero — Animated headline, 4-metric banner, CTAs, scroll cue
+ * 2. Trusted By — Organization badges/logos
+ * 3. Three Pillars — Core expertise areas with scroll animations
+ * 4. Testimonial — 5-star review from student
+ * 5. Teaching Moments — Gallery of real teaching/mentoring moments
+ * 6. CTA Banner — Final call-to-action
+ * 
+ * Features:
+ * - Intersection Observer for scroll-triggered animations
+ * - Animated counters (useCountUp hook with staggered delays)
+ * - Responsive grid layouts with clamp() sizing
+ * - CSS variables for theming (dark/light mode)
+ * - Glow blobs contained within hero section
+ * - Hover effects on cards and images
+ * - Mobile-optimized typography and spacing
+ * 
+ * Performance:
+ * - No external dependencies
+ * - Client-side animations only
+ * - Lazy image loading with error handling
+ * - Efficient IntersectionObserver usage
+ * 
+ * @component
+ */
+
 "use client";
 
 import { useEffect, useRef, useState } from "react";
