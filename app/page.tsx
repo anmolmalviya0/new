@@ -33,6 +33,7 @@
 
 import { useEffect, useRef, useState } from "react";
 
+// Custom hooks and utilities
 /* ── Animated counter ──────────────────────────────── */
 function useCountUp(target: number, duration = 1800, started: boolean) {
   const [count, setCount] = useState(0);
