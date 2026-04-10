@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+// Tailwind CSS configuration with custom theme and animation
 module.exports = {
   content: [
     './app/**/*.{js,ts,jsx,tsx,mdx}',
