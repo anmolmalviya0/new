@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header";
@@ -17,6 +17,16 @@ const ibmPlexMono = IBM_Plex_Mono({
   display: "swap",
 });
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)",  color: "#080e1f" },
+  ],
+};
+
 export const metadata: Metadata = {
   title: "Srijan Speaks | AI Innovation & Manufacturing",
   description:
@@ -27,11 +37,6 @@ export const metadata: Metadata = {
     description: "Accelerating manufacturing transformation via AI",
     type: "website",
   },
-  viewport: "width=device-width, initial-scale=1, viewport-fit=cover",
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
-    { media: "(prefers-color-scheme: dark)",  color: "#080e1f" },
-  ],
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
