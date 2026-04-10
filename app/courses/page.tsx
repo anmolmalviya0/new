@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 
+// Courses page component with FAQ and course catalog
 export default function CoursesPage() {
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
 
