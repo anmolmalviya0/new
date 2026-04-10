@@ -1,3 +1,4 @@
+# Multi-stage Docker build for SrijanSpeaks Next.js application
 # Stage 1 — deps
 FROM node:20-alpine AS deps
 WORKDIR /app
