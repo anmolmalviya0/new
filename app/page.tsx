@@ -107,13 +107,15 @@ export default function Home() {
           alignItems: 'center',
           position: 'relative',
           overflow: 'hidden',
+          width: '100%',
+          maxWidth: '100vw',
         }}
       >
         {/* Grid overlay */}
         <div className="hero-grid" style={{ position: 'absolute', inset: 0, pointerEvents: 'none' }} />
-        {/* Glow blobs */}
-        <div style={{ position: 'absolute', top: '20%', left: '15%', width: 'clamp(200px,30vw,400px)', height: 'clamp(200px,30vw,400px)', background: 'var(--cyan-glow)', borderRadius: '50%', filter: 'blur(80px)', pointerEvents: 'none' }} />
-        <div style={{ position: 'absolute', bottom: '20%', right: '15%', width: 'clamp(160px,25vw,320px)', height: 'clamp(160px,25vw,320px)', background: 'var(--accent-glow)', borderRadius: '50%', filter: 'blur(80px)', pointerEvents: 'none' }} />
+        {/* Glow blobs — contained within section */}
+        <div style={{ position: 'absolute', top: '15%', left: '5%', width: 'clamp(150px,25vw,320px)', height: 'clamp(150px,25vw,320px)', background: 'var(--cyan-glow)', borderRadius: '50%', filter: 'blur(70px)', pointerEvents: 'none', opacity: 0.7 }} />
+        <div style={{ position: 'absolute', bottom: '15%', right: '5%', width: 'clamp(120px,20vw,260px)', height: 'clamp(120px,20vw,260px)', background: 'var(--accent-glow)', borderRadius: '50%', filter: 'blur(70px)', pointerEvents: 'none', opacity: 0.7 }} />
 
         <div className="container" style={{ position: 'relative', zIndex: 1, paddingTop: '5rem', paddingBottom: '6rem' }}>
           {/* Badge */}
