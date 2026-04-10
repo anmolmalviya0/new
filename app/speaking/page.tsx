@@ -1,5 +1,6 @@
 'use client';
 
+// Speaking topics available for events and conferences
 const topics = [
   { title: 'AI & Machine Learning in NDT', desc: 'How AI is transforming non-destructive testing. Deep dive into ML models, deployment challenges, and real-world use cases.', duration: '45–60 min' },
   { title: 'Building Your First Startup',   desc: 'From idea to 50+ clients. Lessons from founding TIQ World, raising funding, and scaling an AI startup.',              duration: '45–60 min' },
