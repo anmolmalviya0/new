@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 160" fill="none">
+  <!-- Speech bubble border (orange) -->
+  <rect x="2" y="18" width="480" height="110" rx="16" ry="16" stroke="#FF6B35" stroke-width="3.5" fill="none"/>
+  <!-- Speech bubble tail -->
+  <polyline points="370,128 385,152 400,128" stroke="#FF6B35" stroke-width="3.5" fill="none" stroke-linejoin="round"/>
+  <!-- Mic cable going up-right from speech bubble -->
+  <line x1="482" y1="60" x2="510" y2="60" stroke="#FF6B35" stroke-width="3.5" stroke-linecap="round"/>
+  <rect x="510" y="52" width="8" height="16" rx="3" fill="#4A90C4"/>
+
+  <!-- SRIJAN text - "SR" -->
+  <text x="22" y="98" font-family="'Arial Black', 'Helvetica Neue', Arial, sans-serif" font-size="64" font-weight="900" fill="#B8D9F0" letter-spacing="-2">SR</text>
+  <!-- Microphone icon in place of "I" -->
+  <!-- Mic body -->
+  <ellipse cx="194" cy="62" rx="14" ry="18" fill="#FF6B35"/>
+  <!-- Mic grille lines -->
+  <line x1="182" y1="56" x2="206" y2="56" stroke="white" stroke-width="2" opacity="0.6"/>
+  <line x1="182" y1="62" x2="206" y2="62" stroke="white" stroke-width="2" opacity="0.6"/>
+  <line x1="182" y1="68" x2="206" y2="68" stroke="white" stroke-width="2" opacity="0.6"/>
+  <!-- Mic stand -->
+  <line x1="194" y1="80" x2="194" y2="102" stroke="#FF6B35" stroke-width="4" stroke-linecap="round"/>
+  <!-- Mic base arc -->
+  <path d="M178 88 Q194 104 210 88" stroke="#FF6B35" stroke-width="4" fill="none" stroke-linecap="round"/>
+
+  <!-- "JAN" after mic -->
+  <text x="212" y="98" font-family="'Arial Black', 'Helvetica Neue', Arial, sans-serif" font-size="64" font-weight="900" fill="#B8D9F0" letter-spacing="-2">JAN</text>
+  <!-- Space -->
+  <!-- "SPEAKS" -->
+  <text x="340" y="98" font-family="'Arial Black', 'Helvetica Neue', Arial, sans-serif" font-size="64" font-weight="900" fill="#B8D9F0" letter-spacing="-2">SPEAKS</text>
+</svg>
