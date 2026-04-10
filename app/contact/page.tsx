@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 
+// Contact form component with social links and response commitment
 export default function ContactPage() {
   const [formData, setFormData] = useState({
     name: '',
