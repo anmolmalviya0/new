@@ -1,5 +1,6 @@
 import type { NextConfig } from 'next'
 
+// Next.js configuration for SrijanSpeaks platform
 const nextConfig: NextConfig = {
   output: 'standalone',
   images: {
