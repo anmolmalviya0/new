@@ -1,7 +1,7 @@
 {
   "name": "srijanspeaks-nextjs",
   "version": "1.0.0",
-  "description": "SrijanSpeaks.com - Personal brand website",
+  "description": "SrijanSpeaks.com - Personal brand website and educational platform",
   "private": true,
   "scripts": {
     "dev": "next dev",
