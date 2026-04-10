@@ -1,6 +1,7 @@
 import nodemailer from 'nodemailer';
 
-// Configure your email service
+// Email API endpoint for contact form submissions
+// Configure your email service via environment variables
 const transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST,
   port: parseInt(process.env.SMTP_PORT || '587'),
