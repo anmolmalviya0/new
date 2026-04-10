@@ -1,5 +1,27 @@
 'use client';
 
+/**
+ * Logo Component
+ * 
+ * Custom HTML+CSS logo: "SR | JAN SPEAKS" with microphone icon
+ * - Responsive sizing: sm (16px), md (22px), lg (28px)
+ * - Automatically adapts to dark/light mode via CSS variables
+ * - Speech bubble design with accent color border
+ * - Microphone icon integrated as vertical separator
+ * - Cable + jack decoration on right edge
+ * - Zero dependencies: Pure HTML + SVG + CSS
+ * 
+ * Features:
+ * - Responsive padding and typography
+ * - Accessible SVG with proper viewBox
+ * - Consistent across all browsers/devices
+ * - Uses CSS custom properties for theming
+ * 
+ * @component
+ * @param {Object} props
+ * @param {('sm'|'md'|'lg')} [props.size='md'] - Logo size variant
+ */
+
 // Logo built as HTML+CSS — guaranteed consistent across all browsers/devices
 // Adapts automatically to dark/light mode via CSS variables
 export default function Logo({ size = 'md' }: { size?: 'sm' | 'md' | 'lg' }) {
