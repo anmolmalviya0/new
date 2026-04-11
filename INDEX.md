@@ -2,6 +2,8 @@
 
 This is a **complete, production-ready Next.js website** for Srijan's personal brand.
 
+> **Last Updated**: April 12, 2026
+
 ## 📂 What's Inside?
 
 ### 📖 Documentation (Start Here!)
