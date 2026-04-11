@@ -2,6 +2,7 @@
 
 # SrijanSpeaks.com Quick Setup Script
 # Run once to set up and start the development server
+# Last updated: April 12, 2026
 
 set -e  # Exit on error
 
