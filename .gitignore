@@ -1,3 +1,6 @@
+# Git ignore patterns for SrijanSpeaks Next.js project
+# Excludes dependencies, build artifacts, env files, and IDE configs
+
 # Dependencies
 node_modules/
 /.pnp
