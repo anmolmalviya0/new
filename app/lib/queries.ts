@@ -1,3 +1,4 @@
+// Sanity GROQ queries for fetching content across all pages and sections
 import { groq } from 'next-sanity'
 
 export const HOMEPAGE_QUERY = groq`
