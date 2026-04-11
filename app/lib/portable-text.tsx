@@ -1,5 +1,6 @@
 'use client';
 
+// Portable text renderer for Sanity rich text content with custom styling
 import { PortableText as SanityPortableText } from '@portabletext/react';
 
 const portableTextComponents = {
