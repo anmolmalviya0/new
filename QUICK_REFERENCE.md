@@ -1,5 +1,7 @@
 # SrijanSpeaks.com — Quick Reference Guide
 
+> **Last Updated**: April 12, 2026 - Developer quick reference
+
 ## 🚀 Essential Commands
 
 ```bash
