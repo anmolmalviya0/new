@@ -1,5 +1,7 @@
 # Deployment Checklist for SrijanSpeaks.com
 
+> Last updated: April 12, 2026 - Production deployment best practices
+
 ## 📋 Pre-Deployment Checklist
 
 ### 1. Development Setup ✅
