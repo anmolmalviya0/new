@@ -9,10 +9,11 @@
  * - Speech bubble design with accent color border
  * - Microphone icon integrated as vertical separator
  * - Cable + jack decoration on right edge
- * - Zero dependencies: Pure HTML + SVG + CSS
- * 
- * Features:
- * - Responsive padding and typography
+  * - Zero dependencies: Pure HTML + SVG + CSS
+  * - Premium display font with custom letterSpacing
+  * 
+  * Features:
+  * - Responsive padding and typography
  * - Accessible SVG with proper viewBox
  * - Consistent across all browsers/devices
  * - Uses CSS custom properties for theming
