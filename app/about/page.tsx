@@ -1,6 +1,7 @@
 'use client';
 
-// About page timeline and gallery data
+// About page with premium fonts (Syne display + Plus Jakarta Sans body)
+// Timeline and gallery data
 const timeline = [
   {
     role: 'Researcher',
