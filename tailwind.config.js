@@ -16,8 +16,10 @@ module.exports = {
         'border-dark': '#1F2937',
       },
       fontFamily: {
-        mono: ['IBM Plex Mono', 'monospace'],
+        display: ['var(--font-display, Syne)', 'sans-serif'],
+        body: ['var(--font-body, Plus Jakarta Sans)', 'sans-serif'],
         sans: ['Inter', 'sans-serif'],
+        mono: ['IBM Plex Mono', 'monospace'],
       },
       spacing: {
         '8px': '8px',
