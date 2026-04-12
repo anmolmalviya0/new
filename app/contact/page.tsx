@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 
-// Contact form component with social links and response commitment
+// Contact form component with social links and response commitment - professional inquiry gateway
 export default function ContactPage() {
   const [formData, setFormData] = useState({
     name: '',
