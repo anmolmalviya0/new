@@ -1,6 +1,6 @@
 'use client';
 
-// Reusable Button component with premium fonts - multiple variants and sizes
+// Reusable Button component with premium fonts - multiple variants and sizes for flexible UI
 interface ButtonProps {
   href?: string;
   onClick?: () => void;
