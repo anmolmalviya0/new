@@ -1,6 +1,4 @@
-/* Global CSS with Tailwind integration and design token system */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap');
-
+/* Global CSS with Tailwind integration and design token system - Premium Typography */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -123,22 +121,47 @@ body {
 
 /* ═══════════════════════════════════════════════════════
    TYPOGRAPHY — fluid, mobile-first
+   Premium fonts: Syne (display) + Plus Jakarta Sans (body)
    ═══════════════════════════════════════════════════════ */
 h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display, 'Syne', sans-serif);
   color: var(--fg);
   line-height: 1.1;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
   font-weight: 800;
+  font-optical-sizing: auto;
 }
 
-h1 { font-size: clamp(2rem, 6vw, 4.5rem); }
-h2 { font-size: clamp(1.6rem, 4vw, 3rem); }
-h3 { font-size: clamp(1.2rem, 2.5vw, 1.75rem); }
-h4 { font-size: clamp(1rem, 2vw, 1.25rem); }
+h1 { 
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+h2 { 
+  font-size: clamp(1.8rem, 4.5vw, 3.5rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+h3 { 
+  font-size: clamp(1.3rem, 2.8vw, 2rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+h4 { 
+  font-size: clamp(1.1rem, 2.2vw, 1.5rem);
+  font-weight: 600;
+  letter-spacing: -0.015em;
+}
 
 p {
+  font-family: var(--font-body, 'Plus Jakarta Sans', sans-serif);
   color: var(--fg-2);
   line-height: 1.75;
+  font-weight: 400;
+}
+
+body {
+  font-family: var(--font-body, 'Plus Jakarta Sans', sans-serif);
 }
 
 a {
