@@ -31,7 +31,7 @@ const inter = Inter({
   display: "swap",
 });
 
-// Display font: Bold, geometric, engineered - for hero headlines
+// Display font: Bold, geometric, engineered - for hero headlines and UI
 const syne = Syne({
   weight: ["400", "500", "600", "700", "800"],
   subsets: ["latin"],
