@@ -13,9 +13,11 @@ steps:
       - 'push'
       - 'gcr.io/$PROJECT_ID/srijanspeaks'
 
-  # Deploy to Cloud Run
-  - name: 'gcr.io/cloud-builders/run'
+  # Deploy to Cloud Run (using gcloud SDK — gcr.io/cloud-builders/run is deprecated)
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: gcloud
     args:
+      - 'run'
       - 'deploy'
       - 'srijanspeaks'
       - '--image'
