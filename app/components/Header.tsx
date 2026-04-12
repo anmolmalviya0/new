@@ -91,23 +91,24 @@ export default function Header() {
         </Link>
 
         {/* DESKTOP NAV — only shown on ≥768px */}
-        {!isMobile && (
-          <nav style={{ display: 'flex', alignItems: 'center', gap: '2rem' }}>
-            {navLinks.map((link) => {
-              const isActive = pathname === link.href;
-              return (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  style={{
-                    position: 'relative',
-                    fontSize: '0.875rem',
-                    fontWeight: 500,
-                    color: isActive ? 'var(--cyan)' : 'var(--fg-muted)',
-                    paddingBottom: '2px',
-                    transition: 'color 0.2s',
-                    whiteSpace: 'nowrap',
-                  }}
+         {!isMobile && (
+           <nav style={{ display: 'flex', alignItems: 'center', gap: '2rem' }}>
+             {navLinks.map((link) => {
+               const isActive = pathname === link.href;
+               return (
+                 <Link
+                   key={link.href}
+                   href={link.href}
+                   style={{
+                     fontFamily: 'var(--font-body, Plus Jakarta Sans, sans-serif)',
+                     position: 'relative',
+                     fontSize: '0.875rem',
+                     fontWeight: 500,
+                     color: isActive ? 'var(--cyan)' : 'var(--fg-muted)',
+                     paddingBottom: '2px',
+                     transition: 'color 0.2s',
+                     whiteSpace: 'nowrap',
+                   }}
                   onMouseEnter={e => { if (!isActive) (e.currentTarget as HTMLAnchorElement).style.color = 'var(--fg)'; }}
                   onMouseLeave={e => { if (!isActive) (e.currentTarget as HTMLAnchorElement).style.color = 'var(--fg-muted)'; }}
                 >
