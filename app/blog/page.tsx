@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 
-// Blog page with search, filtering, and newsletter subscription
+// Blog page with search, filtering, and newsletter subscription - content hub
 export default function BlogPage() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
