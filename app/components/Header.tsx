@@ -46,7 +46,7 @@ export default function Header() {
 
    useEffect(() => { setIsMenuOpen(false); }, [pathname]);
 
-   // Navigation links configuration
+   // Navigation links configuration - all routes for site structure
    const navLinks = [
     { href: '/about',    label: 'About' },
     { href: '/speaking', label: 'Speaking' },
