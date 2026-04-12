@@ -150,22 +150,16 @@ export default function Home() {
         <div style={{ position: 'absolute', bottom: '15%', right: '5%', width: 'clamp(120px,20vw,260px)', height: 'clamp(120px,20vw,260px)', background: 'var(--accent-glow)', borderRadius: '50%', filter: 'blur(70px)', pointerEvents: 'none', opacity: 0.7 }} />
 
         <div className="container" style={{ position: 'relative', zIndex: 1, paddingTop: '5rem', paddingBottom: '6rem' }}>
-          {/* Badge */}
-          <div className="animate-fade-up" style={{ textAlign: 'center', marginBottom: '1.75rem' }}>
-            <span className="badge badge-accent">
-              <span className="animate-pulse-dot" style={{ width: '6px', height: '6px', borderRadius: '50%', background: 'var(--accent)', display: 'inline-block' }} />
-              AI · Manufacturing · Education
-            </span>
-          </div>
-
-           {/* Headline */}
-           <div className="animate-fade-up delay-100" style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
-             <h1 style={{ fontFamily: 'var(--font-display, Syne)', fontWeight: 800, color: 'var(--fg)', marginBottom: '1rem', letterSpacing: '-0.04em' }}>
-               Building the Future<br />
-               <span style={{ color: 'var(--cyan)', fontWeight: 700, letterSpacing: '-0.03em' }}>of Manufacturing</span>
-             </h1>
-            <p style={{ fontSize: 'clamp(1rem, 2.5vw, 1.25rem)', color: 'var(--fg-2)', maxWidth: '600px', margin: '0 auto', lineHeight: 1.7 }}>
-              Accelerating transformation through AI innovation — bridging research, industry & education
+          {/* Personal Brand Hero */}
+          <div className="animate-fade-up" style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
+            <h1 style={{ fontFamily: 'var(--font-display, Syne)', fontWeight: 800, color: 'var(--fg)', marginBottom: '0.5rem', letterSpacing: '-0.04em' }}>
+              SRIJAN TIWARI
+            </h1>
+            <p style={{ fontSize: 'clamp(1.2rem, 3vw, 1.6rem)', color: 'var(--cyan)', fontFamily: 'var(--font-display, Syne)', fontWeight: 700, letterSpacing: '-0.02em', marginBottom: '2rem' }}>
+              Speaker · Educator · Builder
+            </p>
+            <p style={{ fontSize: 'clamp(1.05rem, 2.2vw, 1.35rem)', color: 'var(--fg-2)', maxWidth: '720px', margin: '0 auto', lineHeight: 1.8, fontWeight: 400 }}>
+              I help engineers, organizations, and innovators understand, build, and deploy AI at scale. Through keynotes, educational programs, and technical consulting.
             </p>
           </div>
 

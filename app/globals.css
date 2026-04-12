@@ -14,39 +14,40 @@ html, body {
 }
 
 :root {
+  /* ── Premium Dark Theme (Always Active - Personal Brand) ── */
   /* ── Surface ── */
-  --bg:            #ffffff;
-  --bg-2:          #f5f7fa;
-  --bg-3:          #eef1f6;
-  --bg-card:       #ffffff;
+  --bg:            #080e1f;
+  --bg-2:          #0d1426;
+  --bg-3:          #111b32;
+  --bg-card:       #0f1a2e;
 
   /* ── Text ── */
-  --fg:            #0f1b2d;
-  --fg-2:          #3d4f66;
-  --fg-muted:      #7a8899;
-  --fg-inverse:    #ffffff;
+  --fg:            #eef2f8;
+  --fg-2:          #a8b8cc;
+  --fg-muted:      #607080;
+  --fg-inverse:    #080e1f;
 
-  /* ── Accent — Orange (primary CTA) ── */
-  --accent:        #e8541e;
-  --accent-hover:  #d14519;
-  --accent-glow:   rgba(232, 84, 30, 0.25);
+  /* ── Accent — Premium Orange ── */
+  --accent:        #ff6b35;
+  --accent-hover:  #ff8a5b;
+  --accent-glow:   rgba(255,107,53,0.28);
 
-  /* ── Brand blue — navy/cyan family ── */
-  --brand:         #1a3766;
-  --brand-2:       #1e4080;
-  --cyan:          #0ea5e9;
-  --cyan-glow:     rgba(14, 165, 233, 0.18);
+  /* ── Brand cyan — Electric ── */
+  --brand:         #4a9eff;
+  --brand-2:       #6ab4ff;
+  --cyan:          #00d9ff;
+  --cyan-glow:     rgba(0,217,255,0.18);
 
   /* ── Borders ── */
-  --border:        #dde2ea;
-  --border-strong: #c5cdd9;
+  --border:        #1e2d45;
+  --border-strong: #2a3d5a;
 
   /* ── Shadows ── */
-  --shadow-sm:   0 1px 4px rgba(15,27,45,0.08);
-  --shadow-md:   0 4px 16px rgba(15,27,45,0.10);
-  --shadow-lg:   0 12px 40px rgba(15,27,45,0.14);
-  --shadow-accent: 0 8px 24px rgba(232,84,30,0.30);
-  --shadow-cyan:   0 8px 24px rgba(14,165,233,0.22);
+  --shadow-sm:   0 1px 4px rgba(0,0,0,0.3);
+  --shadow-md:   0 4px 16px rgba(0,0,0,0.4);
+  --shadow-lg:   0 12px 40px rgba(0,0,0,0.5);
+  --shadow-accent: 0 8px 24px rgba(255,107,53,0.35);
+  --shadow-cyan:   0 8px 24px rgba(0,217,255,0.22);
 
   /* ── Radius ── */
   --r-sm:  6px;
@@ -54,39 +55,6 @@ html, body {
   --r-lg:  20px;
   --r-xl:  28px;
   --r-full: 9999px;
-}
-
-/* ── DARK MODE (system preference) ── */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg:            #080e1f;
-    --bg-2:          #0d1426;
-    --bg-3:          #111b32;
-    --bg-card:       #0f1a2e;
-
-    --fg:            #eef2f8;
-    --fg-2:          #a8b8cc;
-    --fg-muted:      #607080;
-    --fg-inverse:    #080e1f;
-
-    --accent:        #ff6b35;
-    --accent-hover:  #ff8a5b;
-    --accent-glow:   rgba(255,107,53,0.28);
-
-    --brand:         #4a9eff;
-    --brand-2:       #6ab4ff;
-    --cyan:          #00d9ff;
-    --cyan-glow:     rgba(0,217,255,0.18);
-
-    --border:        #1e2d45;
-    --border-strong: #2a3d5a;
-
-    --shadow-sm:   0 1px 4px rgba(0,0,0,0.3);
-    --shadow-md:   0 4px 16px rgba(0,0,0,0.4);
-    --shadow-lg:   0 12px 40px rgba(0,0,0,0.5);
-    --shadow-accent: 0 8px 24px rgba(255,107,53,0.35);
-    --shadow-cyan:   0 8px 24px rgba(0,217,255,0.22);
-  }
 }
 
 /* ═══════════════════════════════════════════════════════
