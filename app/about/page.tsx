@@ -1,7 +1,7 @@
 'use client';
 
 // About page with premium fonts (Syne display + Plus Jakarta Sans body)
-// Timeline and gallery data
+// Timeline and gallery data - structured career journey
 const timeline = [
   {
     role: 'Researcher',
