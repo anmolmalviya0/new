@@ -158,12 +158,12 @@ export default function Home() {
             </span>
           </div>
 
-          {/* Headline */}
-          <div className="animate-fade-up delay-100" style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
-            <h1 style={{ fontWeight: 900, color: 'var(--fg)', marginBottom: '1rem' }}>
-              Building the Future<br />
-              <span style={{ color: 'var(--cyan)' }}>of Manufacturing</span>
-            </h1>
+           {/* Headline */}
+           <div className="animate-fade-up delay-100" style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
+             <h1 style={{ fontFamily: 'var(--font-display, Syne)', fontWeight: 800, color: 'var(--fg)', marginBottom: '1rem', letterSpacing: '-0.04em' }}>
+               Building the Future<br />
+               <span style={{ color: 'var(--cyan)', fontWeight: 700, letterSpacing: '-0.03em' }}>of Manufacturing</span>
+             </h1>
             <p style={{ fontSize: 'clamp(1rem, 2.5vw, 1.25rem)', color: 'var(--fg-2)', maxWidth: '600px', margin: '0 auto', lineHeight: 1.7 }}>
               Accelerating transformation through AI innovation — bridging research, industry & education
             </p>
