@@ -82,15 +82,16 @@ export default function Footer() {
               <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
                 {col.links.map((link) => (
                   <li key={link.label}>
-                    <Link
-                      href={link.href}
-                      target={'external' in link && link.external ? '_blank' : undefined}
-                      rel={'external' in link && link.external ? 'noopener noreferrer' : undefined}
-                      style={{
-                        fontSize: '0.875rem',
-                        color: 'var(--fg-2)',
-                        transition: 'color 0.2s ease',
-                      }}
+                     <Link
+                       href={link.href}
+                       target={'external' in link && link.external ? '_blank' : undefined}
+                       rel={'external' in link && link.external ? 'noopener noreferrer' : undefined}
+                       style={{
+                         fontFamily: 'var(--font-body, Plus Jakarta Sans, sans-serif)',
+                         fontSize: '0.875rem',
+                         color: 'var(--fg-2)',
+                         transition: 'color 0.2s ease',
+                       }}
                       className="footer-link"
                     >
                       {link.label}
