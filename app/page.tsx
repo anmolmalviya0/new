@@ -150,7 +150,7 @@ export default function Home() {
         <div style={{ position: 'absolute', bottom: '15%', right: '5%', width: 'clamp(120px,20vw,260px)', height: 'clamp(120px,20vw,260px)', background: 'var(--accent-glow)', borderRadius: '50%', filter: 'blur(70px)', pointerEvents: 'none', opacity: 0.7 }} />
 
         <div className="container" style={{ position: 'relative', zIndex: 1, paddingTop: '5rem', paddingBottom: '6rem' }}>
-          {/* Personal Brand Hero */}
+          {/* Personal Brand Hero — Srijan Tiwari, AI speaker and technical leader */}
           <div className="animate-fade-up" style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
             <h1 style={{ fontFamily: 'var(--font-display, Syne)', fontWeight: 800, color: 'var(--fg)', marginBottom: '0.5rem', letterSpacing: '-0.04em' }}>
               SRIJAN TIWARI
