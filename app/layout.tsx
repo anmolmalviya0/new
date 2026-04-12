@@ -18,12 +18,12 @@
  */
 
 import type { Metadata, Viewport } from "next";
-import { Inter, IBM_Plex_Mono } from "next/font/google";
+import { Inter, Syne, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
-// Font configurations for the application
+// Font configurations for the application - Premium brand fonts
 
 const inter = Inter({
   subsets: ["latin"],
@@ -31,10 +31,19 @@ const inter = Inter({
   display: "swap",
 });
 
-const ibmPlexMono = IBM_Plex_Mono({
-  weight: ["400", "500", "600", "700"],
+// Display font: Bold, geometric, engineered - for hero headlines
+const syne = Syne({
+  weight: ["400", "500", "600", "700", "800"],
   subsets: ["latin"],
-  variable: "--font-mono",
+  variable: "--font-display",
+  display: "swap",
+});
+
+// Body font: Warm, modern humanist - for UI and body text
+const plusJakartaSans = Plus_Jakarta_Sans({
+  weight: ["300", "400", "500", "600", "700", "800"],
+  subsets: ["latin"],
+  variable: "--font-body",
   display: "swap",
 });
 
@@ -62,8 +71,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${inter.variable} ${ibmPlexMono.variable}`}>
-      <body style={{ fontFamily: "var(--font-inter, 'Inter', sans-serif)" }}>
+    <html lang="en" className={`${inter.variable} ${syne.variable} ${plusJakartaSans.variable}`}>
+      <body style={{ fontFamily: "var(--font-body, 'Plus Jakarta Sans', sans-serif)" }}>
         <Header />
         <main>{children}</main>
         <Footer />
