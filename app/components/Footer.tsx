@@ -5,7 +5,7 @@ import Logo from './Logo';
 export default function Footer() {
   const year = new Date().getFullYear();
 
-  // Footer navigation columns configuration
+  // Footer navigation columns configuration for organized link sections
   const cols = [
     {
       title: 'Explore',
