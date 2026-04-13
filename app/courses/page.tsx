@@ -3,6 +3,7 @@
 import { useState } from 'react';
 
 // Courses page component with FAQ and course catalog - online learning platform
+// Enrollment data is static; wire up to LMS API for live counts
 export default function CoursesPage() {
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
 

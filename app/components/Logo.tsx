@@ -26,6 +26,7 @@
 // Logo built as HTML+CSS — guaranteed consistent across all browsers/devices
 // Adapts automatically to dark/light mode via CSS variables
 // Supports three sizes: small (16px), medium (22px), large (28px)
+// Brand colors: --accent (orange) for border/mic, --fg for text
 export default function Logo({ size = 'md' }: { size?: 'sm' | 'md' | 'lg' }) {
   const textSize = size === 'sm' ? 'text-lg' : size === 'lg' ? 'text-3xl' : 'text-2xl';
   const iconSize = size === 'sm' ? 16 : size === 'lg' ? 28 : 22;

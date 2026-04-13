@@ -1,6 +1,7 @@
 'use client';
 
 // Reusable Button component with premium fonts - multiple variants and sizes for flexible UI
+// TODO: integrate with design token system (--accent, --cyan) to replace Tailwind color names
 interface ButtonProps {
   href?: string;
   onClick?: () => void;

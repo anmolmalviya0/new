@@ -24,6 +24,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 
 // Font configurations for the application - Premium brand fonts
+// Display: Syne (geometric, bold) | Body: Plus Jakarta Sans (humanist, warm)
 
 const inter = Inter({
   subsets: ["latin"],

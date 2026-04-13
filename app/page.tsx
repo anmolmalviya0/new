@@ -1,5 +1,5 @@
 "use client";
-
+// Home page — hero, metrics, pillars, story, speaking reel, video, CTA
 import { useEffect, useRef, useState, useCallback } from "react";
 
 /* ── Custom cursor ─────────────────────────────────── */

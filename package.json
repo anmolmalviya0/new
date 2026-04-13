@@ -1,7 +1,7 @@
 {
   "name": "srijanspeaks-nextjs",
   "version": "1.0.0",
-  "description": "SrijanSpeaks.com - Personal brand website and educational platform",
+  "description": "SrijanSpeaks.com - Personal brand website and educational platform for AI keynote speaker Srijan Tiwari",
   "private": true,
   "scripts": {
     "dev": "next dev",

@@ -32,3 +32,4 @@ images:
   - 'gcr.io/$PROJECT_ID/srijanspeaks'
 
 timeout: '1800s'
+# Build machine: e2-medium (default). Increase to e2-highcpu-8 for faster builds.

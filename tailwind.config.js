@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 // Tailwind CSS configuration with custom theme and animation
+// Note: most styling uses inline CSS with design tokens (--accent, --cyan, etc.)
 module.exports = {
   content: [
     './app/**/*.{js,ts,jsx,tsx,mdx}',

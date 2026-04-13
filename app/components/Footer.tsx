@@ -120,7 +120,7 @@ export default function Footer() {
             © {year} Srijan Speaks. All rights reserved.
           </p>
           <p style={{ fontSize: '0.8rem', color: 'var(--fg-muted)' }}>
-            Built with ♥ · AI · NDE · Education
+            Built with ♥ · AI · NDE · Education · Next.js
           </p>
         </div>
       </div>

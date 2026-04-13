@@ -3,6 +3,7 @@
 import { useState } from 'react';
 
 // Contact form component with social links and response commitment - professional inquiry gateway
+// Response SLA: 24–48 hours for speaking, 48–72 hours for consulting
 export default function ContactPage() {
   const [formData, setFormData] = useState({
     name: '',

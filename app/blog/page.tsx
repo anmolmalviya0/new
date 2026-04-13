@@ -3,6 +3,7 @@
 import { useState } from 'react';
 
 // Blog page with search, filtering, and newsletter subscription - content hub
+// Posts are currently static; connect Sanity CMS for dynamic content
 export default function BlogPage() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');

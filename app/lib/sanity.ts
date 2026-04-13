@@ -1,4 +1,5 @@
 // Sanity CMS client configuration and image URL builder
+// Set NEXT_PUBLIC_SANITY_PROJECT_ID + NEXT_PUBLIC_SANITY_DATASET in Cloud Run env vars to activate
 import { createClient } from 'next-sanity'
 import imageUrlBuilder from '@sanity/image-url'
 

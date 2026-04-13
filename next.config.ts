@@ -1,6 +1,7 @@
 import type { NextConfig } from 'next'
 
 // Next.js configuration for SrijanSpeaks platform
+// output: 'standalone' required for Docker/Cloud Run deployment
 const nextConfig: NextConfig = {
   output: 'standalone',
   images: {

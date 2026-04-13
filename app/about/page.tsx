@@ -2,6 +2,7 @@
 
 // About page with premium fonts (Syne display + Plus Jakarta Sans body)
 // Timeline and gallery data - structured career journey
+// Last reviewed: 2026-04-13
 const timeline = [
   {
     role: 'Researcher',

@@ -1,5 +1,5 @@
 {
-  // TypeScript compiler configuration for Next.js 15
+  // TypeScript compiler configuration for Next.js 15 App Router
   "compilerOptions": {
     "target": "ES2020",
     "useDefineForClassFields": true,

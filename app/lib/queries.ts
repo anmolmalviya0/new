@@ -1,4 +1,5 @@
 // Sanity GROQ queries for fetching content across all pages and sections
+// Requires: NEXT_PUBLIC_SANITY_PROJECT_ID env var to be set in Cloud Run
 import { groq } from 'next-sanity'
 
 export const HOMEPAGE_QUERY = groq`

@@ -1,6 +1,7 @@
 'use client';
 
 // Portable text renderer for Sanity rich text content with custom styling
+// Used by blog post pages once Sanity CMS env vars are configured
 import { PortableText as SanityPortableText } from '@portabletext/react';
 
 const portableTextComponents = {
