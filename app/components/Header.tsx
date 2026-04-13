@@ -100,15 +100,16 @@ export default function Header() {
                    key={link.href}
                    href={link.href}
                    style={{
-                     fontFamily: 'var(--font-body, Plus Jakarta Sans, sans-serif)',
-                     position: 'relative',
-                     fontSize: '0.875rem',
-                     fontWeight: 500,
-                     color: isActive ? 'var(--cyan)' : 'var(--fg-muted)',
-                     paddingBottom: '2px',
-                     transition: 'color 0.2s',
-                     whiteSpace: 'nowrap', ...(isActive ? { 'aria-current': 'page' as const } : {}),
-                   }}
+                    fontFamily: 'var(--font-body, Plus Jakarta Sans, sans-serif)',
+                    position: 'relative',
+                    fontSize: '0.875rem',
+                    fontWeight: 500,
+                    color: isActive ? 'var(--cyan)' : 'var(--fg-muted)',
+                    paddingBottom: '2px',
+                    transition: 'color 0.2s',
+                    whiteSpace: 'nowrap',
+                  }}
+                  {...(isActive ? { 'aria-current': 'page' as const } : {})}
                   onMouseEnter={e => { if (!isActive) (e.currentTarget as HTMLAnchorElement).style.color = 'var(--fg)'; }}
                   onMouseLeave={e => { if (!isActive) (e.currentTarget as HTMLAnchorElement).style.color = 'var(--fg-muted)'; }}
                 >
@@ -137,7 +138,7 @@ export default function Header() {
                 background: 'var(--accent)', color: '#fff',
                 borderRadius: 'var(--r-sm)', fontWeight: 700,
                 fontSize: '0.78rem', letterSpacing: '0.06em',
-                textTransform: 'uppercase', whiteSpace: 'nowrap', ...(isActive ? { 'aria-current': 'page' as const } : {}),
+                textTransform: 'uppercase', whiteSpace: 'nowrap',
                 transition: 'opacity 0.2s',
               }}
               onMouseEnter={e => (e.currentTarget.style.opacity = '0.85')}
