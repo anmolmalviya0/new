@@ -141,3 +141,4 @@ export const BLOG_CATEGORIES_QUERY = groq`
     slug
   }
 `;
+

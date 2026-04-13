@@ -108,3 +108,4 @@ export default function Logo({ size = 'md' }: { size?: 'sm' | 'md' | 'lg' }) {
     </span>
   );
 }
+

@@ -65,3 +65,4 @@ const portableTextComponents = {
 export function PortableTextRenderer({ value }: { value: any }) {
   return <SanityPortableText value={value} components={portableTextComponents} />;
 }
+

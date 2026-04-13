@@ -60,7 +60,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   title: "Srijan Speaks | AI Innovation & Manufacturing",
   description:
-    "Building the future of manufacturing through AI. 5000+ engineers trained, 50+ enterprise deployments, $200M+ impact.",
+    "AI Keynote Speaker & Educator. 5000+ engineers trained across 50+ institutions. Book Srijan for your next event.",
   keywords: "AI, Manufacturing, Machine Learning, NDE, Innovation, Srijan Tiwari",
   openGraph: {
     title: "Srijan Speaks",
