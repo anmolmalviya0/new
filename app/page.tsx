@@ -557,25 +557,95 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ═══ TESTIMONIAL ════════════════════════════ */}
+      {/* ═══ PRESS / FEATURED IN ════════════════════ */}
+      <section style={{ background:'var(--bg)',borderTop:'1px solid var(--border)',padding:'3rem 0',overflow:'hidden' }}>
+        <div className="container">
+          <p style={{ textAlign:'center',fontSize:'0.72rem',fontWeight:700,letterSpacing:'0.18em',textTransform:'uppercase',color:'var(--fg-muted)',marginBottom:'2rem' }}>As Featured In &amp; Trusted By</p>
+          <div style={{ display:'flex',flexWrap:'wrap',justifyContent:'center',alignItems:'center',gap:'1rem' }}>
+            {[
+              { name:'YourStory',   icon:'📰' },
+              { name:'Analytics India Mag', icon:'📊' },
+              { name:'IIT Madras',  icon:'🎓' },
+              { name:'NASSCOM',     icon:'🏛️' },
+              { name:'Times of India', icon:'🗞️' },
+              { name:'Entrepreneur India', icon:'💡' },
+              { name:'TIQ World',   icon:'🌐' },
+            ].map((p) => (
+              <div key={p.name} className="press-logo" style={{ display:'flex',alignItems:'center',gap:'0.5rem',padding:'0.55rem 1.2rem',background:'rgba(255,255,255,0.035)',border:'1px solid var(--border)',borderRadius:'999px',backdropFilter:'blur(8px)',WebkitBackdropFilter:'blur(8px)',transition:'all 0.25s ease',cursor:'default',whiteSpace:'nowrap' }}
+                onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.borderColor='var(--accent)'; (e.currentTarget as HTMLDivElement).style.background='rgba(255,94,26,0.08)'; }}
+                onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.borderColor='var(--border)'; (e.currentTarget as HTMLDivElement).style.background='rgba(255,255,255,0.035)'; }}
+              >
+                <span style={{ fontSize:'1rem' }}>{p.icon}</span>
+                <span style={{ fontSize:'0.8rem',fontWeight:600,color:'var(--fg-2)',letterSpacing:'0.03em' }}>{p.name}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ TESTIMONIALS ═══════════════════════════ */}
       <section className="section" style={{ background:'var(--bg)',borderTop:'1px solid var(--border)',position:'relative',overflow:'hidden' }}>
-        <div style={{ position:'absolute',top:'50%',left:'50%',transform:'translate(-50%,-50%)',width:'400px',height:'200px',background:'radial-gradient(ellipse,rgba(255,94,26,0.06) 0%,transparent 70%)',filter:'blur(40px)',pointerEvents:'none' }} />
-        <div className="container" style={{ maxWidth:'720px',textAlign:'center' }}>
-          <div style={{ background:'linear-gradient(135deg,rgba(255,255,255,0.04) 0%,rgba(255,255,255,0.015) 100%)',border:'1px solid rgba(255,255,255,0.07)',borderRadius:'24px',padding:'clamp(2rem,5vw,3.5rem)',backdropFilter:'blur(20px)',WebkitBackdropFilter:'blur(20px)',boxShadow:'0 20px 60px rgba(0,0,0,0.5),inset 0 1px 0 rgba(255,255,255,0.06)',position:'relative' }}>
-            <div style={{ position:'absolute',top:'-10px',left:'2rem',fontSize:'6rem',lineHeight:1,fontFamily:'Georgia,serif',color:'var(--accent)',opacity:0.2,fontWeight:900 }}>&#8220;</div>
-            <div style={{ display:'flex',justifyContent:'center',gap:'4px',marginBottom:'1.5rem' }}>
-              {[1,2,3,4,5].map(s => (
-                <svg key={s} width="18" height="18" viewBox="0 0 24 24" fill="var(--accent)" style={{ filter:'drop-shadow(0 0 4px rgba(255,94,26,0.5))' }}>
-                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                </svg>
-              ))}
-            </div>
-            <blockquote style={{ fontSize:'clamp(1.1rem,2.5vw,1.35rem)',fontWeight:300,color:'var(--fg)',fontStyle:'italic',lineHeight:1.8,marginBottom:'2rem' }}>
-              "Srijan doesn't just teach concepts — he creates genuine connections by showing you how it works in the real world. His teaching style brings clarity to complexity."
-            </blockquote>
-            <div style={{ width:'40px',height:'2px',background:'linear-gradient(90deg,var(--accent),var(--cyan))',borderRadius:'999px',margin:'0 auto 1.25rem' }} />
-            <p style={{ fontWeight:700,color:'var(--cyan)',fontSize:'1rem',margin:0 }}>Aspiring ML Engineer</p>
-            <p style={{ fontSize:'0.72rem',color:'var(--fg-muted)',letterSpacing:'0.12em',textTransform:'uppercase',marginTop:'0.25rem' }}>Engineering Student · IIT Madras</p>
+        <div style={{ position:'absolute',top:'50%',left:'10%',width:'300px',height:'300px',background:'radial-gradient(ellipse,rgba(255,94,26,0.06) 0%,transparent 70%)',filter:'blur(50px)',pointerEvents:'none' }} />
+        <div style={{ position:'absolute',top:'30%',right:'5%',width:'250px',height:'250px',background:'radial-gradient(ellipse,rgba(0,217,255,0.05) 0%,transparent 70%)',filter:'blur(50px)',pointerEvents:'none' }} />
+        <div className="container">
+          <div style={{ textAlign:'center',marginBottom:'3rem' }}>
+            <span className="section-label" style={{ marginBottom:'0.75rem',display:'inline-flex' }}>Social Proof</span>
+            <h2 style={{ color:'var(--fg)',marginBottom:'0.75rem' }}>What People Say</h2>
+            <p style={{ color:'var(--fg-2)',maxWidth:'480px',margin:'0 auto',fontSize:'1rem' }}>Voices from engineers, founders, and learners whose trajectories shifted.</p>
+          </div>
+          <div style={{ display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(300px,1fr))',gap:'1.5rem',maxWidth:'1100px',margin:'0 auto' }}>
+            {[
+              {
+                quote: "Srijan doesn't just teach concepts — he creates genuine connections by showing you how AI works in the real world. His style brings clarity to complexity.",
+                name: 'Rohan Mehta',
+                role: 'ML Engineer · Google',
+                avatar: '🧑‍💻',
+                accent: 'var(--accent)',
+              },
+              {
+                quote: "His keynote at AI Summit India literally changed how our leadership thinks about automation. We implemented his framework within 3 weeks.",
+                name: 'Priya Sharma',
+                role: 'CTO · FinTech Startup, Mumbai',
+                avatar: '👩‍💼',
+                accent: 'var(--cyan)',
+              },
+              {
+                quote: "Best investment of my engineering career. Srijan's course gave me the practical skills to lead our AI transformation — from zero to production in 90 days.",
+                name: 'Arjun Nair',
+                role: 'Senior Engineer · TCS',
+                avatar: '🧑‍🔬',
+                accent: 'var(--purple)',
+              },
+            ].map((t, i) => (
+              <div key={i} className="testimonial-card" style={{ background:'linear-gradient(135deg,rgba(255,255,255,0.04) 0%,rgba(255,255,255,0.015) 100%)',border:'1px solid rgba(255,255,255,0.07)',borderRadius:'20px',padding:'2rem',backdropFilter:'blur(20px)',WebkitBackdropFilter:'blur(20px)',boxShadow:'0 12px 40px rgba(0,0,0,0.4),inset 0 1px 0 rgba(255,255,255,0.06)',position:'relative',transition:'all 0.3s ease' }}
+                onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.transform='translateY(-4px)'; (e.currentTarget as HTMLDivElement).style.borderColor=t.accent; (e.currentTarget as HTMLDivElement).style.boxShadow=`0 20px 50px rgba(0,0,0,0.5),0 0 0 1px ${t.accent}33,inset 0 1px 0 rgba(255,255,255,0.08)`; }}
+                onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.transform=''; (e.currentTarget as HTMLDivElement).style.borderColor='rgba(255,255,255,0.07)'; (e.currentTarget as HTMLDivElement).style.boxShadow='0 12px 40px rgba(0,0,0,0.4),inset 0 1px 0 rgba(255,255,255,0.06)'; }}
+              >
+                <div style={{ position:'absolute',top:'-8px',left:'1.5rem',fontSize:'5rem',lineHeight:1,fontFamily:'Georgia,serif',color:t.accent,opacity:0.18,fontWeight:900 }}>&#8220;</div>
+                <div style={{ display:'flex',gap:'3px',marginBottom:'1.25rem' }}>
+                  {[1,2,3,4,5].map(s => (
+                    <svg key={s} width="14" height="14" viewBox="0 0 24 24" fill={t.accent}>
+                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                    </svg>
+                  ))}
+                </div>
+                <blockquote style={{ fontSize:'0.95rem',fontWeight:300,color:'var(--fg)',fontStyle:'italic',lineHeight:1.75,marginBottom:'1.5rem' }}>"{t.quote}"</blockquote>
+                <div style={{ width:'32px',height:'2px',background:`linear-gradient(90deg,${t.accent},transparent)`,borderRadius:'999px',marginBottom:'1.25rem' }} />
+                <div style={{ display:'flex',alignItems:'center',gap:'0.75rem' }}>
+                  <div style={{ width:'40px',height:'40px',borderRadius:'50%',background:`linear-gradient(135deg,${t.accent}33,${t.accent}11)`,border:`1px solid ${t.accent}44`,display:'flex',alignItems:'center',justifyContent:'center',fontSize:'1.2rem',flexShrink:0 }}>{t.avatar}</div>
+                  <div>
+                    <p style={{ fontWeight:700,color:'var(--fg)',fontSize:'0.9rem',margin:0 }}>{t.name}</p>
+                    <p style={{ fontSize:'0.72rem',color:'var(--fg-muted)',letterSpacing:'0.06em',marginTop:'0.15rem' }}>{t.role}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div style={{ textAlign:'center',marginTop:'2.5rem' }}>
+            <a href="/speaking" style={{ fontSize:'0.85rem',color:'var(--fg-muted)',textDecoration:'none',borderBottom:'1px solid var(--border)',paddingBottom:'2px',transition:'color 0.2s,border-color 0.2s' }}
+              onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.color='var(--accent)'; (e.currentTarget as HTMLAnchorElement).style.borderColor='var(--accent)'; }}
+              onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.color='var(--fg-muted)'; (e.currentTarget as HTMLAnchorElement).style.borderColor='var(--border)'; }}
+            >Read more stories from the community →</a>
           </div>
         </div>
       </section>

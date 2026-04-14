@@ -1,19 +1,19 @@
 /**
  * Root Layout Component
- * 
+ *
  * Main layout wrapper for all pages in the application.
- * - Sets up Google Fonts (Inter + IBM Plex Mono)
- * - Defines metadata (SEO, Open Graph)
+ * - Sets up Google Fonts (Syne display + Plus Jakarta Sans body + Inter)
+ * - Defines metadata (SEO, Open Graph, Twitter Card)
  * - Configures viewport for mobile and theme color
- * - Provides sticky Header and Footer
- * 
+ * - Provides sticky Header, Footer, and ScrollToTop
+ *
  * Features:
  * - SSR-ready with Next.js 15 App Router
  * - Responsive meta viewport configuration
  * - Theme color support for light/dark modes
  * - Proper font variable injection for CSS
  * - Semantic HTML structure
- * 
+ *
  * @component
  */
 
@@ -22,17 +22,16 @@ import { Inter, Syne, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import ScrollToTop from "./components/ScrollToTop";
 
-// Font configurations for the application - Premium brand fonts
-// Display: Syne (geometric, bold) | Body: Plus Jakarta Sans (humanist, warm)
-
+// Font configurations — Premium brand fonts
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
   display: "swap",
 });
 
-// Display font: Bold, geometric, engineered - for hero headlines and UI
+// Display font: Bold, geometric, engineered — for hero headlines and UI
 const syne = Syne({
   weight: ["400", "500", "600", "700", "800"],
   subsets: ["latin"],
@@ -40,7 +39,7 @@ const syne = Syne({
   display: "swap",
 });
 
-// Body font: Warm, modern humanist - for UI and body text
+// Body font: Warm, modern humanist — for UI and body text
 const plusJakartaSans = Plus_Jakarta_Sans({
   weight: ["300", "400", "500", "600", "700", "800"],
   subsets: ["latin"],
@@ -59,14 +58,44 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Srijan Speaks | AI Innovation & Manufacturing",
+  title: {
+    default: "Srijan Speaks | AI Keynote Speaker & Educator",
+    template: "%s | Srijan Speaks",
+  },
   description:
-    "AI Keynote Speaker & Educator. 5000+ engineers trained across 50+ institutions. Book Srijan for your next event.",
-  keywords: "AI, Manufacturing, Machine Learning, NDE, Innovation, Srijan Tiwari",
+    "AI Keynote Speaker, IIT Madras Researcher & Educator. 5000+ engineers trained across 50+ institutions. Book Srijan Tiwari for your next event, workshop, or consulting engagement.",
+  keywords: [
+    "AI Keynote Speaker",
+    "Machine Learning",
+    "NDT",
+    "NDE",
+    "IIT Madras",
+    "Manufacturing AI",
+    "Srijan Tiwari",
+    "Technical Speaker India",
+    "AI Education",
+    "TIQ World",
+  ],
+  authors: [{ name: "Srijan Tiwari", url: "https://srijanspeaks.com" }],
+  creator: "Srijan Tiwari",
   openGraph: {
-    title: "Srijan Speaks",
-    description: "Accelerating manufacturing transformation via AI",
+    title: "Srijan Speaks | AI Keynote Speaker & Educator",
+    description:
+      "Accelerating manufacturing transformation via AI. IIT Madras researcher, co-founder TIQ World, and educator to 5000+ engineers.",
     type: "website",
+    locale: "en_IN",
+    siteName: "Srijan Speaks",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Srijan Speaks | AI Keynote Speaker",
+    description: "Accelerating manufacturing transformation via AI.",
+    creator: "@srijanspeaks",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true },
   },
 };
 
@@ -77,6 +106,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Header />
         <main>{children}</main>
         <Footer />
+        <ScrollToTop />
       </body>
     </html>
   );
