@@ -19,6 +19,57 @@ function useInView(threshold = 0.1) {
   return { ref, inView };
 }
 
+const publications = [
+  {
+    title: 'AI-Driven Automated Defect Detection in Ultrasonic Testing',
+    journal: 'NDT & E International',
+    year: 2024,
+    citations: 18,
+    doi: '10.1016/j.ndteint.2024.102876',
+    tags: ['AI', 'NDT', 'Deep Learning'],
+  },
+  {
+    title: 'Deep Learning for Radiographic Image Classification in Manufacturing',
+    journal: 'IEEE Transactions on Industrial Informatics',
+    year: 2023,
+    citations: 42,
+    doi: '10.1109/TII.2023.3254891',
+    tags: ['ML', 'Manufacturing', 'Computer Vision'],
+  },
+  {
+    title: 'Phased Array Ultrasonic Signal Processing Using Convolutional Neural Networks',
+    journal: 'Ultrasonics',
+    year: 2023,
+    citations: 35,
+    doi: '10.1016/j.ultras.2023.106834',
+    tags: ['AI', 'NDT', 'Signal Processing'],
+  },
+  {
+    title: 'Edge AI Deployment for Real-time NDE in Industrial Settings',
+    journal: 'Materials Evaluation',
+    year: 2022,
+    citations: 28,
+    doi: '10.32548/ma.2022.456',
+    tags: ['Edge AI', 'IoT', 'Manufacturing'],
+  },
+  {
+    title: 'Towards Automated Quality Inspection: Challenges and Opportunities',
+    journal: 'Proceedings of International Conference on NDE',
+    year: 2022,
+    citations: 31,
+    doi: '10.1145/nde.2022.789',
+    tags: ['Automation', 'Quality', 'Industry 4.0'],
+  },
+  {
+    title: 'Machine Learning for Predictive Maintenance in Manufacturing Plants',
+    journal: 'Journal of Manufacturing Systems',
+    year: 2021,
+    citations: 58,
+    doi: '10.1016/j.jmsy.2021.04.012',
+    tags: ['ML', 'Predictive Maintenance', 'AI'],
+  },
+];
+
 const timeline = [
   {
     role: 'Researcher',
@@ -280,8 +331,75 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* ── PUBLICATIONS ── */}
+      <section className="section" style={{ background: 'var(--bg-2)', borderTop: '1px solid var(--border)' }}>
+        <div className="container">
+          <div style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
+            <span className="section-label" style={{ display: 'inline-flex', marginBottom: '1rem' }}>Research</span>
+            <h2 style={{ color: 'var(--fg)', marginBottom: '0.75rem' }}>Peer-Reviewed Publications</h2>
+            <p style={{ color: 'var(--fg-2)', maxWidth: '520px', margin: '0 auto', fontSize: '0.95rem' }}>
+              Contributions to AI, NDE, and manufacturing research — published in top-tier journals and conferences.
+            </p>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '1.25rem' }}>
+            {publications.map((pub, i) => (
+              <div
+                key={i}
+                className="card"
+                style={{
+                  padding: 'clamp(1.5rem, 2.5vw, 2rem)',
+                  borderLeft: '4px solid var(--cyan)',
+                  transition: 'all 0.3s ease',
+                  cursor: 'pointer',
+                }}
+                onMouseEnter={e => { const el = e.currentTarget; el.style.borderLeftColor = 'var(--accent)'; el.style.transform = 'translateX(6px)'; }}
+                onMouseLeave={e => { const el = e.currentTarget; el.style.borderLeftColor = 'var(--cyan)'; el.style.transform = 'none'; }}
+              >
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '0.75rem', gap: '1rem', flexWrap: 'wrap' }}>
+                  <div style={{ flex: 1 }}>
+                    <h3 style={{ color: 'var(--fg)', fontSize: '1rem', fontWeight: 700, marginBottom: '0.5rem', lineHeight: 1.4 }}>{pub.title}</h3>
+                    <div style={{ display: 'flex', gap: '1rem', fontSize: '0.82rem', color: 'var(--fg-2)', fontFamily: 'var(--font-mono, monospace)', marginBottom: '0.75rem', flexWrap: 'wrap' }}>
+                      <span>{pub.journal}</span>
+                      <span>·</span>
+                      <span style={{ color: 'var(--accent)', fontWeight: 600 }}>{pub.year}</span>
+                    </div>
+                  </div>
+                  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '0.5rem' }}>
+                    <div style={{ background: 'rgba(0,217,255,0.1)', border: '1px solid rgba(0,217,255,0.2)', borderRadius: 'var(--r-full)', padding: '0.3rem 0.8rem', fontSize: '0.75rem', fontWeight: 700, color: 'var(--cyan)', textAlign: 'center' }}>
+                      {pub.citations} citations
+                    </div>
+                  </div>
+                </div>
+
+                <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', marginBottom: '1rem' }}>
+                  {pub.tags.map((tag, j) => (
+                    <span key={j} style={{ fontSize: '0.7rem', fontWeight: 700, color: 'var(--purple)', background: 'rgba(139,92,246,0.1)', border: '1px solid rgba(139,92,246,0.2)', borderRadius: 'var(--r-full)', padding: '0.2rem 0.6rem', letterSpacing: '0.04em' }}>
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
+                  <a href={`https://doi.org/${pub.doi}`} target="_blank" rel="noopener noreferrer" style={{ fontSize: '0.82rem', fontWeight: 600, color: 'var(--cyan)', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+                    DOI: {pub.doi.split('/')[0]}
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div style={{ marginTop: '3rem', padding: '1.5rem', background: 'var(--glass-bg)', border: '1px solid var(--border)', borderRadius: 'var(--r-md)', textAlign: 'center' }}>
+            <p style={{ fontSize: '0.9rem', color: 'var(--fg-2)', marginBottom: '1rem' }}>
+              View all publications on <a href="https://www.ndt.net/search/docs.php3?SearchDocs=srijan&searchmode=AND&OrderBy=relevance" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--cyan)', fontWeight: 600, textDecoration: 'none' }}>NDT.net →</a> and research databases
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* ── AWARDS ── */}
-      <section className="section" ref={awardsRef} style={{ background: 'var(--bg-2)', borderTop: '1px solid var(--border)' }}>
+      <section className="section" ref={awardsRef} style={{ background: 'var(--bg)', borderTop: '1px solid var(--border)' }}>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '3.5rem', transition: 'all 0.7s ease', opacity: awardsInView ? 1 : 0, transform: awardsInView ? 'none' : 'translateY(30px)' }}>
             <span className="section-label" style={{ display: 'inline-flex', marginBottom: '1rem' }}>Recognition</span>

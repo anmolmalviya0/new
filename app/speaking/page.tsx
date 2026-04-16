@@ -108,18 +108,24 @@ export default function SpeakingPage() {
 
   return (
     <>
-      {/* ── HERO ── */}
-      <section style={{
-        background: 'radial-gradient(ellipse 120% 70% at 50% -10%, #0d1d45 0%, #050a18 65%)',
-        borderBottom: '1px solid var(--border)',
-        padding: 'clamp(4.5rem, 10vw, 7rem) 0 clamp(3rem, 7vw, 5rem)',
-        position: 'relative', overflow: 'hidden',
-      }}>
-        <div className="hero-grid" style={{ position: 'absolute', inset: 0, pointerEvents: 'none' }} />
-        <div style={{ position: 'absolute', top: '0%', right: '-5%', width: '500px', height: '500px', background: 'radial-gradient(circle, rgba(255,94,26,0.12) 0%, transparent 70%)', filter: 'blur(60px)', pointerEvents: 'none' }} />
-        <div style={{ position: 'absolute', bottom: '10%', left: '5%', width: '400px', height: '300px', background: 'radial-gradient(circle, rgba(0,217,255,0.08) 0%, transparent 70%)', filter: 'blur(60px)', pointerEvents: 'none' }} />
+       {/* ── HERO ── */}
+       <section style={{
+         background: 'radial-gradient(ellipse 120% 70% at 50% -10%, #0d1d45 0%, #050a18 65%)',
+         borderBottom: '1px solid var(--border)',
+         padding: 'clamp(4.5rem, 10vw, 7rem) 0 clamp(3rem, 7vw, 5rem)',
+         position: 'relative', overflow: 'hidden',
+         backgroundImage: 'url(/images/speaking/conference-keynote.jpg)',
+         backgroundSize: 'cover',
+         backgroundPosition: 'center',
+         backgroundAttachment: 'fixed',
+       }}>
+         <div className="hero-grid" style={{ position: 'absolute', inset: 0, pointerEvents: 'none' }} />
+         {/* Dark overlay for text readability */}
+         <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 120% 70% at 50% -10%, rgba(13,29,69,0.85) 0%, rgba(5,10,24,0.92) 65%)', pointerEvents: 'none' }} />
+         <div style={{ position: 'absolute', top: '0%', right: '-5%', width: '500px', height: '500px', background: 'radial-gradient(circle, rgba(255,94,26,0.12) 0%, transparent 70%)', filter: 'blur(60px)', pointerEvents: 'none' }} />
+         <div style={{ position: 'absolute', bottom: '10%', left: '5%', width: '400px', height: '300px', background: 'radial-gradient(circle, rgba(0,217,255,0.08) 0%, transparent 70%)', filter: 'blur(60px)', pointerEvents: 'none' }} />
 
-        <div className="container" style={{ position: 'relative', zIndex: 1, textAlign: 'center' }}>
+         <div className="container" style={{ position: 'relative', zIndex: 1, textAlign: 'center' }}>
           <span className="badge badge-accent" style={{ marginBottom: '1.5rem', display: 'inline-flex' }}>Speaking</span>
           <h1 style={{ color: 'var(--fg)', marginBottom: '1rem' }}>
             Keynote{' '}
