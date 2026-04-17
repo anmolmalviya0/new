@@ -200,7 +200,7 @@ export default function AboutPage() {
                 boxShadow: '0 30px 80px rgba(0,0,0,0.7), 0 0 60px rgba(0,217,255,0.08)',
               }}>
                 <img
-                  src="/images/headshots/hero.jpg"
+                  src="/images/headshots/hero-professional.jpg"
                   alt="Srijan Tiwari — AI Speaker and Researcher"
                   style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
                   onError={e => {
