@@ -211,7 +211,7 @@ export default function Footer() {
                       href={link.href}
                       className="footer-link"
                       style={{
-                        fontFamily: 'var(--font-body, Plus Jakarta Sans, sans-serif)',
+                        fontFamily: "var(--font-body, 'Inter', sans-serif)",
                         fontSize: '0.875rem',
                         color: 'var(--fg-2)',
                         transition: 'color 0.2s ease',

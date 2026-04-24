@@ -97,7 +97,7 @@ const timeline = [
 
 const gallery = [
   { src: '/images/teaching/classroom-teaching.jpg',   title: 'Interactive Classroom',    desc: 'Deep dive into ML fundamentals and real-world applications',      accent: 'var(--cyan)'   },
-  { src: '/images/speaking/conference-speaking.jpg',  title: 'Industry Engagement',      desc: 'Sharing research and insights at national & international events', accent: 'var(--accent)' },
+  { src: '/images/speaking/keynote-tiqworld-4.jpg',   title: 'Industry Engagement',      desc: 'Sharing research and insights at national & international events', accent: 'var(--accent)' },
   { src: '/images/mentoring/iit-mentoring.jpg',       title: 'One-on-One Mentoring',     desc: 'Guiding aspiring researchers and entrepreneurs on their journey',  accent: 'var(--cyan)'   },
 ];
 

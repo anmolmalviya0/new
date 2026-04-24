@@ -94,10 +94,14 @@ const events = [
 ];
 
 const gallery = [
-  { src: '/images/speaking/industry-meet-keynote.jpg',  accent: 'var(--accent)', title: 'Translational Research Keynote',  desc: 'Bridging academic research with industry — 200+ industry leaders.' },
-  { src: '/images/speaking/make-in-india.jpg',          accent: 'var(--cyan)',   title: 'Quality & Inspection Innovation', desc: 'AI in manufacturing quality at national conference, Bengaluru 2025.' },
-  { src: '/images/speaking/iit-cnde-seminar.jpg',       accent: 'var(--accent)', title: 'CNDE Research Symposium',         desc: 'NDE methodologies & AI applications with fellow researchers.' },
-  { src: '/images/teaching/classroom-ml.jpg',           accent: 'var(--cyan)',   title: 'Interactive Teaching',            desc: 'Creating aha moments through live demos and real-world case studies.' },
+  { src: '/images/speaking/keynote-stage-cnde.jpg',     accent: 'var(--accent)', title: 'CNDE Industry Keynote',           desc: 'Empowering Industrial Excellence — IIT Madras CNDE & TIQ World on the big stage.' },
+  { src: '/images/speaking/keynote-podium-1.jpg',       accent: 'var(--cyan)',   title: 'Podium Address',                  desc: 'Engaging 200+ engineers and researchers at a national NDE conference.' },
+  { src: '/images/speaking/keynote-tiqworld-1.jpg',     accent: 'var(--accent)', title: 'TIQ World Product Launch',        desc: 'Presenting AI-powered certification platform to industry leaders.' },
+  { src: '/images/speaking/keynote-tiqworld-3.jpg',     accent: 'var(--cyan)',   title: 'Building World-Class Talent',     desc: 'Keynote on AI in manufacturing quality — from research lab to production floor.' },
+  { src: '/images/speaking/keynote-podium-2.jpg',       accent: 'var(--purple)', title: 'Research Meets Industry',         desc: 'Deep-diving into NDE methodologies and AI applications with fellow researchers.' },
+  { src: '/images/speaking/keynote-tiqworld-4.jpg',     accent: 'var(--accent)', title: 'Quality & Inspection Innovation', desc: 'AI-driven quality inspection transforming how India manufactures.' },
+  { src: '/images/speaking/keynote-tiqworld-5.jpg',     accent: 'var(--cyan)',   title: 'Empowering Engineers',            desc: 'Skills, jobs, and tools that drive industrial excellence — one engineer at a time.' },
+  { src: '/images/speaking/keynote-tiqworld-2.jpg',     accent: 'var(--purple)', title: 'The AI Manufacturing Playbook',   desc: 'End-to-end framework for deploying AI in real manufacturing environments.' },
 ];
 
 export default function SpeakingPage() {
@@ -115,7 +119,7 @@ export default function SpeakingPage() {
          borderBottom: '1px solid var(--border)',
          padding: 'clamp(4.5rem, 10vw, 7rem) 0 clamp(3rem, 7vw, 5rem)',
          position: 'relative', overflow: 'hidden',
-         backgroundImage: 'url(/images/speaking/conference-keynote.jpg)',
+         backgroundImage: 'url(/images/speaking/keynote-stage-cnde.jpg)',
          backgroundSize: 'cover',
          backgroundPosition: 'center',
          backgroundAttachment: 'fixed',

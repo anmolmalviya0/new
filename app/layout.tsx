@@ -2,7 +2,7 @@
  * Root Layout Component
  *
  * Main layout wrapper for all pages in the application.
- * - Sets up Google Fonts (Syne display + Plus Jakarta Sans body + Inter)
+ * - Sets up Google Fonts (Space Grotesk display + Inter body)
  * - Defines metadata (SEO, Open Graph, Twitter Card)
  * - Configures viewport for mobile and theme color
  * - Provides sticky Header, Footer, and ScrollToTop
@@ -18,32 +18,22 @@
  */
 
 import type { Metadata, Viewport } from "next";
-import { Inter, Syne, Plus_Jakarta_Sans } from "next/font/google";
+import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 
-// Font configurations — Premium brand fonts
 const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-body",
   display: "swap",
 });
 
-// Display font: Bold, geometric, engineered — for hero headlines and UI
-const syne = Syne({
-  weight: ["400", "500", "600", "700", "800"],
+const spaceGrotesk = Space_Grotesk({
+  weight: ["400", "500", "600", "700"],
   subsets: ["latin"],
   variable: "--font-display",
-  display: "swap",
-});
-
-// Body font: Warm, modern humanist — for UI and body text
-const plusJakartaSans = Plus_Jakarta_Sans({
-  weight: ["300", "400", "500", "600", "700", "800"],
-  subsets: ["latin"],
-  variable: "--font-body",
   display: "swap",
 });
 
@@ -101,8 +91,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${inter.variable} ${syne.variable} ${plusJakartaSans.variable}`}>
-      <body style={{ fontFamily: "var(--font-body, 'Plus Jakarta Sans', sans-serif)" }}>
+    <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable}`}>
+      <body style={{ fontFamily: "var(--font-body, 'Inter', sans-serif)" }}>
         <Header />
         <main>{children}</main>
         <Footer />

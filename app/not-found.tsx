@@ -30,7 +30,7 @@ export default function NotFound() {
         <div
           style={{
             fontSize: 'clamp(6rem, 20vw, 12rem)',
-            fontFamily: 'var(--font-display, Syne)',
+            fontFamily: "var(--font-display, 'Space Grotesk')",
             fontWeight: 900,
             lineHeight: 1,
             background: 'linear-gradient(135deg, var(--fg) 0%, var(--cyan) 50%, var(--accent) 100%)',

@@ -36,7 +36,7 @@ export default function ContactPage() {
     width: '100%', padding: '0.85rem 1rem',
     background: 'var(--glass-bg)', border: '1px solid var(--border)',
     borderRadius: 'var(--r-sm)', color: 'var(--fg)',
-    fontFamily: 'var(--font-body, Plus Jakarta Sans, sans-serif)',
+    fontFamily: "var(--font-body, 'Inter', sans-serif)",
     fontSize: '0.95rem', outline: 'none',
     transition: 'border-color 0.2s, box-shadow 0.2s', boxSizing: 'border-box',
     backdropFilter: 'blur(8px)',

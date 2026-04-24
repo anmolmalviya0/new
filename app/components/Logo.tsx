@@ -41,7 +41,7 @@ export default function Logo({ size = 'md' }: { size?: 'sm' | 'md' | 'lg' }) {
         padding: size === 'sm' ? '4px 10px' : size === 'lg' ? '8px 18px' : '6px 14px',
         position: 'relative',
         color: 'var(--fg)',
-        fontFamily: "var(--font-display, 'Syne', 'Arial Black', sans-serif)",
+        fontFamily: "var(--font-display, 'Space Grotesk', 'Arial Black', sans-serif)",
         letterSpacing: '-0.04em',
         fontWeight: 800,
       }}

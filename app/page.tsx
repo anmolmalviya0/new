@@ -182,7 +182,7 @@ function MetricCard({ target, suffix = "", label, accent, delay, started, icon }
       <div style={{ position: 'absolute', bottom: 0, left: '10%', right: '10%', height: '50px', background: `radial-gradient(ellipse, ${accent}18 0%, transparent 70%)`, filter: 'blur(12px)' }} />
       <div style={{ fontSize: '1.6rem', marginBottom: '0.6rem' }}>{icon}</div>
       <div style={{
-        fontFamily: 'var(--font-display, Syne)',
+        fontFamily: "var(--font-display, 'Space Grotesk')",
         fontSize: 'clamp(2.4rem,5vw,3.5rem)',
         fontWeight: 900, lineHeight: 1,
         color: accent, marginBottom: '0.5rem',
@@ -230,7 +230,7 @@ export default function Home() {
 
   const moments = [
     { src: "/images/teaching/classroom-teaching.jpg",  accent: "var(--cyan)",   label: "Classroom Teaching",  sub: "Live ML demos · real-time problem solving" },
-    { src: "/images/speaking/conference-keynote.jpg",  accent: "var(--accent)", label: "Industry Conference",  sub: "200+ audience · translational research" },
+    { src: "/images/speaking/keynote-tiqworld-1.jpg",  accent: "var(--accent)", label: "Industry Conference",  sub: "200+ audience · translational research" },
     { src: "/images/mentoring/one-on-one.jpg",         accent: "var(--purple)", label: "1-on-1 Mentoring",     sub: "Career guidance · research collaboration" },
   ];
 
@@ -287,7 +287,7 @@ export default function Home() {
         <div style={{ position: 'absolute', top: '35%', left: '30%', width: 'clamp(200px,30vw,500px)', height: 'clamp(200px,30vw,500px)', background: 'radial-gradient(circle, rgba(139,92,246,0.12) 0%, transparent 70%)', borderRadius: '50%', filter: 'blur(60px)', animation: 'aurora 22s ease-in-out infinite', pointerEvents: 'none' }} />
 
         {/* Large decorative text behind */}
-        <div style={{ position: 'absolute', bottom: '5%', right: '-2%', fontFamily: 'var(--font-display, Syne)', fontWeight: 900, fontSize: 'clamp(8rem,18vw,22rem)', lineHeight: 1, color: 'rgba(255,255,255,0.015)', userSelect: 'none', pointerEvents: 'none', letterSpacing: '-0.05em', zIndex: 0 }}>
+        <div style={{ position: 'absolute', bottom: '5%', right: '-2%', fontFamily: "var(--font-display, 'Space Grotesk')", fontWeight: 900, fontSize: 'clamp(8rem,18vw,22rem)', lineHeight: 1, color: 'rgba(255,255,255,0.015)', userSelect: 'none', pointerEvents: 'none', letterSpacing: '-0.05em', zIndex: 0 }}>
           AI
         </div>
 
@@ -345,7 +345,7 @@ export default function Home() {
 
             {/* The name — the biggest thing on the page */}
             <h1 style={{
-              fontFamily: 'var(--font-display, Syne)',
+              fontFamily: "var(--font-display, 'Space Grotesk')",
               fontWeight: 900,
               letterSpacing: '-0.05em',
               lineHeight: 0.9,
@@ -379,7 +379,7 @@ export default function Home() {
             {/* Typewriter rotating title */}
             <div style={{
               fontSize: 'clamp(1.1rem,2.8vw,1.8rem)',
-              fontFamily: 'var(--font-display, Syne)',
+              fontFamily: "var(--font-display, 'Space Grotesk')",
               fontWeight: 700,
               letterSpacing: '-0.02em',
               height: '2.4rem',
