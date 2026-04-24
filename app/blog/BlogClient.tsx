@@ -42,7 +42,7 @@ export default function BlogPage() {
     <>
       {/* ── HERO ── */}
       <section style={{
-        background: 'radial-gradient(ellipse 120% 70% at 50% -10%, #0d1d45 0%, #050a18 65%)',
+        background: 'var(--hero-gradient-2)',
         paddingTop: 'clamp(5rem,12vw,8rem)', paddingBottom: 'clamp(3rem,8vw,5rem)',
         borderBottom: '1px solid var(--border)', position: 'relative', overflow: 'hidden',
       }}>
@@ -154,7 +154,7 @@ export default function BlogPage() {
       </section>
 
       {/* ── NEWSLETTER ── */}
-      <section style={{ background: 'linear-gradient(135deg, #050a18 0%, #0a0f25 50%, #050a18 100%)', borderTop: '1px solid var(--border)', padding: 'clamp(3rem,8vw,5rem) 1.5rem', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
+      <section style={{ background: 'var(--cta-gradient)', borderTop: '1px solid var(--border)', padding: 'clamp(3rem,8vw,5rem) 1.5rem', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', width: '500px', height: '250px', background: 'radial-gradient(ellipse, rgba(139,92,246,0.08) 0%, transparent 70%)', filter: 'blur(40px)', pointerEvents: 'none' }} />
         <div style={{ position: 'relative', zIndex: 1, maxWidth: '520px', margin: '0 auto' }}>
           <span className="section-label" style={{ display: 'inline-flex', marginBottom: '1.25rem' }}>Newsletter</span>

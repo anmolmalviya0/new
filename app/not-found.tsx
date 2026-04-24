@@ -13,7 +13,7 @@ export default function NotFound() {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        background: 'radial-gradient(ellipse 100% 70% at 50% 0%, #0d1d45 0%, #050a18 70%)',
+        background: 'var(--hero-gradient-2)',
         position: 'relative',
         overflow: 'hidden',
         padding: '4rem 1.5rem',

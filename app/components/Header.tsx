@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import Logo from './Logo';
+import ThemeToggle from './ThemeToggle';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -40,9 +41,9 @@ export default function Header() {
       <header style={{
         position: 'sticky', top: 0, zIndex: 200,
         background: scrolled
-          ? 'rgba(3,5,15,0.85)'
+          ? 'var(--header-bg)'
           : 'transparent',
-        borderBottom: scrolled ? '1px solid rgba(255,255,255,0.07)' : '1px solid transparent',
+        borderBottom: scrolled ? '1px solid var(--header-border)' : '1px solid transparent',
         backdropFilter: scrolled ? 'blur(20px) saturate(180%)' : 'none',
         WebkitBackdropFilter: scrolled ? 'blur(20px) saturate(180%)' : 'none',
         transition: 'all 0.4s cubic-bezier(0.4,0,0.2,1)',
@@ -89,8 +90,8 @@ export default function Header() {
                       fontSize: '0.875rem',
                       fontWeight: isActive ? 600 : 500,
                       color: isActive ? 'var(--fg)' : 'var(--fg-muted)',
-                      background: isActive ? 'rgba(255,255,255,0.06)' : 'transparent',
-                      border: isActive ? '1px solid rgba(255,255,255,0.1)' : '1px solid transparent',
+                      background: isActive ? 'var(--glass-bg)' : 'transparent',
+                      border: isActive ? '1px solid var(--border)' : '1px solid transparent',
                       transition: 'all 0.2s ease',
                       whiteSpace: 'nowrap',
                       display: 'inline-flex', alignItems: 'center', gap: '0.3rem',
@@ -98,7 +99,7 @@ export default function Header() {
                     onMouseEnter={e => {
                       if (!isActive) {
                         (e.currentTarget as HTMLAnchorElement).style.color = 'var(--fg)';
-                        (e.currentTarget as HTMLAnchorElement).style.background = 'rgba(255,255,255,0.05)';
+                        (e.currentTarget as HTMLAnchorElement).style.background = 'var(--glass-bg)';
                       }
                     }}
                     onMouseLeave={e => {
@@ -125,6 +126,8 @@ export default function Header() {
 
           {/* RIGHT SIDE */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', flexShrink: 0 }}>
+
+            <ThemeToggle />
 
             {/* Desktop CTA */}
             {!isMobile && (
@@ -166,7 +169,7 @@ export default function Header() {
                   width: '42px', height: '42px',
                   borderRadius: '10px',
                   border: '1px solid var(--border)',
-                  background: isMenuOpen ? 'rgba(255,255,255,0.08)' : 'rgba(255,255,255,0.04)',
+                  background: isMenuOpen ? 'var(--glass-bg)' : 'var(--glass-bg)',
                   color: 'var(--fg)', cursor: 'pointer', flexShrink: 0,
                   transition: 'all 0.2s ease',
                 }}
@@ -186,7 +189,7 @@ export default function Header() {
         {isMobile && isMenuOpen && (
           <nav style={{
             borderTop: '1px solid var(--border)',
-            background: 'rgba(3,5,15,0.97)',
+            background: 'var(--mobile-menu-bg)',
             backdropFilter: 'blur(24px)',
             WebkitBackdropFilter: 'blur(24px)',
             animation: 'slideDown 0.22s ease',

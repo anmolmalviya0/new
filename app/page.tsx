@@ -79,7 +79,7 @@ export default function Home() {
 
       {/* ═══ HERO ═══ */}
       <section style={{
-        background: 'radial-gradient(ellipse 120% 80% at 50% 0%, #0e1a38 0%, var(--bg) 70%)',
+        background: 'var(--hero-gradient)',
         minHeight: '100svh',
         display: 'flex', alignItems: 'center',
         position: 'relative', overflow: 'hidden',
@@ -291,7 +291,7 @@ export default function Home() {
               >
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '1rem' }}>
                   <span style={{ fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: i % 2 === 0 ? 'var(--cyan)' : 'var(--accent)', background: i % 2 === 0 ? 'var(--cyan-deep)' : 'var(--accent-deep)', border: `1px solid ${i % 2 === 0 ? 'rgba(0,217,255,0.15)' : 'rgba(255,94,26,0.15)'}`, borderRadius: '6px', padding: '0.2rem 0.55rem' }}>{ev.type}</span>
-                  <span style={{ fontSize: '1.6rem', fontWeight: 900, color: 'rgba(255,255,255,0.04)', fontFamily: 'var(--font-display)', lineHeight: 1 }}>{ev.year}</span>
+                  <span style={{ fontSize: '1.6rem', fontWeight: 900, color: 'var(--year-ghost)', fontFamily: 'var(--font-display)', lineHeight: 1 }}>{ev.year}</span>
                 </div>
                 <h3 style={{ color: 'var(--fg)', fontSize: '1.05rem', fontWeight: 700, marginBottom: '0.4rem', lineHeight: 1.3 }}>{ev.name}</h3>
                 <p style={{ color: 'var(--fg-muted)', fontSize: '0.78rem', marginBottom: '1rem' }}>{ev.city}</p>
@@ -316,10 +316,10 @@ export default function Home() {
           <div style={{
             position: 'relative', borderRadius: '16px', overflow: 'hidden',
             border: '1px solid var(--border)', aspectRatio: '16/9',
-            background: '#050810', cursor: 'pointer',
+            background: 'var(--video-bg)', cursor: 'pointer',
           }}
             onClick={() => window.open('https://www.youtube.com/@srijanspeaks', '_blank')}>
-            <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 60% 80% at 40% 50%, rgba(0,80,160,0.4) 0%, rgba(5,10,24,0.95) 100%)' }} />
+            <div style={{ position: 'absolute', inset: 0, background: 'var(--video-overlay)' }} />
             <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem' }}>
               <div style={{ width: '72px', height: '72px', borderRadius: '50%', background: 'var(--accent)', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'transform 0.3s ease' }}>
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="white" style={{ marginLeft: '3px' }}><path d="M5 3l14 9-14 9V3z"/></svg>
@@ -327,7 +327,7 @@ export default function Home() {
               <span style={{ color: 'var(--fg)', fontSize: '0.8rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase' }}>Watch Keynote Excerpt</span>
             </div>
             <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: '1.25rem', background: 'linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%)', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-              <span style={{ fontSize: '0.72rem', color: 'rgba(255,255,255,0.5)', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase' }}>AI Summit India 2024 · Bengaluru</span>
+              <span style={{ fontSize: '0.72rem', color: 'var(--video-label-color)', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase' }}>AI Summit India 2024 · Bengaluru</span>
               <span style={{ fontSize: '0.72rem', color: 'var(--fg-muted)', fontWeight: 700 }}>1200+ Attendees</span>
             </div>
           </div>

@@ -23,6 +23,8 @@ import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
+import ThemeProvider from "./components/ThemeProvider";
+import ThemeScript from "./components/ThemeScript";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -88,12 +90,15 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable}`}>
+    <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable}`} data-theme="dark" suppressHydrationWarning>
+      <head><ThemeScript /></head>
       <body style={{ fontFamily: "var(--font-body, 'Inter', sans-serif)" }}>
-        <Header />
-        <main>{children}</main>
-        <Footer />
-        <ScrollToTop />
+        <ThemeProvider>
+          <Header />
+          <main>{children}</main>
+          <Footer />
+          <ScrollToTop />
+        </ThemeProvider>
       </body>
     </html>
   );

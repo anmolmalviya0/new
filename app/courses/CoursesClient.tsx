@@ -86,7 +86,7 @@ export default function CoursesPage() {
     <>
       {/* ── HERO ── */}
       <section style={{
-        background: 'radial-gradient(ellipse 120% 70% at 50% -10%, #0d1d45 0%, #050a18 65%)',
+        background: 'var(--hero-gradient-2)',
         paddingTop: 'clamp(5rem, 12vw, 8rem)',
         paddingBottom: 'clamp(3rem, 8vw, 5rem)',
         borderBottom: '1px solid var(--border)',
@@ -286,7 +286,7 @@ export default function CoursesPage() {
       </section>
 
       {/* ── CTA ── */}
-      <section style={{ background: 'linear-gradient(135deg, #050a18 0%, #0a0f25 50%, #050a18 100%)', borderTop: '1px solid var(--border)', padding: 'clamp(3rem, 8vw, 5rem) 1.5rem', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
+      <section style={{ background: 'var(--cta-gradient)', borderTop: '1px solid var(--border)', padding: 'clamp(3rem, 8vw, 5rem) 1.5rem', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
         <div style={{ position: 'relative', zIndex: 1, maxWidth: '560px', margin: '0 auto' }}>
           <span className="section-label" style={{ display: 'inline-flex', marginBottom: '1.25rem' }}>Start Learning</span>
           <h2 style={{ color: 'var(--fg)', marginBottom: '1rem' }}>Ready to level up?</h2>

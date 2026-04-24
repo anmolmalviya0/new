@@ -147,7 +147,7 @@ export default function AboutPage() {
       {/* ── HERO ── */}
       <section
         style={{
-          background: 'radial-gradient(ellipse 120% 70% at 50% -10%, #0d1d45 0%, #050a18 65%)',
+          background: 'var(--hero-gradient-2)',
           borderBottom: '1px solid var(--border)',
           padding: 'clamp(4.5rem, 10vw, 7rem) 0 clamp(3rem, 7vw, 5rem)',
           position: 'relative',
@@ -466,7 +466,7 @@ export default function AboutPage() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="section" style={{ background: 'linear-gradient(135deg, #050a18 0%, #0a0f25 50%, #050a18 100%)', borderTop: '1px solid var(--border)', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
+      <section className="section" style={{ background: 'var(--cta-gradient)', borderTop: '1px solid var(--border)', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
         <div className="container" style={{ maxWidth: '560px', position: 'relative', zIndex: 1 }}>
           <span className="section-label" style={{ display: 'inline-flex', marginBottom: '1.25rem' }}>Work Together</span>
           <h2 style={{ color: 'var(--fg)', marginBottom: '1rem' }}>Let&apos;s Build Something</h2>

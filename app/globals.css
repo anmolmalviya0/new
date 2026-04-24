@@ -77,13 +77,23 @@ html, body {
   --radius:    var(--r-md);
   --radius-sm: var(--r-sm);
   --radius-lg: var(--r-lg);
+
+  /* ── Theme-aware gradients ── */
+  --hero-gradient:  radial-gradient(ellipse 120% 80% at 50% 0%, #0e1a38 0%, var(--bg) 70%);
+  --hero-gradient-2: radial-gradient(ellipse 120% 70% at 50% -10%, #0d1d45 0%, var(--bg) 65%);
+  --cta-gradient:   linear-gradient(135deg, #050a18 0%, #0a0f25 50%, #050a18 100%);
+  --header-bg:      rgba(3,5,15,0.85);
+  --header-border:  rgba(255,255,255,0.07);
+  --mobile-menu-bg: rgba(3,5,15,0.97);
+  --year-ghost:     rgba(255,255,255,0.04);
+  --video-bg:       #050810;
+  --video-overlay:  radial-gradient(ellipse 60% 80% at 40% 50%, rgba(0,80,160,0.4) 0%, rgba(5,10,24,0.95) 100%);
+  --video-label-color: rgba(255,255,255,0.5);
+  color-scheme: dark;
 }
 
-/* Force dark mode — site is designed dark-first */
-html { color-scheme: dark; }
-
-@media (prefers-color-scheme: light) {
-  :root {
+/* Theme switching via data-theme attribute */
+[data-theme="light"] {
     --bg:            #f0f4ff;
     --bg-2:          #e8eef8;
     --bg-3:          #dde5f5;
@@ -115,7 +125,17 @@ html { color-scheme: dark; }
     --shadow-accent: 0 8px 32px rgba(232,69,10,0.25), 0 2px 8px rgba(232,69,10,0.12);
     --shadow-cyan:   0 8px 32px rgba(0,136,187,0.2), 0 2px 8px rgba(0,136,187,0.1);
     --shadow-inset:  inset 0 1px 0 rgba(255,255,255,0.9), inset 0 -1px 0 rgba(0,0,0,0.05);
-  }
+    --hero-gradient:  radial-gradient(ellipse 120% 80% at 50% 0%, #c8d8f0 0%, var(--bg) 70%);
+    --hero-gradient-2: radial-gradient(ellipse 120% 70% at 50% -10%, #c8d8f0 0%, var(--bg) 65%);
+    --cta-gradient:   linear-gradient(135deg, #e8eef8 0%, #dde5f5 50%, #e8eef8 100%);
+    --header-bg:      rgba(240,244,255,0.85);
+    --header-border:  rgba(0,0,0,0.06);
+    --mobile-menu-bg: rgba(240,244,255,0.97);
+    --year-ghost:     rgba(0,0,0,0.04);
+    --video-bg:       #e8eef8;
+    --video-overlay:  radial-gradient(ellipse 60% 80% at 40% 50%, rgba(180,200,230,0.4) 0%, rgba(230,235,245,0.95) 100%);
+    --video-label-color: rgba(0,0,0,0.4);
+    color-scheme: light;
 }
 
 /* ═══════════════════════════════════════════════════════
@@ -132,7 +152,6 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-  color-scheme: dark;
 }
 
 body {
@@ -147,7 +166,7 @@ body {
 }
 
 ::selection {
-  background: rgba(0,217,255,0.2);
+  background: var(--cyan-deep);
   color: var(--fg);
 }
 

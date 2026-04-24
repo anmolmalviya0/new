@@ -73,7 +73,7 @@ export default function ContactPage() {
     <>
       {/* ── HERO ── */}
       <section style={{
-        background: 'radial-gradient(ellipse 120% 70% at 50% -10%, #0d1d45 0%, #050a18 65%)',
+        background: 'var(--hero-gradient-2)',
         paddingTop: 'clamp(5rem, 12vw, 8rem)', paddingBottom: 'clamp(3rem, 8vw, 5rem)',
         borderBottom: '1px solid var(--border)', position: 'relative', overflow: 'hidden',
       }}>

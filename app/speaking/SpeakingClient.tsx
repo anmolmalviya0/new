@@ -115,7 +115,7 @@ export default function SpeakingPage() {
     <>
        {/* ── HERO ── */}
        <section style={{
-         background: 'radial-gradient(ellipse 120% 70% at 50% -10%, #0d1d45 0%, #050a18 65%)',
+         background: 'var(--hero-gradient-2)',
          borderBottom: '1px solid var(--border)',
          padding: 'clamp(4.5rem, 10vw, 7rem) 0 clamp(3rem, 7vw, 5rem)',
          position: 'relative', overflow: 'hidden',
