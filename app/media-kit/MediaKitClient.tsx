@@ -38,13 +38,10 @@ export default function MediaKitPage() {
         padding: 'clamp(5rem, 12vw, 8rem) 0 clamp(3rem, 8vw, 5rem)',
         position: 'relative', overflow: 'hidden',
       }}>
-        <div className="hero-grid" style={{ position: 'absolute', inset: 0, pointerEvents: 'none' }} />
-        <div style={{ position: 'absolute', top: '10%', left: '-5%', width: '400px', height: '400px', background: 'radial-gradient(circle, rgba(139,92,246,0.1) 0%, transparent 70%)', filter: 'blur(60px)', pointerEvents: 'none' }} />
-        <div style={{ position: 'absolute', bottom: '5%', right: '-5%', width: '350px', height: '350px', background: 'radial-gradient(circle, rgba(255,94,26,0.08) 0%, transparent 70%)', filter: 'blur(60px)', pointerEvents: 'none' }} />
         <div className="container" style={{ textAlign: 'center', position: 'relative', zIndex: 1 }}>
           <span className="section-label" style={{ marginBottom: '1rem', display: 'inline-flex' }}>Press Resources</span>
           <h1 style={{ color: 'var(--fg)', margin: '1rem 0 1.2rem', lineHeight: 1.05 }}>
-            Media <span className="gradient-text-accent">Kit</span>
+            Media Kit
           </h1>
           <p style={{ fontSize: 'clamp(0.95rem, 2.5vw, 1.1rem)', color: 'var(--fg-2)', maxWidth: '42rem', margin: '0 auto', lineHeight: 1.8 }}>
             Bios, headshots, logos, and key facts for press, event organisers, and media partners.

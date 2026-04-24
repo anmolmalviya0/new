@@ -30,7 +30,6 @@ export default function BlogPostPage() {
         background: 'radial-gradient(ellipse 100% 70% at 50% 0%, #0d1d45 0%, #050a18 70%)',
         position: 'relative', overflow: 'hidden', padding: '4rem 1.5rem',
       }}>
-        <div className="hero-grid" style={{ position: 'absolute', inset: 0, pointerEvents: 'none' }} />
         <div style={{ position: 'relative', zIndex: 1, textAlign: 'center', maxWidth: '500px' }}>
           <div style={{ fontSize: '4rem', marginBottom: '1.5rem' }}>📄</div>
           <h1 style={{ fontSize: 'clamp(1.5rem, 4vw, 2.4rem)', fontWeight: 800, color: 'var(--fg)', marginBottom: '1rem' }}>
@@ -56,8 +55,6 @@ export default function BlogPostPage() {
         padding: 'clamp(5rem, 12vw, 8rem) 0 clamp(3rem, 8vw, 5rem)',
         position: 'relative', overflow: 'hidden',
       }}>
-        <div className="hero-grid" style={{ position: 'absolute', inset: 0, pointerEvents: 'none' }} />
-        <div style={{ position: 'absolute', top: '10%', right: '-5%', width: '400px', height: '400px', background: 'radial-gradient(circle, rgba(0,217,255,0.1) 0%, transparent 70%)', filter: 'blur(60px)', pointerEvents: 'none' }} />
         <div className="container" style={{ position: 'relative', zIndex: 1, maxWidth: '800px', margin: '0 auto', padding: '0 1.25rem' }}>
           <Link href="/blog" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.82rem', color: 'var(--fg-muted)', marginBottom: '2rem', transition: 'color 0.2s' }}
             onMouseEnter={e => (e.currentTarget.style.color = 'var(--cyan)')}
@@ -171,7 +168,7 @@ export default function BlogPostPage() {
             {related.map(r => (
               <Link key={r.id} href={`/blog/${r.id}`} className="card" style={{ display: 'block', overflow: 'hidden', textDecoration: 'none', transition: 'transform 0.3s ease, border-color 0.3s ease' }}
                 onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-6px)'; e.currentTarget.style.borderColor = 'var(--border-strong)'; }}
-                onMouseLeave={e => { e.currentTarget.style.transform = 'none'; e.currentTarget.style.borderColor = 'var(--glass-border)'; }}
+                onMouseLeave={e => { e.currentTarget.style.transform = 'none'; e.currentTarget.style.borderColor = 'var(--border)'; }}
               >
                 <div style={{ background: 'linear-gradient(135deg, var(--bg-3), var(--bg-2))', height: '7rem', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '2.5rem' }}>
                   {r.emoji}

@@ -46,12 +46,10 @@ export default function BlogPage() {
         paddingTop: 'clamp(5rem,12vw,8rem)', paddingBottom: 'clamp(3rem,8vw,5rem)',
         borderBottom: '1px solid var(--border)', position: 'relative', overflow: 'hidden',
       }}>
-        <div className="hero-grid" style={{ position: 'absolute', inset: 0, pointerEvents: 'none' }} />
-        <div style={{ position: 'absolute', top: '10%', left: '-5%', width: '400px', height: '400px', background: 'radial-gradient(circle, rgba(139,92,246,0.1) 0%, transparent 70%)', filter: 'blur(60px)', pointerEvents: 'none' }} />
         <div className="container" style={{ textAlign: 'center', position: 'relative', zIndex: 1 }}>
           <span className="section-label" style={{ marginBottom: '1rem', display: 'inline-flex' }}>Thoughts &amp; Ideas</span>
           <h1 style={{ color: 'var(--fg)', margin: '1rem 0 1.2rem', lineHeight: 1.05 }}>
-            The <span className="gradient-text-accent">Blog</span>
+            The Blog
           </h1>
           <p style={{ fontSize: 'clamp(0.95rem,2.5vw,1.1rem)', color: 'var(--fg-2)', maxWidth: '40rem', margin: '0 auto', lineHeight: 1.8 }}>
             Honest writing on AI, manufacturing, entrepreneurship, and the craft of technical communication.
@@ -131,7 +129,7 @@ export default function BlogPage() {
                   className="card"
                   style={{ display: 'block', overflow: 'hidden', textDecoration: 'none', transition: 'transform 0.3s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.3s ease, border-color 0.3s ease' }}
                   onMouseEnter={e => { const el = e.currentTarget; el.style.transform = 'translateY(-6px) scale(1.01)'; el.style.borderColor = 'var(--border-strong)'; }}
-                  onMouseLeave={e => { const el = e.currentTarget; el.style.transform = 'none'; el.style.borderColor = 'var(--glass-border)'; }}
+                  onMouseLeave={e => { const el = e.currentTarget; el.style.transform = 'none'; el.style.borderColor = 'var(--border)'; }}
                 >
                   <div style={{ background: 'linear-gradient(135deg, var(--bg-3), var(--bg-2))', height: '9rem', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '3.5rem' }}>
                     {post.emoji}

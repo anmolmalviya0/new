@@ -19,12 +19,6 @@ export default function NotFound() {
         padding: '4rem 1.5rem',
       }}
     >
-      {/* Background orbs */}
-      <div style={{ position: 'absolute', top: '20%', left: '10%', width: '400px', height: '400px', background: 'radial-gradient(circle, rgba(0,217,255,0.08) 0%, transparent 70%)', filter: 'blur(60px)', pointerEvents: 'none' }} />
-      <div style={{ position: 'absolute', bottom: '10%', right: '10%', width: '300px', height: '300px', background: 'radial-gradient(circle, rgba(255,94,26,0.08) 0%, transparent 70%)', filter: 'blur(60px)', pointerEvents: 'none' }} />
-
-      <div className="hero-grid" style={{ position: 'absolute', inset: 0, pointerEvents: 'none' }} />
-
       <div style={{ position: 'relative', zIndex: 1, textAlign: 'center', maxWidth: '600px' }}>
         {/* Big 404 */}
         <div

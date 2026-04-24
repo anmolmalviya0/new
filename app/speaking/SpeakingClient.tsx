@@ -124,17 +124,12 @@ export default function SpeakingPage() {
          backgroundPosition: 'center',
          backgroundAttachment: 'fixed',
        }}>
-         <div className="hero-grid" style={{ position: 'absolute', inset: 0, pointerEvents: 'none' }} />
-         {/* Dark overlay for text readability */}
          <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 120% 70% at 50% -10%, rgba(13,29,69,0.85) 0%, rgba(5,10,24,0.92) 65%)', pointerEvents: 'none' }} />
-         <div style={{ position: 'absolute', top: '0%', right: '-5%', width: '500px', height: '500px', background: 'radial-gradient(circle, rgba(255,94,26,0.12) 0%, transparent 70%)', filter: 'blur(60px)', pointerEvents: 'none' }} />
-         <div style={{ position: 'absolute', bottom: '10%', left: '5%', width: '400px', height: '300px', background: 'radial-gradient(circle, rgba(0,217,255,0.08) 0%, transparent 70%)', filter: 'blur(60px)', pointerEvents: 'none' }} />
 
          <div className="container" style={{ position: 'relative', zIndex: 1, textAlign: 'center' }}>
           <span className="badge badge-accent" style={{ marginBottom: '1.5rem', display: 'inline-flex' }}>Speaking</span>
           <h1 style={{ color: 'var(--fg)', marginBottom: '1rem' }}>
-            Keynote{' '}
-            <span className="gradient-text-accent">Speaking</span>
+            Keynote Speaking
           </h1>
           <p style={{ fontSize: 'clamp(1rem, 2vw, 1.2rem)', color: 'var(--fg-2)', maxWidth: '560px', margin: '0 auto 2rem', lineHeight: 1.8 }}>
             Inspiring audiences on AI, entrepreneurship, and making impact at scale — from IIT lecture halls to international conferences.
@@ -314,9 +309,8 @@ export default function SpeakingPage() {
 
       {/* ── TESTIMONIAL ── */}
       <section style={{ background: 'var(--bg-2)', borderTop: '1px solid var(--border)', padding: 'clamp(3rem, 8vw, 5rem) 0', position: 'relative', overflow: 'hidden' }}>
-        <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', width: '500px', height: '250px', background: 'radial-gradient(ellipse, rgba(255,94,26,0.06) 0%, transparent 70%)', filter: 'blur(40px)', pointerEvents: 'none' }} />
         <div className="container" style={{ maxWidth: '720px', position: 'relative', zIndex: 1 }}>
-          <div className="testimonial-card" style={{ textAlign: 'center' }}>
+          <div style={{ background: 'var(--bg-card)', border: '1px solid var(--border)', borderRadius: 'var(--r-md)', padding: 'clamp(1.75rem, 3vw, 2.5rem)', position: 'relative', textAlign: 'center' }}>
             <div style={{ position: 'absolute', top: '-10px', left: '1.5rem', fontSize: '5rem', lineHeight: 1, fontFamily: 'Georgia, serif', color: 'var(--accent)', opacity: 0.15, fontWeight: 900 }}>&#8220;</div>
             <div style={{ display: 'flex', justifyContent: 'center', gap: '4px', marginBottom: '1.5rem' }}>
               {[1,2,3,4,5].map(s => (
@@ -337,7 +331,6 @@ export default function SpeakingPage() {
 
       {/* ── CTA ── */}
       <section className="section" style={{ background: 'var(--bg)', borderTop: '1px solid var(--border)', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
-        <div style={{ position: 'absolute', top: '-50px', left: '50%', transform: 'translateX(-50%)', width: '500px', height: '250px', background: 'radial-gradient(ellipse, rgba(255,94,26,0.08) 0%, transparent 70%)', filter: 'blur(40px)', pointerEvents: 'none' }} />
         <div className="container" style={{ maxWidth: '560px', position: 'relative', zIndex: 1 }}>
           <span className="section-label" style={{ display: 'inline-flex', marginBottom: '1.25rem' }}>Book Srijan</span>
           <h2 style={{ color: 'var(--fg)', marginBottom: '1rem' }}>Book Me for Your Event</h2>

@@ -92,12 +92,10 @@ export default function CoursesPage() {
         borderBottom: '1px solid var(--border)',
         position: 'relative', overflow: 'hidden',
       }}>
-        <div className="hero-grid" style={{ position: 'absolute', inset: 0, pointerEvents: 'none' }} />
-        <div style={{ position: 'absolute', top: '10%', right: '-5%', width: '400px', height: '400px', background: 'radial-gradient(circle, rgba(0,217,255,0.1) 0%, transparent 70%)', filter: 'blur(60px)', pointerEvents: 'none' }} />
         <div className="container" style={{ textAlign: 'center', position: 'relative', zIndex: 1 }}>
-          <span className="section-label" style={{ marginBottom: '1rem', display: 'inline-flex' }}>📚 Learning Hub</span>
+          <span className="section-label" style={{ marginBottom: '1rem', display: 'inline-flex' }}>Learning Hub</span>
           <h1 style={{ color: 'var(--fg)', margin: '1rem 0 1.2rem', lineHeight: 1.05 }}>
-            Online <span className="gradient-text-accent">Courses</span>
+            Online Courses
           </h1>
           <p style={{ fontSize: 'clamp(1rem, 2.5vw, 1.2rem)', color: 'var(--fg-2)', maxWidth: '42rem', margin: '0 auto 2.5rem', lineHeight: 1.8 }}>
             Learn from real engineering experience. Every course is built around problems I&apos;ve actually solved — no theory for theory&apos;s sake.
@@ -167,7 +165,7 @@ export default function CoursesPage() {
                 }}
                 onMouseLeave={e => {
                   const el = e.currentTarget as HTMLDivElement;
-                  el.style.borderColor = 'var(--glass-border)';
+                  el.style.borderColor = 'var(--border)';
                   el.style.boxShadow = '';
                 }}
               >
@@ -242,7 +240,7 @@ export default function CoursesPage() {
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1.5rem' }}>
             {testimonials.map((t, i) => (
-              <div key={i} className="testimonial-card">
+              <div key={i} className="card" style={{ padding: 'clamp(1.5rem,3vw,2rem)', position: 'relative' }}>
                 <div style={{ position: 'absolute', top: '-8px', left: '1.25rem', fontSize: '4rem', lineHeight: 1, fontFamily: 'Georgia, serif', color: t.color, opacity: 0.15, fontWeight: 900 }}>&#8220;</div>
                 <div style={{ display: 'flex', gap: '3px', marginBottom: '1rem' }}>
                   {[1,2,3,4,5].map(s => (
@@ -289,7 +287,6 @@ export default function CoursesPage() {
 
       {/* ── CTA ── */}
       <section style={{ background: 'linear-gradient(135deg, #050a18 0%, #0a0f25 50%, #050a18 100%)', borderTop: '1px solid var(--border)', padding: 'clamp(3rem, 8vw, 5rem) 1.5rem', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
-        <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', width: '600px', height: '300px', background: 'radial-gradient(ellipse, rgba(0,217,255,0.08) 0%, transparent 70%)', filter: 'blur(40px)', pointerEvents: 'none' }} />
         <div style={{ position: 'relative', zIndex: 1, maxWidth: '560px', margin: '0 auto' }}>
           <span className="section-label" style={{ display: 'inline-flex', marginBottom: '1.25rem' }}>Start Learning</span>
           <h2 style={{ color: 'var(--fg)', marginBottom: '1rem' }}>Ready to level up?</h2>

@@ -154,11 +154,6 @@ export default function AboutPage() {
           overflow: 'hidden',
         }}
       >
-        <div className="hero-grid" style={{ position: 'absolute', inset: 0, pointerEvents: 'none' }} />
-        {/* Aurora blobs */}
-        <div style={{ position: 'absolute', top: '10%', right: '-5%', width: '450px', height: '450px', background: 'radial-gradient(circle, rgba(0,217,255,0.1) 0%, transparent 70%)', filter: 'blur(60px)', pointerEvents: 'none' }} />
-        <div style={{ position: 'absolute', bottom: '5%', left: '-5%', width: '350px', height: '350px', background: 'radial-gradient(circle, rgba(255,94,26,0.1) 0%, transparent 70%)', filter: 'blur(60px)', pointerEvents: 'none' }} />
-
         <div className="container" style={{ position: 'relative', zIndex: 1 }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '3rem', alignItems: 'center' }}>
             {/* Text */}
@@ -166,8 +161,7 @@ export default function AboutPage() {
               <span className="badge badge-accent" style={{ marginBottom: '1.5rem', display: 'inline-flex' }}>About Srijan</span>
               <h1 style={{ color: 'var(--fg)', marginBottom: '1.25rem', lineHeight: 1.05 }}>
                 Researcher ·<br />
-                Builder ·{' '}
-                <span className="gradient-text-cyan">Educator</span>
+                Builder · Educator
               </h1>
               <p style={{ fontSize: 'clamp(1rem, 2vw, 1.15rem)', color: 'var(--fg-2)', maxWidth: '520px', lineHeight: 1.8, marginBottom: '2rem' }}>
                 I&apos;m <strong style={{ color: 'var(--fg)', fontWeight: 600 }}>Srijan Tiwari</strong> — an IIT Madras researcher,
@@ -473,7 +467,6 @@ export default function AboutPage() {
 
       {/* ── CTA ── */}
       <section className="section" style={{ background: 'linear-gradient(135deg, #050a18 0%, #0a0f25 50%, #050a18 100%)', borderTop: '1px solid var(--border)', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
-        <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', width: '500px', height: '250px', background: 'radial-gradient(ellipse, rgba(0,217,255,0.07) 0%, transparent 70%)', filter: 'blur(40px)', pointerEvents: 'none' }} />
         <div className="container" style={{ maxWidth: '560px', position: 'relative', zIndex: 1 }}>
           <span className="section-label" style={{ display: 'inline-flex', marginBottom: '1.25rem' }}>Work Together</span>
           <h2 style={{ color: 'var(--fg)', marginBottom: '1rem' }}>Let&apos;s Build Something</h2>

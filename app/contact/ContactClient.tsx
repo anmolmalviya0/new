@@ -77,12 +77,10 @@ export default function ContactPage() {
         paddingTop: 'clamp(5rem, 12vw, 8rem)', paddingBottom: 'clamp(3rem, 8vw, 5rem)',
         borderBottom: '1px solid var(--border)', position: 'relative', overflow: 'hidden',
       }}>
-        <div className="hero-grid" style={{ position: 'absolute', inset: 0, pointerEvents: 'none' }} />
-        <div style={{ position: 'absolute', top: '20%', right: '-5%', width: '400px', height: '400px', background: 'radial-gradient(circle, rgba(255,94,26,0.1) 0%, transparent 70%)', filter: 'blur(60px)', pointerEvents: 'none' }} />
         <div className="container" style={{ textAlign: 'center', position: 'relative', zIndex: 1 }}>
           <span className="section-label" style={{ marginBottom: '1rem', display: 'inline-flex' }}>Let&apos;s Talk</span>
           <h1 style={{ color: 'var(--fg)', margin: '1rem 0 1.2rem', lineHeight: 1.05 }}>
-            Get in <span className="gradient-text-accent">Touch</span>
+            Get in Touch
           </h1>
           <p style={{ fontSize: 'clamp(0.95rem, 2.5vw, 1.1rem)', color: 'var(--fg-2)', maxWidth: '42rem', margin: '0 auto 2.5rem', lineHeight: 1.8 }}>
             Speaking inquiry, course question, or research collaboration? Every message is read personally. I respond within 48 hours.
@@ -167,7 +165,7 @@ export default function ContactPage() {
               {/* Email */}
               <div className="card" style={{ padding: '1.25rem 1.5rem' }}
                 onMouseEnter={e => (e.currentTarget.style.borderColor = 'rgba(0,217,255,0.3)')}
-                onMouseLeave={e => (e.currentTarget.style.borderColor = 'var(--glass-border)')}
+                onMouseLeave={e => (e.currentTarget.style.borderColor = 'var(--border)')}
               >
                 <p style={{ fontSize: '0.7rem', color: 'var(--cyan)', textTransform: 'uppercase', letterSpacing: '0.12em', fontWeight: 700, marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
@@ -184,7 +182,7 @@ export default function ContactPage() {
               {/* LinkedIn */}
               <div className="card" style={{ padding: '1.25rem 1.5rem' }}
                 onMouseEnter={e => (e.currentTarget.style.borderColor = 'rgba(0,217,255,0.3)')}
-                onMouseLeave={e => (e.currentTarget.style.borderColor = 'var(--glass-border)')}
+                onMouseLeave={e => (e.currentTarget.style.borderColor = 'var(--border)')}
               >
                 <p style={{ fontSize: '0.7rem', color: 'var(--cyan)', textTransform: 'uppercase', letterSpacing: '0.12em', fontWeight: 700, marginBottom: '0.5rem' }}>LinkedIn</p>
                 <a href="https://linkedin.com/in/srijantiwari" target="_blank" rel="noopener noreferrer"
@@ -199,7 +197,7 @@ export default function ContactPage() {
               {/* YouTube */}
               <div className="card" style={{ padding: '1.25rem 1.5rem' }}
                 onMouseEnter={e => (e.currentTarget.style.borderColor = 'rgba(255,94,26,0.3)')}
-                onMouseLeave={e => (e.currentTarget.style.borderColor = 'var(--glass-border)')}
+                onMouseLeave={e => (e.currentTarget.style.borderColor = 'var(--border)')}
               >
                 <p style={{ fontSize: '0.7rem', color: 'var(--accent)', textTransform: 'uppercase', letterSpacing: '0.12em', fontWeight: 700, marginBottom: '0.5rem' }}>YouTube</p>
                 <a href="https://www.youtube.com/@srijanspeaks" target="_blank" rel="noopener noreferrer"
