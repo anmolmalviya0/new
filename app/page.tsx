@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useRef, useState, useCallback } from "react";
+import Image from "next/image";
 
 /* ── Intersection observer ─────────────────────────── */
 function useInView(threshold = 0.12) {
@@ -235,6 +236,30 @@ export default function Home() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Person',
+            name: 'Srijan Tiwari',
+            url: 'https://srijanspeaks.com',
+            jobTitle: 'AI Keynote Speaker & Researcher',
+            worksFor: [
+              { '@type': 'Organization', name: 'IIT Madras CNDE' },
+              { '@type': 'Organization', name: 'TIQ World' },
+            ],
+            alumniOf: { '@type': 'Organization', name: 'IIT Madras' },
+            knowsAbout: ['Artificial Intelligence', 'Machine Learning', 'Non-Destructive Testing', 'Manufacturing AI'],
+            sameAs: [
+              'https://linkedin.com/in/srijantiwari',
+              'https://twitter.com/srijanspeaks',
+              'https://www.youtube.com/@srijanspeaks',
+            ],
+          }),
+        }}
+      />
+
       {/* ═══ HERO ════════════════════════════════════ */}
       <section ref={heroSpotRef as React.RefObject<HTMLDivElement>} style={{
         background: 'radial-gradient(ellipse 140% 100% at 60% -20%, #0e1f50 0%, #060a1a 45%, #03050f 80%)',
@@ -301,7 +326,7 @@ export default function Home() {
             }}>
               <span className="live-dot" />
               <span style={{ fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: 'var(--emerald)' }}>
-                Available for Speaking · 2025–26
+                Available for Speaking · 2026–27
               </span>
             </div>
           </div>
@@ -699,7 +724,7 @@ export default function Home() {
             {moments.map((m, i) => (
               <div key={i} className="card moment-card" style={{ overflow: 'hidden', opacity: teachInView ? 1 : 0, transform: teachInView ? 'none' : 'translateY(40px) scale(0.96)', transition: `all 0.7s cubic-bezier(0.34,1.2,0.64,1) ${i * 150}ms` }}>
                 <div style={{ position: 'relative', aspectRatio: '4/3', background: 'var(--bg-3)', overflow: 'hidden' }}>
-                  <img src={m.src} alt={m.label} style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.6s ease', display: 'block' }} className="moment-img" onError={e => { (e.target as HTMLImageElement).style.display = 'none'; }} />
+                  <Image src={m.src} alt={m.label} fill sizes="(max-width: 768px) 100vw, 33vw" style={{ objectFit: 'cover', transition: 'transform 0.6s ease' }} className="moment-img" onError={e => { (e.target as HTMLImageElement).style.display = 'none'; }} />
                   <div className="moment-overlay" style={{ position: 'absolute', inset: 0, background: `linear-gradient(to top, ${m.accent === 'var(--cyan)' ? 'rgba(0,217,255,0.3)' : m.accent === 'var(--purple)' ? 'rgba(139,92,246,0.3)' : 'rgba(255,94,26,0.3)'} 0%, transparent 60%)`, opacity: 0, transition: 'opacity 0.3s ease', display: 'flex', alignItems: 'flex-end', padding: '1.25rem' }}>
                     <span style={{ fontSize: '0.8rem', fontWeight: 700, color: m.accent, textShadow: '0 0 10px currentColor' }}>→ {m.label}</span>
                   </div>

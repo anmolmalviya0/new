@@ -25,6 +25,7 @@ export default function Footer() {
         { label: 'Courses',  href: '/courses' },
         { label: 'Blog',     href: '/blog' },
         { label: 'Contact',  href: '/contact' },
+        { label: 'Media Kit', href: '/media-kit' },
       ],
     },
     {

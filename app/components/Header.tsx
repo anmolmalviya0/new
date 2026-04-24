@@ -32,6 +32,7 @@ export default function Header() {
     { href: '/courses',  label: 'Courses' },
     { href: '/blog',     label: 'Blog' },
     { href: '/contact',  label: 'Contact' },
+    { href: '/media-kit', label: 'Media Kit' },
   ];
 
   return (
