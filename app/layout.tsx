@@ -94,6 +94,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main>{children}</main>
         <Footer />
         <ScrollToTop />
+        <ScrollToTop />
       </body>
     </html>
   );
