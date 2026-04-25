@@ -112,7 +112,7 @@ const skills = [
 const awards = [
   { icon: '🏆', title: 'Best Speaker Award', org: 'AI Summit India 2024', color: 'var(--accent)' },
   { icon: '🎓', title: 'IIT Madras Research Excellence', org: 'Centre for NDE · 2022', color: 'var(--cyan)' },
-  { icon: '🚀', title: 'Top 40 AI Innovators India', org: 'Analytics India Magazine · 2023', color: 'var(--purple)' },
+  { icon: 'rocket', title: 'Top 40 AI Innovators India', org: 'Analytics India Magazine · 2023', color: 'var(--purple)' },
   { icon: '🌍', title: 'Global NDE Impact Award', org: 'DGZfP International · 2021', color: 'var(--accent)' },
 ];
 

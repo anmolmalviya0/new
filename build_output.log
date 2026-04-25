@@ -1,0 +1,11 @@
+Creating temporary archive of 55 file(s) totalling 32.2 MiB before compression.
+Some files were not included in the source upload.
+
+Check the gcloud log [/Users/anmol/.config/gcloud/logs/2026.04.17/22.23.08.000705.log] to see which files and the contents of the
+default gcloudignore file used (see `$ gcloud topic gcloudignore` to learn
+more).
+
+Uploading tarball of [.] to [gs://project-cbab58ca-d2b4-46a4-9e5_cloudbuild/source/1776444794.717874-4468d060db1b4f5e8d3817d0bde4fceb.tgz]
+Created [https://cloudbuild.googleapis.com/v1/projects/project-cbab58ca-d2b4-46a4-9e5/locations/global/builds/6c771498-fcce-41f3-ac80-6910ed7dd29a].
+Logs are available at [ https://console.cloud.google.com/cloud-build/builds/6c771498-fcce-41f3-ac80-6910ed7dd29a?project=487953083761 ].
+Waiting for build to complete. Polling interval: 1 second(s).

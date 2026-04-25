@@ -1,3 +1,4 @@
+import Icon from '../components/Icon';
 'use client';
 
 import { useState } from 'react';
@@ -64,9 +65,9 @@ export default function ContactPage() {
   ];
 
   const slaCards = [
-    { icon: '⚡', label: 'Speaking Inquiries', sla: '24–48 hrs', color: 'var(--cyan)' },
+    { icon: 'zap', label: 'Speaking Inquiries', sla: '24–48 hrs', color: 'var(--cyan)' },
     { icon: '🎓', label: 'Course Questions',    sla: '48 hrs',    color: 'var(--accent)' },
-    { icon: '🔬', label: 'Consulting',          sla: '48–72 hrs', color: 'var(--purple)' },
+    { icon: 'flask', label: 'Consulting',          sla: '48–72 hrs', color: 'var(--purple)' },
   ];
 
   return (
@@ -217,7 +218,7 @@ export default function ContactPage() {
                     { icon: '🎤', text: 'Keynotes, workshops & panel invitations', c: 'var(--cyan)' },
                     { icon: '🏢', text: 'Corporate training programs (10+ engineers)', c: 'var(--cyan)' },
                     { icon: '⚙️', text: 'AI / NDE consulting engagements', c: 'var(--cyan)' },
-                    { icon: '🔬', text: 'Research collaborations & institutional partnerships', c: 'var(--accent)' },
+                    { icon: 'flask', text: 'Research collaborations & institutional partnerships', c: 'var(--accent)' },
                   ].map((item, i) => (
                     <li key={i} style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
                       <span style={{ fontSize: '1rem', flexShrink: 0, marginTop: '0.1rem' }}>{item.icon}</span>

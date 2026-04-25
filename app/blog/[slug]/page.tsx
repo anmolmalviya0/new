@@ -3,17 +3,25 @@
 import { useParams } from 'next/navigation';
 import Link from 'next/link';
 import { useState } from 'react';
+import Icon from '../../components/Icon';
+
+const categoryConfig: Record<string, { icon: any; color: string }> = {
+  'AI & ML': { icon: 'cpu', color: 'var(--cyan)' },
+  'Entrepreneurship': { icon: 'rocket', color: 'var(--accent)' },
+  'Speaking': { icon: 'mic', color: 'var(--purple)' },
+  'Research': { icon: 'flask', color: 'var(--cyan)' },
+};
 
 const blogPosts = [
-  { id: 1, title: 'The Future of AI in NDT', excerpt: 'How machine learning is revolutionising non-destructive testing — from ultrasonic signal classification to edge deployment.', date: 'Mar 15, 2024', category: 'AI & ML', emoji: '🤖', readTime: '5 min', featured: true },
-  { id: 2, title: 'Digital NDE Ecosystem 2030: Skills, Trust, Technology', excerpt: 'Exploring the convergence of digital technologies, skilled workforce, and trust frameworks reshaping the NDE industry. From ASNT — comprehensive insights on the future of non-destructive evaluation.', date: 'Apr 10, 2024', category: 'Research', emoji: '🔬', readTime: '12 min' },
-  { id: 3, title: 'Empowering Industrial Excellence: NDT Workforce Development', excerpt: 'How NDT/NDE 4.0 workforce initiatives are transforming quality inspection and creating new opportunities for engineers across India.', date: 'Apr 5, 2024', category: 'Research', emoji: '👥', readTime: '8 min' },
-  { id: 4, title: 'Building Your First Startup', excerpt: 'Lessons from founding TIQ World and scaling to 50+ enterprise clients. What worked, what failed, and what I wish I knew.', date: 'Mar 8, 2024', category: 'Entrepreneurship', emoji: '🚀', readTime: '7 min' },
-  { id: 5, title: 'Speaking at Tech Conferences', excerpt: 'Tips for crafting memorable keynotes and engaging technical audiences without dumbing down the content.', date: 'Feb 28, 2024', category: 'Speaking', emoji: '🎤', readTime: '4 min' },
-  { id: 6, title: 'Python for NDT Data Analysis', excerpt: 'Practical guide to processing ultrasonic and radiographic data with Python, NumPy, and PyTorch.', date: 'Feb 14, 2024', category: 'AI & ML', emoji: '🐍', readTime: '8 min' },
-  { id: 7, title: 'Manufacturing 4.0 in India', excerpt: 'How Indian manufacturers can leapfrog into Industry 4.0 with AI — the talent, the infrastructure, and the policy gaps.', date: 'Jan 30, 2024', category: 'Research', emoji: '🏭', readTime: '6 min' },
-  { id: 8, title: 'From Engineer to Entrepreneur', excerpt: 'The mindset shift required when you stop building for others and start building for yourself. Hard-won lessons.', date: 'Jan 15, 2024', category: 'Entrepreneurship', emoji: '💡', readTime: '5 min' },
-  { id: 9, title: 'Advancing NDE Research: Publications & Discoveries', excerpt: 'Curated collection of our latest peer-reviewed research on AI-driven defect detection, automated quality inspection, and edge deployment.', date: 'Dec 28, 2023', category: 'Research', emoji: '📚', readTime: '10 min' },
+  { id: 1, title: 'The Future of AI in NDT', excerpt: 'How machine learning is revolutionising non-destructive testing — from ultrasonic signal classification to edge deployment.', date: 'Mar 15, 2024', category: 'AI & ML',  readTime: '5 min', featured: true },
+  { id: 2, title: 'Digital NDE Ecosystem 2030: Skills, Trust, Technology', excerpt: 'Exploring the convergence of digital technologies, skilled workforce, and trust frameworks reshaping the NDE industry. From ASNT — comprehensive insights on the future of non-destructive evaluation.', date: 'Apr 10, 2024', category: 'Research',  readTime: '12 min' },
+  { id: 3, title: 'Empowering Industrial Excellence: NDT Workforce Development', excerpt: 'How NDT/NDE 4.0 workforce initiatives are transforming quality inspection and creating new opportunities for engineers across India.', date: 'Apr 5, 2024', category: 'Research',  readTime: '8 min' },
+  { id: 4, title: 'Building Your First Startup', excerpt: 'Lessons from founding TIQ World and scaling to 50+ enterprise clients. What worked, what failed, and what I wish I knew.', date: 'Mar 8, 2024', category: 'Entrepreneurship',  readTime: '7 min' },
+  { id: 5, title: 'Speaking at Tech Conferences', excerpt: 'Tips for crafting memorable keynotes and engaging technical audiences without dumbing down the content.', date: 'Feb 28, 2024', category: 'Speaking',  readTime: '4 min' },
+  { id: 6, title: 'Python for NDT Data Analysis', excerpt: 'Practical guide to processing ultrasonic and radiographic data with Python, NumPy, and PyTorch.', date: 'Feb 14, 2024', category: 'AI & ML',  readTime: '8 min' },
+  { id: 7, title: 'Manufacturing 4.0 in India', excerpt: 'How Indian manufacturers can leapfrog into Industry 4.0 with AI — the talent, the infrastructure, and the policy gaps.', date: 'Jan 30, 2024', category: 'Research',  readTime: '6 min' },
+  { id: 8, title: 'From Engineer to Entrepreneur', excerpt: 'The mindset shift required when you stop building for others and start building for yourself. Hard-won lessons.', date: 'Jan 15, 2024', category: 'Entrepreneurship',  readTime: '5 min' },
+  { id: 9, title: 'Advancing NDE Research: Publications & Discoveries', excerpt: 'Curated collection of our latest peer-reviewed research on AI-driven defect detection, automated quality inspection, and edge deployment.', date: 'Dec 28, 2023', category: 'Research',  readTime: '10 min' },
 ];
 
 export default function BlogPostPage() {
@@ -66,8 +74,8 @@ export default function BlogPostPage() {
 
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem', alignItems: 'center', marginBottom: '1.5rem' }}>
             <span className="badge badge-accent">{post.category}</span>
-            <span style={{ fontSize: '0.72rem', fontWeight: 600, color: 'var(--cyan)', background: 'rgba(0,217,255,0.08)', border: '1px solid rgba(0,217,255,0.2)', borderRadius: 'var(--r-full)', padding: '0.2rem 0.6rem' }}>
-              ⏱ {post.readTime} read
+            <span style={{ fontSize: '0.72rem', fontWeight: 600, color: 'var(--cyan)', background: 'rgba(0,217,255,0.08)', border: '1px solid rgba(0,217,255,0.2)', borderRadius: 'var(--r-full)', padding: '0.2rem 0.6rem', display: 'inline-flex', alignItems: 'center', gap: '0.3rem' }}>
+              <Icon name="clock" size={14} color="var(--cyan)" /> {post.readTime} read
             </span>
             <span style={{ fontSize: '0.78rem', color: 'var(--fg-muted)', fontFamily: 'var(--font-mono, monospace)' }}>{post.date}</span>
           </div>
@@ -78,11 +86,11 @@ export default function BlogPostPage() {
 
           <div style={{
             display: 'flex', alignItems: 'center', justifyContent: 'center',
-            fontSize: '5rem', height: '160px',
+            height: '160px',
             background: 'linear-gradient(135deg, rgba(0,217,255,0.08) 0%, rgba(139,92,246,0.05) 100%)',
             borderRadius: 'var(--r-lg)', border: '1px solid rgba(0,217,255,0.12)',
           }}>
-            {post.emoji}
+            <Icon name={categoryConfig[post.category].icon} size={60} color={categoryConfig[post.category].color} strokeWidth={1.5} />
           </div>
         </div>
       </section>
@@ -170,13 +178,11 @@ export default function BlogPostPage() {
                 onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-6px)'; e.currentTarget.style.borderColor = 'var(--border-strong)'; }}
                 onMouseLeave={e => { e.currentTarget.style.transform = 'none'; e.currentTarget.style.borderColor = 'var(--border)'; }}
               >
-                <div style={{ background: 'linear-gradient(135deg, var(--bg-3), var(--bg-2))', height: '7rem', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '2.5rem' }}>
-                  {r.emoji}
-                </div>
+                <div style={{ height: '4px', background: categoryConfig[r.category].color, width: '100%' }} />
                 <div style={{ padding: '1.25rem' }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
                     <span style={{ fontSize: '0.68rem', fontWeight: 700, color: 'var(--accent)', textTransform: 'uppercase', letterSpacing: '0.1em' }}>{r.category}</span>
-                    <span style={{ fontSize: '0.65rem', color: 'var(--cyan)' }}>⏱ {r.readTime}</span>
+                    <span style={{ fontSize: '0.65rem', color: 'var(--cyan)', display: 'inline-flex', alignItems: 'center', gap: '0.25rem' }}><Icon name="clock" size={13} color="var(--cyan)" /> {r.readTime}</span>
                   </div>
                   <h3 style={{ fontSize: '0.95rem', fontWeight: 700, color: 'var(--fg)', lineHeight: 1.3, marginBottom: '0.5rem' }}>{r.title}</h3>
                   <span style={{ fontSize: '0.72rem', color: 'var(--fg-muted)', fontFamily: 'var(--font-mono, monospace)' }}>{r.date}</span>

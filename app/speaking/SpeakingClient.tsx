@@ -1,3 +1,4 @@
+import Icon from '../components/Icon';
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
@@ -22,7 +23,7 @@ function useInView(threshold = 0.1) {
 
 const topics = [
   {
-    icon: '🤖',
+    icon: 'cpu',
     title: 'AI & Machine Learning in NDT',
     desc: 'How AI is transforming non-destructive testing. Deep dive into ML models, deployment challenges, and real-world use cases from IIT Madras and TIQ World.',
     duration: '45–60 min',
@@ -31,7 +32,7 @@ const topics = [
     tags: ['AI', 'NDT', 'Industry 4.0'],
   },
   {
-    icon: '🚀',
+    icon: 'rocket',
     title: 'Building Your First Startup',
     desc: 'From idea to 50+ clients. Lessons from founding TIQ World, raising funding, and scaling an AI startup from a research lab.',
     duration: '45–60 min',
@@ -40,7 +41,7 @@ const topics = [
     tags: ['Startup', 'Entrepreneurship', 'AI SaaS'],
   },
   {
-    icon: '🎤',
+    icon: 'mic',
     title: 'The Art of Technical Speaking',
     desc: 'Crafting memorable keynotes, engaging technical audiences, and making complex ideas accessible without dumbing them down.',
     duration: '30–45 min',
@@ -49,7 +50,7 @@ const topics = [
     tags: ['Communication', 'Speaking', 'Clarity'],
   },
   {
-    icon: '🔬',
+    icon: 'flask',
     title: 'Research to Market',
     desc: 'How to transition from academic research to building a profitable product company. A framework for researcher-founders.',
     duration: '45 min',
@@ -58,7 +59,7 @@ const topics = [
     tags: ['Commercialisation', 'R&D', 'Product'],
   },
   {
-    icon: '⚙️',
+    icon: 'settings',
     title: 'Manufacturing AI Playbook',
     desc: 'End-to-end guide to deploying AI in manufacturing environments — from data collection to edge inference and ROI measurement.',
     duration: '60–90 min',
@@ -67,7 +68,7 @@ const topics = [
     tags: ['Manufacturing', 'AI Deployment', 'ROI'],
   },
   {
-    icon: '🌐',
+    icon: 'globe',
     title: 'India&apos;s AI Moment',
     desc: 'Why India is uniquely positioned to lead in industrial AI. The policy landscape, talent pool, and what needs to happen next.',
     duration: '30–45 min',
@@ -78,10 +79,10 @@ const topics = [
 ];
 
 const formats = [
-  { icon: '🎯', title: 'Keynote', desc: '45–90 minute headline address. Inspiring, story-driven, technically credible.', accent: 'var(--cyan)' },
-  { icon: '🛠', title: 'Workshop', desc: 'Half-day or full-day hands-on technical workshop with exercises and live demos.', accent: 'var(--accent)' },
-  { icon: '🤝', title: 'Panel Discussion', desc: 'Moderator or panelist for AI, manufacturing, and innovation conversations.', accent: 'var(--purple)' },
-  { icon: '🎓', title: 'Masterclass', desc: 'Deep-dive educational session for cohorts of 20–100 engineers.', accent: 'var(--cyan)' },
+  { icon: 'target', title: 'Keynote', desc: '45–90 minute headline address. Inspiring, story-driven, technically credible.', accent: 'var(--cyan)' },
+  { icon: 'tool', title: 'Workshop', desc: 'Half-day or full-day hands-on technical workshop with exercises and live demos.', accent: 'var(--accent)' },
+  { icon: 'users', title: 'Panel Discussion', desc: 'Moderator or panelist for AI, manufacturing, and innovation conversations.', accent: 'var(--purple)' },
+  { icon: 'graduation-cap', title: 'Masterclass', desc: 'Deep-dive educational session for cohorts of 20–100 engineers.', accent: 'var(--cyan)' },
 ];
 
 const events = [

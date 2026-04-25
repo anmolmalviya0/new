@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Icon from '../components/Icon';
 
 // Blog page — enhanced with featured post, category icons, read time chips, newsletter
 export default function BlogPage() {
@@ -10,23 +11,31 @@ export default function BlogPage() {
   const [subscribed, setSubscribed] = useState(false);
 
   const blogPosts = [
-    { id: 1, title: 'The Future of AI in NDT', excerpt: 'How machine learning is revolutionising non-destructive testing — from ultrasonic signal classification to edge deployment.', date: 'Mar 15, 2024', category: 'AI & ML', emoji: '🤖', readTime: '5 min', featured: true },
-    { id: 2, title: 'Digital NDE Ecosystem 2030: Skills, Trust, Technology', excerpt: 'Exploring the convergence of digital technologies, skilled workforce, and trust frameworks reshaping the NDE industry. From ASNT — comprehensive insights on the future of non-destructive evaluation.', date: 'Apr 10, 2024', category: 'Research', emoji: '🔬', readTime: '12 min', featured: false },
-    { id: 3, title: 'Empowering Industrial Excellence: NDT Workforce Development', excerpt: 'How NDT/NDE 4.0 workforce initiatives are transforming quality inspection and creating new opportunities for engineers across India. Building world-class talent for industrial excellence.', date: 'Apr 5, 2024', category: 'Research', emoji: '👥', readTime: '8 min', featured: false },
-    { id: 4, title: 'Building Your First Startup', excerpt: 'Lessons from founding TIQ World and scaling to 50+ enterprise clients. What worked, what failed, and what I wish I knew.', date: 'Mar 8, 2024', category: 'Entrepreneurship', emoji: '🚀', readTime: '7 min', featured: false },
-    { id: 5, title: 'Speaking at Tech Conferences', excerpt: 'Tips for crafting memorable keynotes and engaging technical audiences without dumbing down the content.', date: 'Feb 28, 2024', category: 'Speaking', emoji: '🎤', readTime: '4 min', featured: false },
-    { id: 6, title: 'Python for NDT Data Analysis', excerpt: 'Practical guide to processing ultrasonic and radiographic data with Python, NumPy, and PyTorch.', date: 'Feb 14, 2024', category: 'AI & ML', emoji: '🐍', readTime: '8 min', featured: false },
-    { id: 7, title: 'Manufacturing 4.0 in India', excerpt: 'How Indian manufacturers can leapfrog into Industry 4.0 with AI — the talent, the infrastructure, and the policy gaps.', date: 'Jan 30, 2024', category: 'Research', emoji: '🏭', readTime: '6 min', featured: false },
-    { id: 8, title: 'From Engineer to Entrepreneur', excerpt: 'The mindset shift required when you stop building for others and start building for yourself. Hard-won lessons.', date: 'Jan 15, 2024', category: 'Entrepreneurship', emoji: '💡', readTime: '5 min', featured: false },
-    { id: 9, title: 'Advancing NDE Research: Publications & Discoveries', excerpt: 'Curated collection of our latest peer-reviewed research on AI-driven defect detection, automated quality inspection, and edge deployment in manufacturing environments.', date: 'Dec 28, 2023', category: 'Research', emoji: '📚', readTime: '10 min', featured: false },
+    { id: 1, title: 'The Future of AI in NDT', excerpt: 'How machine learning is revolutionising non-destructive testing — from ultrasonic signal classification to edge deployment.', date: 'Mar 15, 2024', category: 'AI & ML', readTime: '5 min', featured: true },
+    { id: 2, title: 'Digital NDE Ecosystem 2030: Skills, Trust, Technology', excerpt: 'Exploring the convergence of digital technologies, skilled workforce, and trust frameworks reshaping the NDE industry. From ASNT — comprehensive insights on the future of non-destructive evaluation.', date: 'Apr 10, 2024', category: 'Research', readTime: '12 min', featured: false },
+    { id: 3, title: 'Empowering Industrial Excellence: NDT Workforce Development', excerpt: 'How NDT/NDE 4.0 workforce initiatives are transforming quality inspection and creating new opportunities for engineers across India. Building world-class talent for industrial excellence.', date: 'Apr 5, 2024', category: 'Research', readTime: '8 min', featured: false },
+    { id: 4, title: 'Building Your First Startup', excerpt: 'Lessons from founding TIQ World and scaling to 50+ enterprise clients. What worked, what failed, and what I wish I knew.', date: 'Mar 8, 2024', category: 'Entrepreneurship', readTime: '7 min', featured: false },
+    { id: 5, title: 'Speaking at Tech Conferences', excerpt: 'Tips for crafting memorable keynotes and engaging technical audiences without dumbing down the content.', date: 'Feb 28, 2024', category: 'Speaking', readTime: '4 min', featured: false },
+    { id: 6, title: 'Python for NDT Data Analysis', excerpt: 'Practical guide to processing ultrasonic and radiographic data with Python, NumPy, and PyTorch.', date: 'Feb 14, 2024', category: 'AI & ML', readTime: '8 min', featured: false },
+    { id: 7, title: 'Manufacturing 4.0 in India', excerpt: 'How Indian manufacturers can leapfrog into Industry 4.0 with AI — the talent, the infrastructure, and the policy gaps.', date: 'Jan 30, 2024', category: 'Research', readTime: '6 min', featured: false },
+    { id: 8, title: 'From Engineer to Entrepreneur', excerpt: 'The mindset shift required when you stop building for others and start building for yourself. Hard-won lessons.', date: 'Jan 15, 2024', category: 'Entrepreneurship', readTime: '5 min', featured: false },
+    { id: 9, title: 'Advancing NDE Research: Publications & Discoveries', excerpt: 'Curated collection of our latest peer-reviewed research on AI-driven defect detection, automated quality inspection, and edge deployment in manufacturing environments.', date: 'Dec 28, 2023', category: 'Research', readTime: '10 min', featured: false },
   ];
 
+  const categoryConfig: Record<string, { icon: any; color: string }> = {
+    'all': { icon: 'clipboard', color: 'var(--fg-muted)' },
+    'AI & ML': { icon: 'cpu', color: 'var(--cyan)' },
+    'Entrepreneurship': { icon: 'rocket', color: 'var(--accent)' },
+    'Speaking': { icon: 'mic', color: 'var(--purple)' },
+    'Research': { icon: 'flask', color: 'var(--cyan)' },
+  };
+
   const categories = [
-    { id: 'all',             label: 'All Posts',      emoji: '📋' },
-    { id: 'AI & ML',         label: 'AI & ML',        emoji: '🤖' },
-    { id: 'Entrepreneurship',label: 'Startup',        emoji: '🚀' },
-    { id: 'Speaking',        label: 'Speaking',       emoji: '🎤' },
-    { id: 'Research',        label: 'Research',       emoji: '🔬' },
+    { id: 'all', label: 'All Posts' },
+    { id: 'AI & ML', label: 'AI & ML' },
+    { id: 'Entrepreneurship', label: 'Startup' },
+    { id: 'Speaking', label: 'Speaking' },
+    { id: 'Research', label: 'Research' },
   ];
 
   const filtered = blogPosts.filter(p => {
@@ -73,12 +82,16 @@ export default function BlogPage() {
             />
           </div>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
-            {categories.map(cat => (
-              <button key={cat.id} onClick={() => setSelectedCategory(cat.id)}
-                style={{ padding: '0.45rem 1rem', borderRadius: 'var(--r-full)', border: `1px solid ${selectedCategory === cat.id ? 'var(--cyan)' : 'var(--border)'}`, background: selectedCategory === cat.id ? 'rgba(0,217,255,0.1)' : 'transparent', color: selectedCategory === cat.id ? 'var(--cyan)' : 'var(--fg-2)', fontWeight: 600, fontSize: '0.82rem', cursor: 'pointer', transition: 'all 0.2s', display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
-                <span>{cat.emoji}</span> {cat.label}
-              </button>
-            ))}
+            {categories.map(cat => {
+              const config = categoryConfig[cat.id];
+              return (
+                <button key={cat.id} onClick={() => setSelectedCategory(cat.id)}
+                  style={{ padding: '0.45rem 1rem', borderRadius: 'var(--r-full)', border: `1px solid ${selectedCategory === cat.id ? 'var(--cyan)' : 'var(--border)'}`, background: selectedCategory === cat.id ? 'rgba(0,217,255,0.1)' : 'transparent', color: selectedCategory === cat.id ? 'var(--cyan)' : 'var(--fg-2)', fontWeight: 600, fontSize: '0.82rem', cursor: 'pointer', transition: 'all 0.2s', display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+                  <Icon name={config.icon} size={18} color={selectedCategory === cat.id ? 'var(--cyan)' : 'var(--fg-muted)'} strokeWidth={2} />
+                  {cat.label}
+                </button>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -95,8 +108,8 @@ export default function BlogPage() {
               onMouseEnter={e => (e.currentTarget.style.opacity = '0.92')}
               onMouseLeave={e => (e.currentTarget.style.opacity = '1')}
             >
-              <div style={{ background: 'linear-gradient(135deg, rgba(0,217,255,0.12) 0%, rgba(139,92,246,0.08) 100%)', borderRadius: 'var(--r-xl)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '6rem', minHeight: '220px', border: '1px solid rgba(0,217,255,0.15)' }}>
-                {featured.emoji}
+              <div style={{ background: 'linear-gradient(135deg, rgba(0,217,255,0.12) 0%, rgba(139,92,246,0.08) 100%)', borderRadius: 'var(--r-xl)', display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '220px', border: '1px solid rgba(0,217,255,0.15)' }}>
+                <Icon name={categoryConfig[featured.category].icon} size={80} color={categoryConfig[featured.category].color} strokeWidth={1.5} />
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                 <span style={{ fontSize: '0.72rem', fontWeight: 700, color: 'var(--accent)', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.75rem' }}>{featured.category}</span>
@@ -104,7 +117,7 @@ export default function BlogPage() {
                 <p style={{ color: 'var(--fg-2)', lineHeight: 1.75, marginBottom: '1.25rem', fontSize: '1rem' }}>{featured.excerpt}</p>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
                   <span style={{ fontSize: '0.78rem', color: 'var(--fg-muted)', fontFamily: 'var(--font-mono, monospace)' }}>{featured.date}</span>
-                  <span style={{ fontSize: '0.72rem', fontWeight: 700, color: 'var(--cyan)', background: 'rgba(0,217,255,0.08)', border: '1px solid rgba(0,217,255,0.2)', borderRadius: 'var(--r-full)', padding: '0.2rem 0.6rem' }}>⏱ {featured.readTime} read</span>
+                  <span style={{ fontSize: '0.72rem', fontWeight: 700, color: 'var(--cyan)', background: 'rgba(0,217,255,0.08)', border: '1px solid rgba(0,217,255,0.2)', borderRadius: 'var(--r-full)', padding: '0.2rem 0.6rem', display: 'inline-flex', alignItems: 'center', gap: '0.3rem' }}><Icon name="clock" size={14} color="var(--cyan)" /> {featured.readTime} read</span>
                   <span style={{ fontSize: '0.82rem', fontWeight: 700, color: 'var(--accent)' }}>Read article →</span>
                 </div>
               </div>
@@ -118,7 +131,7 @@ export default function BlogPage() {
         <div className="container">
           {filtered.length === 0 ? (
             <div style={{ textAlign: 'center', padding: '5rem 0', color: 'var(--fg-muted)' }}>
-              <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>🔍</div>
+              <div style={{ marginBottom: '1.5rem', display: 'flex', justifyContent: 'center' }}><Icon name="search" size={64} color="var(--fg-muted)" strokeWidth={1.5} /></div>
               <p style={{ fontSize: '1rem' }}>No posts found for &ldquo;{searchTerm}&rdquo; {selectedCategory !== 'all' ? `in ${selectedCategory}` : ''}.</p>
               <button onClick={() => { setSearchTerm(''); setSelectedCategory('all'); }} style={{ marginTop: '1rem', padding: '0.5rem 1.5rem', background: 'transparent', border: '1px solid var(--border)', borderRadius: 'var(--r-full)', color: 'var(--fg-2)', cursor: 'pointer', fontSize: '0.85rem' }}>Clear filters</button>
             </div>
@@ -131,13 +144,11 @@ export default function BlogPage() {
                   onMouseEnter={e => { const el = e.currentTarget; el.style.transform = 'translateY(-6px) scale(1.01)'; el.style.borderColor = 'var(--border-strong)'; }}
                   onMouseLeave={e => { const el = e.currentTarget; el.style.transform = 'none'; el.style.borderColor = 'var(--border)'; }}
                 >
-                  <div style={{ background: 'linear-gradient(135deg, var(--bg-3), var(--bg-2))', height: '9rem', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '3.5rem' }}>
-                    {post.emoji}
-                  </div>
+                  <div style={{ height: '4px', background: categoryConfig[post.category].color, width: '100%' }} />
                   <div style={{ padding: '1.4rem' }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem' }}>
                       <span style={{ fontSize: '0.7rem', fontWeight: 700, color: 'var(--accent)', textTransform: 'uppercase', letterSpacing: '0.1em' }}>{post.category}</span>
-                      <span style={{ fontSize: '0.68rem', fontWeight: 600, color: 'var(--cyan)', background: 'rgba(0,217,255,0.08)', border: '1px solid rgba(0,217,255,0.15)', borderRadius: 'var(--r-full)', padding: '0.15rem 0.5rem' }}>⏱ {post.readTime}</span>
+                      <span style={{ fontSize: '0.68rem', fontWeight: 600, color: 'var(--cyan)', background: 'rgba(0,217,255,0.08)', border: '1px solid rgba(0,217,255,0.15)', borderRadius: 'var(--r-full)', padding: '0.15rem 0.5rem', display: 'inline-flex', alignItems: 'center', gap: '0.25rem' }}><Icon name="clock" size={13} color="var(--cyan)" /> {post.readTime}</span>
                     </div>
                     <h3 style={{ fontSize: '1.05rem', fontWeight: 800, color: 'var(--fg)', marginBottom: '0.6rem', lineHeight: 1.3 }}>{post.title}</h3>
                     <p style={{ color: 'var(--fg-muted)', fontSize: '0.85rem', lineHeight: 1.65, marginBottom: '1rem' }}>{post.excerpt}</p>
