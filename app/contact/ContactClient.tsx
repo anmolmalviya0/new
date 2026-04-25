@@ -1,5 +1,5 @@
-import Icon from '../components/Icon';
 'use client';
+import Icon from '../components/Icon';
 
 import { useState } from 'react';
 
@@ -57,17 +57,17 @@ export default function ContactPage() {
   };
 
   const inquiryTypes = [
-    { value: 'speaking',    label: '🎤 Speaking Engagement' },
-    { value: 'course',      label: '📚 Course / Training' },
-    { value: 'consulting',  label: '⚙️ Technical Consulting' },
-    { value: 'partnership', label: '🤝 Partnership / Collaboration' },
-    { value: 'other',       label: '💬 Other' },
+    { value: 'speaking',    label: 'Speaking Engagement' },
+    { value: 'course',      label: 'Course / Training' },
+    { value: 'consulting',  label: 'Technical Consulting' },
+    { value: 'partnership', label: 'Partnership / Collaboration' },
+    { value: 'other',       label: 'Other' },
   ];
 
   const slaCards = [
-    { icon: 'zap', label: 'Speaking Inquiries', sla: '24–48 hrs', color: 'var(--cyan)' },
-    { icon: '🎓', label: 'Course Questions',    sla: '48 hrs',    color: 'var(--accent)' },
-    { icon: 'flask', label: 'Consulting',          sla: '48–72 hrs', color: 'var(--purple)' },
+    { icon: 'zap' as const, label: 'Speaking Inquiries', sla: '24–48 hrs', color: 'var(--cyan)' },
+    { icon: 'graduation-cap' as const, label: 'Course Questions',    sla: '48 hrs',    color: 'var(--accent)' },
+    { icon: 'flask' as const, label: 'Consulting',          sla: '48–72 hrs', color: 'var(--purple)' },
   ];
 
   return (
@@ -90,7 +90,7 @@ export default function ContactPage() {
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem', justifyContent: 'center' }}>
             {slaCards.map(s => (
               <div key={s.label} className="stat-pill" style={{ color: s.color, borderColor: `${s.color}30`, background: `${s.color}08` }}>
-                <span>{s.icon}</span>
+                <Icon name={s.icon} size={20} color={s.color} />
                 <span style={{ fontWeight: 600 }}>{s.label}</span>
                 <span style={{ color: 'var(--fg-muted)', fontSize: '0.72rem' }}>→ {s.sla}</span>
               </div>
@@ -154,7 +154,7 @@ export default function ContactPage() {
                   className="btn btn-primary"
                   style={{ width: '100%', opacity: loading ? 0.7 : 1, cursor: loading ? 'not-allowed' : 'pointer', fontSize: '0.92rem' }}
                 >
-                  {loading ? '⏳ Sending…' : '✦ Send Message'}
+                  {loading ? 'Sending…' : '✦ Send Message'}
                 </button>
               </form>
             </div>
@@ -215,13 +215,13 @@ export default function ContactPage() {
                 <p style={{ fontSize: '0.7rem', color: 'var(--fg-muted)', textTransform: 'uppercase', letterSpacing: '0.12em', fontWeight: 700, marginBottom: '1rem' }}>Best for</p>
                 <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
                   {[
-                    { icon: '🎤', text: 'Keynotes, workshops & panel invitations', c: 'var(--cyan)' },
-                    { icon: '🏢', text: 'Corporate training programs (10+ engineers)', c: 'var(--cyan)' },
-                    { icon: '⚙️', text: 'AI / NDE consulting engagements', c: 'var(--cyan)' },
-                    { icon: 'flask', text: 'Research collaborations & institutional partnerships', c: 'var(--accent)' },
+                    { icon: 'mic' as const, text: 'Keynotes, workshops & panel invitations', c: 'var(--cyan)' },
+                    { icon: 'users' as const, text: 'Corporate training programs (10+ engineers)', c: 'var(--cyan)' },
+                    { icon: 'settings' as const, text: 'AI / NDE consulting engagements', c: 'var(--cyan)' },
+                    { icon: 'flask' as const, text: 'Research collaborations & institutional partnerships', c: 'var(--accent)' },
                   ].map((item, i) => (
                     <li key={i} style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
-                      <span style={{ fontSize: '1rem', flexShrink: 0, marginTop: '0.1rem' }}>{item.icon}</span>
+                      <span style={{ flexShrink: 0, marginTop: '0.1rem' }}><Icon name={item.icon} size={20} color={item.c} /></span>
                       <span style={{ color: 'var(--fg-2)', fontSize: '0.88rem', lineHeight: 1.55 }}>{item.text}</span>
                     </li>
                   ))}

@@ -1,5 +1,5 @@
-import Icon from '../components/Icon';
 'use client';
+import Icon from '../components/Icon';
 
 import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
@@ -23,7 +23,7 @@ function useInView(threshold = 0.1) {
 
 const topics = [
   {
-    icon: 'cpu',
+    icon: 'cpu' as const,
     title: 'AI & Machine Learning in NDT',
     desc: 'How AI is transforming non-destructive testing. Deep dive into ML models, deployment challenges, and real-world use cases from IIT Madras and TIQ World.',
     duration: '45–60 min',
@@ -32,7 +32,7 @@ const topics = [
     tags: ['AI', 'NDT', 'Industry 4.0'],
   },
   {
-    icon: 'rocket',
+    icon: 'rocket' as const,
     title: 'Building Your First Startup',
     desc: 'From idea to 50+ clients. Lessons from founding TIQ World, raising funding, and scaling an AI startup from a research lab.',
     duration: '45–60 min',
@@ -41,7 +41,7 @@ const topics = [
     tags: ['Startup', 'Entrepreneurship', 'AI SaaS'],
   },
   {
-    icon: 'mic',
+    icon: 'mic' as const,
     title: 'The Art of Technical Speaking',
     desc: 'Crafting memorable keynotes, engaging technical audiences, and making complex ideas accessible without dumbing them down.',
     duration: '30–45 min',
@@ -50,7 +50,7 @@ const topics = [
     tags: ['Communication', 'Speaking', 'Clarity'],
   },
   {
-    icon: 'flask',
+    icon: 'flask' as const,
     title: 'Research to Market',
     desc: 'How to transition from academic research to building a profitable product company. A framework for researcher-founders.',
     duration: '45 min',
@@ -59,7 +59,7 @@ const topics = [
     tags: ['Commercialisation', 'R&D', 'Product'],
   },
   {
-    icon: 'settings',
+    icon: 'settings' as const,
     title: 'Manufacturing AI Playbook',
     desc: 'End-to-end guide to deploying AI in manufacturing environments — from data collection to edge inference and ROI measurement.',
     duration: '60–90 min',
@@ -68,7 +68,7 @@ const topics = [
     tags: ['Manufacturing', 'AI Deployment', 'ROI'],
   },
   {
-    icon: 'globe',
+    icon: 'globe' as const,
     title: 'India&apos;s AI Moment',
     desc: 'Why India is uniquely positioned to lead in industrial AI. The policy landscape, talent pool, and what needs to happen next.',
     duration: '30–45 min',
@@ -79,10 +79,10 @@ const topics = [
 ];
 
 const formats = [
-  { icon: 'target', title: 'Keynote', desc: '45–90 minute headline address. Inspiring, story-driven, technically credible.', accent: 'var(--cyan)' },
-  { icon: 'tool', title: 'Workshop', desc: 'Half-day or full-day hands-on technical workshop with exercises and live demos.', accent: 'var(--accent)' },
-  { icon: 'users', title: 'Panel Discussion', desc: 'Moderator or panelist for AI, manufacturing, and innovation conversations.', accent: 'var(--purple)' },
-  { icon: 'graduation-cap', title: 'Masterclass', desc: 'Deep-dive educational session for cohorts of 20–100 engineers.', accent: 'var(--cyan)' },
+  { icon: 'target' as const, title: 'Keynote', desc: '45–90 minute headline address. Inspiring, story-driven, technically credible.', accent: 'var(--cyan)' },
+  { icon: 'tool' as const, title: 'Workshop', desc: 'Half-day or full-day hands-on technical workshop with exercises and live demos.', accent: 'var(--accent)' },
+  { icon: 'users' as const, title: 'Panel Discussion', desc: 'Moderator or panelist for AI, manufacturing, and innovation conversations.', accent: 'var(--purple)' },
+  { icon: 'graduation-cap' as const, title: 'Masterclass', desc: 'Deep-dive educational session for cohorts of 20–100 engineers.', accent: 'var(--cyan)' },
 ];
 
 const events = [
@@ -161,7 +161,7 @@ export default function SpeakingPage() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1.25rem' }}>
             {formats.map((f, i) => (
               <div key={i} className="card" style={{ padding: '1.5rem', textAlign: 'center' }}>
-                <div style={{ fontSize: '2rem', marginBottom: '0.75rem' }}>{f.icon}</div>
+                <div style={{ marginBottom: '0.75rem' }}><Icon name={f.icon} size={32} color={f.accent} /></div>
                 <h3 style={{ color: f.accent, fontSize: '1rem', fontWeight: 700, marginBottom: '0.6rem' }}>{f.title}</h3>
                 <p style={{ fontSize: '0.83rem', color: 'var(--fg-2)', lineHeight: 1.65 }}>{f.desc}</p>
               </div>
@@ -219,7 +219,7 @@ export default function SpeakingPage() {
                   borderTop: `2px solid ${t.color}`,
                 }}
               >
-                <div style={{ fontSize: '1.75rem', marginBottom: '0.85rem' }}>{t.icon}</div>
+                <div style={{ marginBottom: '0.85rem' }}><Icon name={t.icon} size={28} color={t.color} /></div>
                 <h3 style={{ color: t.color, fontSize: '0.95rem', fontWeight: 700, marginBottom: '0.75rem', lineHeight: 1.3 }}>{t.title}</h3>
                 <p style={{ fontSize: '0.87rem', color: 'var(--fg-2)', lineHeight: 1.75, fontFamily: 'var(--font-body)', marginBottom: '1.25rem' }}>{t.desc}</p>
                 {/* Tags */}
@@ -231,8 +231,8 @@ export default function SpeakingPage() {
                   ))}
                 </div>
                 <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-                  <span style={{ fontSize: '0.72rem', fontWeight: 700, color: 'var(--accent)', fontFamily: 'var(--font-mono, monospace)' }}>⏱ {t.duration}</span>
-                  <span style={{ fontSize: '0.72rem', color: 'var(--fg-muted)', fontFamily: 'var(--font-mono, monospace)' }}>👥 {t.audience}</span>
+                  <span style={{ fontSize: '0.72rem', fontWeight: 700, color: 'var(--accent)', fontFamily: 'var(--font-mono, monospace)', display: 'inline-flex', alignItems: 'center', gap: '0.3rem' }}><Icon name="clock" size={14} color="var(--accent)" /> {t.duration}</span>
+                  <span style={{ fontSize: '0.72rem', color: 'var(--fg-muted)', fontFamily: 'var(--font-mono, monospace)', display: 'inline-flex', alignItems: 'center', gap: '0.3rem' }}><Icon name="users" size={14} color="var(--fg-muted)" /> {t.audience}</span>
                 </div>
               </div>
             ))}

@@ -39,7 +39,7 @@ export default function BlogPostPage() {
         position: 'relative', overflow: 'hidden', padding: '4rem 1.5rem',
       }}>
         <div style={{ position: 'relative', zIndex: 1, textAlign: 'center', maxWidth: '500px' }}>
-          <div style={{ fontSize: '4rem', marginBottom: '1.5rem' }}>📄</div>
+          <div style={{ marginBottom: '1.5rem' }}><Icon name="search" size={56} color="var(--fg-muted)" strokeWidth={1.5} /></div>
           <h1 style={{ fontSize: 'clamp(1.5rem, 4vw, 2.4rem)', fontWeight: 800, color: 'var(--fg)', marginBottom: '1rem' }}>
             Post Not Found
           </h1>
@@ -147,9 +147,9 @@ export default function BlogPostPage() {
               width: '64px', height: '64px', borderRadius: '50%', flexShrink: 0,
               background: 'linear-gradient(135deg, rgba(0,217,255,0.2), rgba(255,94,26,0.15))',
               border: '1px solid rgba(0,217,255,0.25)',
-              display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.8rem',
+              display: 'flex', alignItems: 'center', justifyContent: 'center',
             }}>
-              👤
+              <Icon name="users" size={28} color="var(--cyan)" />
             </div>
             <div style={{ flex: 1, minWidth: '200px' }}>
               <p style={{ fontWeight: 700, color: 'var(--fg)', fontSize: '1rem', marginBottom: '0.25rem' }}>Srijan Tiwari</p>

@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
+import Icon from '../components/Icon';
 
 // About page — enhanced with photo hero, awards, skill bars, publications, press mentions
 // Last reviewed: 2026-04-14
@@ -110,10 +111,10 @@ const skills = [
 ];
 
 const awards = [
-  { icon: '🏆', title: 'Best Speaker Award', org: 'AI Summit India 2024', color: 'var(--accent)' },
-  { icon: '🎓', title: 'IIT Madras Research Excellence', org: 'Centre for NDE · 2022', color: 'var(--cyan)' },
-  { icon: 'rocket', title: 'Top 40 AI Innovators India', org: 'Analytics India Magazine · 2023', color: 'var(--purple)' },
-  { icon: '🌍', title: 'Global NDE Impact Award', org: 'DGZfP International · 2021', color: 'var(--accent)' },
+  { icon: 'target' as const, title: 'Best Speaker Award', org: 'AI Summit India 2024', color: 'var(--accent)' },
+  { icon: 'graduation-cap' as const, title: 'IIT Madras Research Excellence', org: 'Centre for NDE · 2022', color: 'var(--cyan)' },
+  { icon: 'rocket' as const, title: 'Top 40 AI Innovators India', org: 'Analytics India Magazine · 2023', color: 'var(--purple)' },
+  { icon: 'globe' as const, title: 'Global NDE Impact Award', org: 'DGZfP International · 2021', color: 'var(--accent)' },
 ];
 
 function SkillBar({ label, pct, color, visible, delay }: { label: string; pct: number; color: string; visible: boolean; delay: number }) {
@@ -209,7 +210,7 @@ export default function AboutPage() {
                       parent.style.background = 'linear-gradient(135deg, rgba(0,217,255,0.15) 0%, rgba(255,94,26,0.1) 100%)';
                       const ph = document.createElement('div');
                       ph.style.cssText = 'width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:5rem;';
-                      ph.textContent = '👤';
+                      ph.textContent = 'ST';
                       parent.appendChild(ph);
                     }
                   }}
@@ -416,7 +417,7 @@ export default function AboutPage() {
                   transform: awardsInView ? 'none' : 'translateY(30px) scale(0.96)',
                 }}
               >
-                <div style={{ fontSize: '2.2rem', marginBottom: '0.75rem', filter: 'drop-shadow(0 0 12px rgba(255,255,255,0.1))' }}>{a.icon}</div>
+                <div style={{ marginBottom: '0.75rem' }}><Icon name={a.icon} size={32} color={a.color} /></div>
                 <h4 style={{ color: a.color, fontWeight: 700, marginBottom: '0.35rem', fontSize: '0.95rem', lineHeight: 1.3 }}>{a.title}</h4>
                 <p style={{ fontSize: '0.78rem', color: 'var(--fg-muted)', fontFamily: 'var(--font-mono, monospace)', lineHeight: 1.5 }}>{a.org}</p>
               </div>

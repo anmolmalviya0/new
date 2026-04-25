@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Icon from '../components/Icon';
 
 // Courses page — enhanced with testimonials, comparison table, and richer cards
 export default function CoursesPage() {
@@ -15,7 +16,7 @@ export default function CoursesPage() {
       duration: '12 weeks',
       level: 'Intermediate',
       enrolled: 1250,
-      image: '🤖',
+      image: 'cpu' as const,
       color: 'var(--cyan)',
       badge: 'Most Popular',
       highlights: ['CNNs for defect detection', 'Signal processing basics', 'Deploy on edge devices', 'Certificate included'],
@@ -28,7 +29,7 @@ export default function CoursesPage() {
       duration: '8 weeks',
       level: 'Beginner',
       enrolled: 850,
-      image: '🚀',
+      image: 'rocket' as const,
       color: 'var(--accent)',
       badge: 'Bestseller',
       highlights: ['Ideation to MVP', 'Funding strategies', 'B2B sales basics', 'Founder community'],
@@ -41,7 +42,7 @@ export default function CoursesPage() {
       duration: '10 weeks',
       level: 'Advanced',
       enrolled: 620,
-      image: '🐍',
+      image: 'cpu' as const,
       color: 'var(--cyan)',
       badge: null,
       highlights: ['PyTorch deep dive', 'MLOps fundamentals', 'Model optimization', 'Production deployment'],
@@ -54,7 +55,7 @@ export default function CoursesPage() {
       duration: '6 weeks',
       level: 'Beginner',
       enrolled: 425,
-      image: '✍️',
+      image: 'mic' as const,
       color: 'var(--accent)',
       badge: null,
       highlights: ['Paper writing', 'Keynote frameworks', 'LinkedIn storytelling', 'Slide design'],
@@ -62,9 +63,9 @@ export default function CoursesPage() {
   ];
 
   const philosophy = [
-    { icon: '🎯', title: 'Real-World First', desc: 'Every concept connected to actual industry problems and solutions', color: 'var(--cyan)' },
-    { icon: '💡', title: 'Connect, Not Confuse', desc: 'Simplified explanations of complex topics with relatable examples', color: 'var(--accent)' },
-    { icon: '🚀', title: 'Skill to Career', desc: 'Move from learning to applying — direct pathways to opportunity', color: 'var(--cyan)' },
+    { icon: 'target' as const, title: 'Real-World First', desc: 'Every concept connected to actual industry problems and solutions', color: 'var(--cyan)' },
+    { icon: 'zap' as const, title: 'Connect, Not Confuse', desc: 'Simplified explanations of complex topics with relatable examples', color: 'var(--accent)' },
+    { icon: 'rocket' as const, title: 'Skill to Career', desc: 'Move from learning to applying — direct pathways to opportunity', color: 'var(--cyan)' },
   ];
 
   const testimonials = [
@@ -117,7 +118,7 @@ export default function CoursesPage() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '2rem' }}>
             {philosophy.map((p, i) => (
               <div key={i} className="card" style={{ textAlign: 'center', padding: '2rem 1.5rem' }}>
-                <div style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>{p.icon}</div>
+                <div style={{ marginBottom: '1rem' }}><Icon name={p.icon} size={32} color={p.color} /></div>
                 <h3 style={{ fontSize: '1.05rem', fontWeight: 700, color: p.color, marginBottom: '0.6rem' }}>{p.title}</h3>
                 <p style={{ color: 'var(--fg-muted)', fontSize: '0.88rem', lineHeight: 1.65 }}>{p.desc}</p>
               </div>
@@ -177,8 +178,8 @@ export default function CoursesPage() {
                 )}
 
                 {/* Header */}
-                <div style={{ background: 'var(--bg-3)', height: '7rem', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '3.5rem', borderBottom: `2px solid ${course.color}40` }}>
-                  {course.image}
+                <div style={{ background: 'var(--bg-3)', height: '7rem', display: 'flex', alignItems: 'center', justifyContent: 'center', borderBottom: `2px solid ${course.color}40` }}>
+                  <Icon name={course.image} size={48} color={course.color} strokeWidth={1.5} />
                 </div>
 
                 <div style={{ padding: '1.5rem' }}>
@@ -199,7 +200,7 @@ export default function CoursesPage() {
                   </ul>
 
                   <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.8rem', color: 'var(--fg-muted)', fontFamily: 'var(--font-mono, monospace)', marginBottom: '1rem' }}>
-                    <span>📚 {course.duration}</span>
+                    <span style={{ display: 'flex', alignItems: 'center', gap: '0.35rem' }}><Icon name="book-open" size={14} /> {course.duration}</span>
                     <span>{course.enrolled.toLocaleString()} enrolled</span>
                   </div>
 
